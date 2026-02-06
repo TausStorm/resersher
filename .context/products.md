@@ -17,6 +17,7 @@ Tool that simplifies complicated documents.
 - Technical data sheets
 - Norms and standards
 - Regulatory documents
+- Laws and legal applications
 - Any complex documentation
 
 ### Differentiators
