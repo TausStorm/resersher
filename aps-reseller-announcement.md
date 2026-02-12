@@ -1,46 +1,45 @@
-# UVRelining Announces American Pipelining Solutions as Official US Reseller
+# UVRelining Partners with American Pipelining Solutions to Bring LED UV Curing Technology to the US Market
 
-**UVRelining partners with American Pipelining Solutions (APS) to bring its UV CIPP relining technology to the United States market.**
+We are proud to announce that **American Pipelining Solutions (APS)** is now the official US distributor of the **UV XAIR** -- UVRelining's latest LED UV curing system and the most advanced relining machine on the market today.
 
----
+This partnership means that US contractors now have direct access to the latest generation of LED UV curing technology, distributed and supported locally by one of the most trusted names in the American trenchless industry.
 
-We are excited to announce that **American Pipelining Solutions (APS)**, based in Anderson, South Carolina, is now the official US reseller of UVRelining products.
+## About the UV XAIR
 
-This partnership brings together two companies that share a clear vision: making pipe rehabilitation more efficient, more reliable, and more accessible to professionals in the field.
+The UV XAIR represents the cutting edge of LED UV curing for pipe rehabilitation. Designed for speed, versatility, and ease of use, it sets a new standard for what a single system can do:
+
+- **One head, full range** -- cures dimensions from DN70 to DN600 without changing the UV head
+- **Industry-leading curing speeds** -- up to 110m/hour thanks to our Flash Curing Process (FCP)
+- **Wireless control** -- operated via a ruggedized Panasonic Toughbook tablet, giving operators full control from wherever they need to be
+- **Smart monitoring** -- automatic anti-slip surveillance on the three-wheel puller unit, with cloud-based quality reporting built in
+- **Lightweight, durable build** -- carbon panel construction inspired by the racing industry
+- **T-Liner compatible** -- expandable with our T-Liner System for UV-cured T-liner and patch repair installations
+
+The UV XAIR is not an incremental update. It is a fundamentally different approach to UV curing -- faster, lighter, smarter, and built for the demands of modern pipe rehabilitation.
 
 ## Why APS
 
-Entering the US market requires a partner who understands the industry from the ground up -- and APS is exactly that. With a proven track record in the trenchless pipe repair and CIPP lining space, APS has built a reputation for putting contractors first. Their in-house training academy (APSTA), dedicated after-sales support team, and hands-on approach to customer success make them the ideal partner to represent UVRelining in the United States.
+Bringing the latest LED UV curing technology to the US requires more than shipping equipment. It requires a partner who can train, support, and stand behind the product in the field.
 
-APS doesn't just sell equipment -- they train teams, support jobs in the field, and stand behind every product they offer. That philosophy aligns perfectly with how we operate at UVRelining.
+APS is that partner. Based in Anderson, South Carolina, APS has built its reputation on a contractor-first approach to the trenchless industry. They run one of the most comprehensive training programs in the country through their American Pipelining Solutions Training Academy (APSTA), and their after-sales support ensures that every customer has the backing they need from day one.
 
-## What This Means
+APS doesn't just distribute -- they invest in the success of the professionals who use their products. That commitment to training, support, and long-term partnership is exactly why we chose them to represent UVRelining in the United States.
 
-US-based contractors and plumbing professionals now have direct access to UVRelining's complete UV curing system, including:
+## What This Means for the US Market
 
-- **UV XAIR** -- our flagship UV curing system, covering DN70 to DN600 with a single head
-- **UV360RS+** -- compact light-head capable of navigating 90-degree bends down to DN70
-- **UVLCR** -- our ultra-low VOC UV Light Curing Resin, engineered for maximum strength and fast cure times
-- **UVHL** -- high-performance UV House Liner
-- **Preimpregnated liners, inversion drums, T-liner and patch tools**, and the full range of accessories and spare parts
+LED UV curing is the future of CIPP relining. It is faster, more controllable, and delivers more consistent results than traditional curing methods. With the UV XAIR now available through APS, American contractors have access to the same technology that is already transforming the European relining industry.
 
-Through APS, US customers will also benefit from local training, technical support, and equipment service -- backed by both APS's expertise in the American market and UVRelining's deep knowledge of UV curing technology.
+Through APS, US customers will benefit from:
 
-## A Natural Fit
+- **Local distribution** of the UV XAIR system
+- **Hands-on training** and certification programs
+- **Technical support** and equipment service from a team that knows the American market
+- **The full backing of UVRelining and Sacpro Group** -- bringing decades of European relining expertise to the US
 
-UVRelining has built its reputation in Europe on innovation and performance. Our UV curing systems are designed to be faster, more versatile, and more reliable than anything else on the market. Now, as part of Sacpro Group, we have the scale and resources to expand globally -- and the US is a critical part of that strategy.
-
-APS brings the market knowledge, the relationships, and the infrastructure to make UVRelining a trusted name among American contractors. Together, we're bringing world-class UV relining technology to the professionals who need it most.
+We are excited about what this partnership means for the industry. The US market is ready for the next generation of UV curing, and together with APS, we are here to deliver it.
 
 ---
 
-For more information, contact:
+**UVRelining** -- uvrelining.com
 
-**UVRelining**
-uvrelining.com
-taus@uvrelining.com
-
-**American Pipelining Solutions**
-americanpipeliningsupplies.com
-sales@pipeliningsuppliesusa.com
-(888) 258-9359
+**American Pipelining Solutions** -- americanpipeliningsupplies.com | (888) 258-9359
