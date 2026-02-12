@@ -1,42 +1,29 @@
-# UVRelining Partners with American Pipelining Solutions to Bring LED UV Curing Technology to the US Market
+# UVRelining Welcomes American Pipelining Solutions as Official US Distributor
 
-We are proud to announce that **American Pipelining Solutions (APS)** is now the official US distributor of the **UV XAIR** -- UVRelining's latest LED UV curing system and the most advanced relining machine on the market today.
+We are thrilled to announce that **American Pipelining Solutions (APS)**, based in Anderson, South Carolina, is now the official US distributor of UVRelining's **UV XAIR** -- our latest LED UV curing system.
 
-This partnership means that US contractors now have direct access to the latest generation of LED UV curing technology, distributed and supported locally by one of the most trusted names in the American trenchless industry.
+This is a major milestone for UVRelining. The US market has been a key part of our growth strategy, and finding the right partner to represent our brand and technology was essential. In APS, we have found exactly that.
 
-## About the UV XAIR
+APS has established itself as one of the most respected names in the American trenchless industry. Their commitment to contractor success -- through hands-on training at their American Pipelining Solutions Training Academy (APSTA), dedicated after-sales support, and a genuine investment in the professionals they work with -- mirrors the values we hold at UVRelining. We could not be happier to have them as our US partner.
 
-The UV XAIR represents the cutting edge of LED UV curing for pipe rehabilitation. Designed for speed, versatility, and ease of use, it sets a new standard for what a single system can do:
+## The UV XAIR -- LED UV Curing, Redefined
 
-- **One head, full range** -- cures dimensions from DN70 to DN600 without changing the UV head
-- **Industry-leading curing speeds** -- up to 110m/hour thanks to our Flash Curing Process (FCP)
-- **Wireless control** -- operated via a ruggedized Panasonic Toughbook tablet, giving operators full control from wherever they need to be
-- **Smart monitoring** -- automatic anti-slip surveillance on the three-wheel puller unit, with cloud-based quality reporting built in
-- **Lightweight, durable build** -- carbon panel construction inspired by the racing industry
-- **T-Liner compatible** -- expandable with our T-Liner System for UV-cured T-liner and patch repair installations
+With this partnership, APS will distribute the UV XAIR, bringing the latest generation of LED UV curing technology to US contractors. The UV XAIR is designed to set a new standard in pipe rehabilitation:
 
-The UV XAIR is not an incremental update. It is a fundamentally different approach to UV curing -- faster, lighter, smarter, and built for the demands of modern pipe rehabilitation.
+- **Full dimensional range from a single head** -- cures DN70 to DN600 without swapping the UV head, a capability unmatched by any other system on the market
+- **Unprecedented curing speeds** -- up to 110m/hour powered by our Flash Curing Process (FCP)
+- **Wireless operation** -- full system control via a ruggedized Panasonic Toughbook tablet, giving operators freedom to manage installations from wherever they need to be
+- **Smart quality assurance** -- automatic anti-slip surveillance and cloud-based reporting that generates quality documentation for every project
+- **Lightweight carbon construction** -- durable, high-performance panels inspired by the racing industry
+- **T-Liner compatible** -- expandable with our T-Liner System for UV-cured T-liner and patch repair work
 
-## Why APS
+LED UV curing is already transforming the relining industry across Europe. It is faster, more precise, and delivers more consistent results than traditional methods. Through APS, American contractors now have access to this same technology -- supported locally by a team that understands the US market inside and out.
 
-Bringing the latest LED UV curing technology to the US requires more than shipping equipment. It requires a partner who can train, support, and stand behind the product in the field.
+## Looking Ahead
 
-APS is that partner. Based in Anderson, South Carolina, APS has built its reputation on a contractor-first approach to the trenchless industry. They run one of the most comprehensive training programs in the country through their American Pipelining Solutions Training Academy (APSTA), and their after-sales support ensures that every customer has the backing they need from day one.
+We are genuinely excited about what lies ahead. APS brings the expertise, infrastructure, and customer-first mindset that will make the UV XAIR a trusted tool for contractors across the United States. Together, we are bringing world-class LED UV curing technology to the professionals who will shape the future of pipe rehabilitation in America.
 
-APS doesn't just distribute -- they invest in the success of the professionals who use their products. That commitment to training, support, and long-term partnership is exactly why we chose them to represent UVRelining in the United States.
-
-## What This Means for the US Market
-
-LED UV curing is the future of CIPP relining. It is faster, more controllable, and delivers more consistent results than traditional curing methods. With the UV XAIR now available through APS, American contractors have access to the same technology that is already transforming the European relining industry.
-
-Through APS, US customers will benefit from:
-
-- **Local distribution** of the UV XAIR system
-- **Hands-on training** and certification programs
-- **Technical support** and equipment service from a team that knows the American market
-- **The full backing of UVRelining and Sacpro Group** -- bringing decades of European relining expertise to the US
-
-We are excited about what this partnership means for the industry. The US market is ready for the next generation of UV curing, and together with APS, we are here to deliver it.
+Welcome to the UVRelining family, APS. We look forward to a long and successful partnership.
 
 ---
 
