@@ -6,7 +6,7 @@
 
 ---
 
-**From:** Fredrik Sterner, CEO -- Sacpro Group
+**From:** Taus Gerner-Rasmussen, CSO -- Sacpro Group
 **To:** Picote Solutions / Picote OY
 **Date:** February 2026
 **Status:** Draft -- for discussion
@@ -45,8 +45,8 @@ Sacpro Group will showcase, stock, and sell the full range of Picote products ac
 |---|---|---|
 | Falun | Sweden | Operational |
 | Malmo | Sweden | Planned |
-| Store 3 | Sweden | Operational |
-| Store 1 | Norway | Planned -- Q4 2026 |
+| Stockholm | Sweden | Operational |
+| Oslo | Norway | Planned -- Q4 2026 |
 | Store 1 | Finland | Operational |
 
 - **Full product range** stocked over time, adapted to local market demand
@@ -72,7 +72,6 @@ Sacpro Group will showcase, stock, and sell the full range of Picote products ac
 Picote Solutions purchases junction liners from Sacpro Group, subject to the product meeting Picote's quality expectations.
 
 - Target price: **~EUR 18** per junction liner, size 100-100-45
-- Full pricing across sizes detailed in **Appendix A -- Junction Liner Quote**
 - Quality validation: Picote evaluates the product and confirms it meets their standards before committing to ongoing supply
 
 **B. Termination of Reliningsvaruhuset contract**
@@ -95,7 +94,7 @@ Sacpro Group receives the rights to sell Picote materials and millers across all
 Picote OY's installation teams begin using Sacpro Group liner and epoxy for their relining operations, subject to the products performing equal to or better than their current materials.
 
 - Target price after discount: **~EUR 14** per liner, size 100-150
-- Full pricing across sizes and products detailed in **Appendix B -- Liner & Epoxy Quote**
+- Full pricing across sizes and products detailed in **Appendix A -- Liner & Epoxy Quote (Offer 2652)**
 - Performance validation: Picote OY evaluates the liner and epoxy under real installation conditions before committing
 
 ---
@@ -133,14 +132,13 @@ A clear resolution on this point strengthens the partnership and avoids channel 
 
 ## 6. Appendices
 
-- **Appendix A** -- Junction Liner Quote (sizes, pricing, specifications)
-- **Appendix B** -- Liner & Epoxy Quote (sizes, pricing, specifications)
+- **Appendix A** -- Liner & Epoxy Quote (Offer 2652)
 
 *Appendices to be attached separately.*
 
 ---
 
 **Sacpro Group**
-Fredrik Sterner, CEO
-fredrik@sacpro.se | +46 70 327 24 22
+Taus Gerner-Rasmussen, CSO
+taus@uvrelining.com | +46 70 990 11 22
 sacpro.se
