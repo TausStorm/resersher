@@ -47,7 +47,7 @@ Sacpro Group will showcase, stock, and sell the full range of Picote products ac
 | Malmo | Sweden | Planned |
 | Stockholm | Sweden | Operational |
 | Oslo | Norway | Planned -- Q4 2026 |
-| Store 1 | Finland | Operational |
+| Finland | Finland | Operational |
 
 - **Full product range** stocked over time, adapted to local market demand
 - **Immediate delivery** from local stock -- no waiting on shipments
