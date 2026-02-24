@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UVRelining Sales Portal</title>
+  <style>
+/* === Reset & Base === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f8f9fb;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --border-light: #f0f1f3;
+  --text: #1a1d23;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #eff6ff;
+  --success: #059669;
+  --success-light: #ecfdf5;
+  --warning: #d97706;
+  --warning-light: #fffbeb;
+  --danger: #dc2626;
+  --danger-light: #fef2f2;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+  --sidebar-bg: #0f172a;
+  --sidebar-text: #94a3b8;
+  --sidebar-active: #ffffff;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+  --transition: 150ms ease;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === Layout === */
+.app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* === Sidebar === */
+.sidebar {
+  width: 240px;
+  background: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar-header {
+  padding: 20px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  font-weight: 800;
+  font-size: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.5px;
+}
+
+.logo-text {
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.nav-items {
+  list-style: none;
+  padding: 12px 8px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  color: var(--sidebar-text);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.nav-item:hover {
+  background: rgba(255,255,255,0.06);
+  color: #e2e8f0;
+}
+
+.nav-item.active {
+  background: rgba(255,255,255,0.1);
+  color: var(--sidebar-active);
+}
+
+.nav-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  color: #e2e8f0;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.user-role {
+  color: var(--sidebar-text);
+  font-size: 12px;
+}
+
+/* === Main Content === */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.page-title h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.top-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box svg {
+  position: absolute;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
+}
+
+.search-box input {
+  padding: 8px 12px 8px 34px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 13px;
+  width: 280px;
+  outline: none;
+  transition: border-color var(--transition);
+  background: var(--bg);
+}
+
+.search-box input:focus {
+  border-color: var(--primary);
+  background: var(--surface);
+}
+
+.search-box input::placeholder {
+  color: var(--text-muted);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 28px;
+}
+
+/* === Buttons === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  background: var(--surface);
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn:hover {
+  background: var(--bg);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.btn-success {
+  background: var(--success);
+  color: white;
+  border-color: var(--success);
+}
+
+.btn-success:hover {
+  background: #047857;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--primary);
+}
+
+.btn-ghost:hover {
+  background: var(--primary-light);
+}
+
+/* === Cards === */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: box-shadow var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* === Stats Grid === */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+
+.stat-change {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.stat-change.up { color: var(--success); }
+.stat-change.down { color: var(--danger); }
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.stat-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.stat-icon.blue { background: var(--primary-light); color: var(--primary); }
+.stat-icon.green { background: var(--success-light); color: var(--success); }
+.stat-icon.orange { background: var(--warning-light); color: var(--warning); }
+.stat-icon.purple { background: var(--purple-light); color: var(--purple); }
+
+/* === Table === */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 12px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: middle;
+}
+
+tbody tr {
+  transition: background var(--transition);
+  cursor: pointer;
+}
+
+tbody tr:hover {
+  background: var(--bg);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cell-primary {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.cell-secondary {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+/* === Badges === */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.badge-draft { background: #f3f4f6; color: #4b5563; }
+.badge-sent { background: var(--primary-light); color: var(--primary); }
+.badge-accepted { background: var(--success-light); color: var(--success); }
+.badge-expired { background: #fef2f2; color: #dc2626; }
+.badge-declined { background: #fef2f2; color: #dc2626; }
+.badge-confirmed { background: var(--primary-light); color: var(--primary); }
+.badge-in_production { background: var(--warning-light); color: var(--warning); }
+.badge-delivered { background: var(--success-light); color: var(--success); }
+.badge-invoiced { background: var(--purple-light); color: var(--purple); }
+
+/* === Grid layouts === */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+/* === Quick Actions === */
+.quick-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.quick-action {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.quick-action:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+.quick-action-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.quick-action-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.quick-action-text h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.quick-action-text p {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* === Modal === */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  width: 720px;
+  max-width: 95vw;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  z-index: 1;
+}
+
+.modal-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+}
+
+.modal-close:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+/* === Form === */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  transition: border-color var(--transition);
+  background: var(--surface);
+  font-family: inherit;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 12px;
+}
+
+.form-divider {
+  border-top: 1px solid var(--border);
+  margin: 20px 0;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* === Line Items === */
+.line-items {
+  margin-top: 8px;
+}
+
+.line-item {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr auto;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.line-item .form-input, .line-item .form-select {
+  padding: 7px 10px;
+  font-size: 13px;
+}
+
+.line-total {
+  font-weight: 600;
+  font-size: 13px;
+  text-align: right;
+  min-width: 90px;
+}
+
+.remove-line {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.remove-line:hover {
+  color: var(--danger);
+  background: var(--danger-light);
+}
+
+.add-line-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 0;
+  background: none;
+  border: none;
+}
+
+.add-line-btn:hover {
+  text-decoration: underline;
+}
+
+.quote-total-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 0;
+  margin-top: 8px;
+  border-top: 2px solid var(--text);
+}
+
+.quote-total-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-right: 16px;
+}
+
+.quote-total-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* === Detail View === */
+.detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.detail-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.detail-id {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.detail-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+}
+
+.meta-item-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.meta-item-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* === Product Cards (catalog view) === */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: all var(--transition);
+}
+
+.product-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+.product-category {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.product-name {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.product-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.product-stock {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.stock-ok { color: var(--success); }
+.stock-low { color: var(--warning); }
+.stock-out { color: var(--danger); }
+
+/* === Filter Bar === */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filter-chip {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+
+.filter-chip:hover, .filter-chip.active {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* === Toast === */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toast {
+  padding: 12px 20px;
+  background: var(--sidebar-bg);
+  color: white;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  animation: slideIn 300ms ease;
+}
+
+.toast.success { border-left: 4px solid var(--success); }
+.toast.error { border-left: 4px solid var(--danger); }
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* === Empty State === */
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text-secondary);
+}
+
+.empty-state svg {
+  width: 48px;
+  height: 48px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.empty-state h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+/* === Back button === */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px 0;
+  margin-bottom: 16px;
+  background: none;
+  border: none;
+  font-weight: 500;
+}
+
+.back-btn:hover {
+  color: var(--primary);
+}
+
+.back-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* === iPad / Tablet tweaks === */
+@media (max-width: 1200px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .quick-actions { flex-wrap: wrap; }
+}
+
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .app { flex-direction: column; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: 1fr; }
+  .detail-meta { grid-template-columns: repeat(2, 1fr); }
+  .grid-2 { grid-template-columns: 1fr; }
+  .search-box input { width: 180px; }
+  .top-bar { padding: 12px 16px; }
+  .content { padding: 16px; }
+  /* Show mobile nav */
+  .mobile-nav { display: flex !important; }
+}
+
+/* Mobile bottom nav (hidden on desktop) */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--sidebar-bg);
+  padding: 8px 0;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+  z-index: 900;
+  justify-content: space-around;
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--sidebar-text);
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: none;
+  border: none;
+}
+
+.mobile-nav-item.active {
+  color: white;
+}
+
+.mobile-nav-item svg {
+  width: 20px;
+  height: 20px;
+}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar (desktop) -->
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">UV</span>
+          <span class="logo-text">Sales Portal</span>
+        </div>
+      </div>
+      <ul class="nav-items">
+        <li class="nav-item active" data-page="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          <span>Dashboard</span>
+        </li>
+        <li class="nav-item" data-page="quotes">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Quotes</span>
+        </li>
+        <li class="nav-item" data-page="orders">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span>Orders</span>
+        </li>
+        <li class="nav-item" data-page="customers">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Customers</span>
+        </li>
+        <li class="nav-item" data-page="products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          <span>Products</span>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar">TG</div>
+          <div class="user-details">
+            <span class="user-name">Taus Gerner-R.</span>
+            <span class="user-role">Sales</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="top-bar">
+        <div class="page-title">
+          <h1 id="pageTitle">Dashboard</h1>
+          <span class="breadcrumb" id="breadcrumb">Overview</span>
+        </div>
+        <div class="top-bar-actions">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Search customers, quotes, orders..." id="globalSearch">
+          </div>
+          <button class="btn btn-primary" id="newQuoteBtn" onclick="app.showNewQuote()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            New Quote
+          </button>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <div class="content" id="content">
+        <!-- Pages injected by JS -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Mobile bottom nav -->
+  <nav class="mobile-nav">
+    <button class="mobile-nav-item active" data-page="dashboard" onclick="app.navigate('dashboard')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Home
+    </button>
+    <button class="mobile-nav-item" data-page="quotes" onclick="app.navigate('quotes')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Quotes
+    </button>
+    <button class="mobile-nav-item" data-page="orders" onclick="app.navigate('orders')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+      Orders
+    </button>
+    <button class="mobile-nav-item" data-page="customers" onclick="app.navigate('customers')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      Customers
+    </button>
+    <button class="mobile-nav-item" data-page="products" onclick="app.navigate('products')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      Products
+    </button>
+  </nav>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">New Quote</h2>
+        <button class="modal-close" onclick="app.closeModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+// Mock data representing UVRelining's actual product line and customers
+const DATA = {
+  products: [
+    { id: 'P001', name: 'UV XAIR Complete System', category: 'Machines', price: 285000, currency: 'EUR', unit: 'st', stock: 3, description: 'Latest-generation LED UV curing system DN70-DN600' },
+    { id: 'P002', name: 'UV XAIR Light Head', category: 'Machines', price: 95000, currency: 'EUR', unit: 'st', stock: 5, description: 'LED UV curing head with Flash Curing Process' },
+    { id: 'P003', name: 'UV XAIR Puller Unit', category: 'Machines', price: 42000, currency: 'EUR', unit: 'st', stock: 4, description: 'Three-wheel puller with automatic anti-slip surveillance' },
+    { id: 'P004', name: 'UV360RS+', category: 'Machines', price: 165000, currency: 'EUR', unit: 'st', stock: 2, description: 'Compact UV system, navigates 90-degree bends DN70+' },
+    { id: 'P005', name: 'UVLCR Resin 20kg', category: 'Chemistry', price: 890, currency: 'EUR', unit: 'st', stock: 145, description: 'Vinylester UV Light Curing Resin, ultra-low VOC' },
+    { id: 'P006', name: 'UVLCR Resin 200kg', category: 'Chemistry', price: 7800, currency: 'EUR', unit: 'st', stock: 28, description: 'Vinylester UV Light Curing Resin, bulk drum' },
+    { id: 'P007', name: 'UVHL DN100 (50m)', category: 'Liners', price: 1250, currency: 'EUR', unit: 'st', stock: 62, description: 'UV House Liner DN100, 50 meter roll' },
+    { id: 'P008', name: 'UVHL DN150 (50m)', category: 'Liners', price: 1850, currency: 'EUR', unit: 'st', stock: 45, description: 'UV House Liner DN150, 50 meter roll' },
+    { id: 'P009', name: 'UVHL DN200 (50m)', category: 'Liners', price: 2400, currency: 'EUR', unit: 'st', stock: 38, description: 'UV House Liner DN200, 50 meter roll' },
+    { id: 'P010', name: 'Pre-impregnated Liner DN150', category: 'Liners', price: 2950, currency: 'EUR', unit: 'st', stock: 22, description: 'UVHL + UVLCR pre-impregnated, ready to install' },
+    { id: 'P011', name: 'T-Liner Kit DN100-DN150', category: 'Accessories', price: 380, currency: 'EUR', unit: 'st', stock: 85, description: 'UV-cured T-liner for lateral connections' },
+    { id: 'P012', name: 'Patch Tool DN100-DN300', category: 'Accessories', price: 4200, currency: 'EUR', unit: 'st', stock: 8, description: 'UV patch repair tool' },
+    { id: 'P013', name: 'Inversion Drum 200mm', category: 'Accessories', price: 3800, currency: 'EUR', unit: 'st', stock: 6, description: 'Liner inversion drum for DN200' },
+    { id: 'P014', name: 'Toughbook G2 Tablet', category: 'Accessories', price: 3200, currency: 'EUR', unit: 'st', stock: 12, description: 'Panasonic Toughbook G2 with UV XAIR control software' },
+    { id: 'P015', name: 'UV XAIR Service Kit', category: 'Spare Parts', price: 1450, currency: 'EUR', unit: 'st', stock: 18, description: 'Annual maintenance kit for UV XAIR systems' },
+  ],
+
+  customers: [
+    { id: 'C001', name: 'APS - Advanced Pipe Solutions', country: 'US', city: 'Houston, TX', contact: 'Mike Johnson', email: 'mike@aps-us.com', phone: '+1 713-555-0142', type: 'Distributor' },
+    { id: 'C002', name: 'NordicReline AB', country: 'SE', city: 'Gothenburg', contact: 'Erik Lindqvist', email: 'erik@nordicreline.se', phone: '+46 31 555 0200', type: 'Contractor' },
+    { id: 'C003', name: 'PipeWorks GmbH', country: 'DE', city: 'Munich', contact: 'Hans Mueller', email: 'h.mueller@pipeworks.de', phone: '+49 89 555 0340', type: 'Contractor' },
+    { id: 'C004', name: 'RelineNow Ltd', country: 'UK', city: 'Birmingham', contact: 'James Clark', email: 'j.clark@relinenow.co.uk', phone: '+44 121 555 0780', type: 'Contractor' },
+    { id: 'C005', name: 'Sacpro Norge AS', country: 'NO', city: 'Oslo', contact: 'Bjorn Andersen', email: 'bjorn@sacpro.no', phone: '+47 22 55 0190', type: 'Group Company' },
+    { id: 'C006', name: 'CityDrain Oy', country: 'FI', city: 'Helsinki', contact: 'Matti Virtanen', email: 'matti@citydrain.fi', phone: '+358 9 555 0420', type: 'Contractor' },
+    { id: 'C007', name: 'ReliningPro ApS', country: 'DK', city: 'Copenhagen', contact: 'Lars Nielsen', email: 'lars@reliningpro.dk', phone: '+45 33 55 0680', type: 'Contractor' },
+    { id: 'C008', name: 'Pipe Rehab France SAS', country: 'FR', city: 'Lyon', contact: 'Pierre Dubois', email: 'p.dubois@piperehab.fr', phone: '+33 4 72 55 0910', type: 'Distributor' },
+  ],
+
+  quotes: [
+    {
+      id: 'Q-2026-001', customer: 'C001', date: '2026-02-10', validUntil: '2026-03-10', status: 'sent',
+      items: [
+        { productId: 'P001', qty: 2, discount: 5 },
+        { productId: 'P014', qty: 2, discount: 0 },
+        { productId: 'P015', qty: 2, discount: 0 },
+      ],
+      notes: 'Initial US market entry package for APS. Includes training on-site.'
+    },
+    {
+      id: 'Q-2026-002', customer: 'C003', date: '2026-02-15', validUntil: '2026-03-15', status: 'draft',
+      items: [
+        { productId: 'P005', qty: 20, discount: 10 },
+        { productId: 'P007', qty: 30, discount: 8 },
+        { productId: 'P008', qty: 20, discount: 8 },
+        { productId: 'P011', qty: 50, discount: 5 },
+      ],
+      notes: 'Quarterly consumables order for Munich operations.'
+    },
+    {
+      id: 'Q-2026-003', customer: 'C002', date: '2026-02-18', validUntil: '2026-03-18', status: 'accepted',
+      items: [
+        { productId: 'P004', qty: 1, discount: 0 },
+        { productId: 'P012', qty: 1, discount: 0 },
+      ],
+      notes: 'Replacement UV360RS+ for Gothenburg team.'
+    },
+    {
+      id: 'Q-2026-004', customer: 'C006', date: '2026-02-20', validUntil: '2026-03-20', status: 'sent',
+      items: [
+        { productId: 'P010', qty: 15, discount: 5 },
+        { productId: 'P011', qty: 30, discount: 5 },
+      ],
+      notes: 'Pre-impregnated liner trial order for Helsinki project.'
+    },
+    {
+      id: 'Q-2026-005', customer: 'C004', date: '2026-02-22', validUntil: '2026-03-22', status: 'expired',
+      items: [
+        { productId: 'P001', qty: 1, discount: 3 },
+        { productId: 'P006', qty: 5, discount: 10 },
+      ],
+      notes: 'UK expansion quote. Customer requested follow-up in Q2.'
+    },
+  ],
+
+  orders: [
+    {
+      id: 'O-2026-001', quoteId: 'Q-2025-048', customer: 'C002', date: '2026-01-15', deliveryDate: '2026-02-28', status: 'delivered',
+      items: [
+        { productId: 'P005', qty: 10, discount: 8 },
+        { productId: 'P007', qty: 20, discount: 5 },
+      ],
+    },
+    {
+      id: 'O-2026-002', quoteId: 'Q-2025-051', customer: 'C005', date: '2026-01-22', deliveryDate: '2026-03-01', status: 'in_production',
+      items: [
+        { productId: 'P001', qty: 1, discount: 10 },
+        { productId: 'P014', qty: 1, discount: 10 },
+      ],
+    },
+    {
+      id: 'O-2026-003', quoteId: 'Q-2026-003', customer: 'C002', date: '2026-02-20', deliveryDate: '2026-03-15', status: 'confirmed',
+      items: [
+        { productId: 'P004', qty: 1, discount: 0 },
+        { productId: 'P012', qty: 1, discount: 0 },
+      ],
+    },
+    {
+      id: 'O-2026-004', quoteId: null, customer: 'C007', date: '2026-02-12', deliveryDate: '2026-02-26', status: 'delivered',
+      items: [
+        { productId: 'P005', qty: 5, discount: 5 },
+        { productId: 'P008', qty: 10, discount: 5 },
+        { productId: 'P011', qty: 20, discount: 0 },
+      ],
+    },
+  ],
+};
+
+// Helper functions
+function getCustomer(id) { return DATA.customers.find(c => c.id === id); }
+function getProduct(id) { return DATA.products.find(p => p.id === id); }
+
+function calcLineTotal(item) {
+  const product = getProduct(item.productId);
+  if (!product) return 0;
+  const base = product.price * item.qty;
+  return base - (base * (item.discount || 0) / 100);
+}
+
+function calcQuoteTotal(quote) {
+  return quote.items.reduce((sum, item) => sum + calcLineTotal(item), 0);
+}
+
+function formatCurrency(amount, currency) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: currency || 'EUR',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(amount);
+}
+
+function formatDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString('en-GB', {
+    day: 'numeric', month: 'short', year: 'numeric'
+  });
+}
+
+function statusBadge(status) {
+  const labels = {
+    draft: 'Draft', sent: 'Sent', accepted: 'Accepted', expired: 'Expired',
+    declined: 'Declined', confirmed: 'Confirmed', in_production: 'In Production',
+    delivered: 'Delivered', invoiced: 'Invoiced',
+  };
+  return '<span class="badge badge-' + status + '">' + (labels[status] || status) + '</span>';
+}
+
+// ===== APP =====
+const app = {
+  currentPage: 'dashboard',
+  lineItemCounter: 0,
+
+  init() {
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', () => this.navigate(item.dataset.page));
+    });
+    this.navigate('dashboard');
+  },
+
+  navigate(page) {
+    this.currentPage = page;
+    // Desktop nav
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelector('.sidebar [data-page="' + page + '"]')?.classList.add('active');
+    // Mobile nav
+    document.querySelectorAll('.mobile-nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelector('.mobile-nav [data-page="' + page + '"]')?.classList.add('active');
+
+    const titles = {
+      dashboard: ['Dashboard', 'Overview'],
+      quotes: ['Quotes', 'Manage offers'],
+      orders: ['Orders', 'Track orders'],
+      customers: ['Customers', 'Customer directory'],
+      products: ['Products', 'Product catalog'],
+    };
+    const [title, sub] = titles[page] || [page, ''];
+    document.getElementById('pageTitle').textContent = title;
+    document.getElementById('breadcrumb').textContent = sub;
+    this.render();
+  },
+
+  render() {
+    const el = document.getElementById('content');
+    switch (this.currentPage) {
+      case 'dashboard': el.innerHTML = this.renderDashboard(); break;
+      case 'quotes': el.innerHTML = this.renderQuotes(); break;
+      case 'orders': el.innerHTML = this.renderOrders(); break;
+      case 'customers': el.innerHTML = this.renderCustomers(); break;
+      case 'products': el.innerHTML = this.renderProducts(); break;
+    }
+  },
+
+  // ===== DASHBOARD =====
+  renderDashboard() {
+    const activeQuotes = DATA.quotes.filter(q => q.status === 'sent' || q.status === 'draft');
+    const acceptedQuotes = DATA.quotes.filter(q => q.status === 'accepted');
+    const activeOrders = DATA.orders.filter(o => o.status !== 'delivered' && o.status !== 'invoiced');
+    const pipelineValue = DATA.quotes
+      .filter(q => q.status === 'sent')
+      .reduce((sum, q) => sum + calcQuoteTotal(q), 0);
+
+    return '<div class="stats-grid">' +
+      '<div class="stat-card"><div class="stat-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="stat-label">Active Quotes</div><div class="stat-value">' + activeQuotes.length + '</div><div class="stat-change up">2 sent, awaiting response</div></div>' +
+      '<div class="stat-card"><div class="stat-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div class="stat-label">Won This Month</div><div class="stat-value">' + acceptedQuotes.length + '</div><div class="stat-change up">+1 from last month</div></div>' +
+      '<div class="stat-card"><div class="stat-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></div><div class="stat-label">Open Orders</div><div class="stat-value">' + activeOrders.length + '</div><div class="stat-change up">1 in production</div></div>' +
+      '<div class="stat-card"><div class="stat-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="stat-label">Pipeline Value</div><div class="stat-value">' + formatCurrency(pipelineValue) + '</div><div class="stat-change up">Quotes sent, awaiting decision</div></div>' +
+    '</div>' +
+
+    '<div class="quick-actions">' +
+      '<div class="quick-action" onclick="app.showNewQuote()"><div class="quick-action-icon" style="background:var(--primary-light);color:var(--primary)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="quick-action-text"><h3>New Quote</h3><p>Create and send a new offer</p></div></div>' +
+      '<div class="quick-action" onclick="app.navigate(\'orders\')"><div class="quick-action-icon" style="background:var(--success-light);color:var(--success)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="quick-action-text"><h3>Convert Quote to Order</h3><p>' + acceptedQuotes.length + ' quote' + (acceptedQuotes.length !== 1 ? 's' : '') + ' ready to convert</p></div></div>' +
+      '<div class="quick-action" onclick="app.navigate(\'products\')"><div class="quick-action-icon" style="background:var(--warning-light);color:var(--warning)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="quick-action-text"><h3>Check Stock</h3><p>View inventory levels</p></div></div>' +
+    '</div>' +
+
+    '<div class="grid-2">' +
+      '<div class="card"><div class="card-header"><span class="card-title">Recent Quotes</span><button class="btn btn-ghost btn-sm" onclick="app.navigate(\'quotes\')">View all</button></div><div class="table-wrapper"><table><thead><tr><th>Quote</th><th>Customer</th><th>Total</th><th>Status</th></tr></thead><tbody>' +
+        DATA.quotes.slice(0, 4).map(function(q) {
+          var c = getCustomer(q.customer);
+          return '<tr onclick="app.viewQuote(\'' + q.id + '\')"><td class="cell-primary">' + q.id + '</td><td>' + (c ? c.name : q.customer) + '</td><td>' + formatCurrency(calcQuoteTotal(q)) + '</td><td>' + statusBadge(q.status) + '</td></tr>';
+        }).join('') +
+      '</tbody></table></div></div>' +
+      '<div class="card"><div class="card-header"><span class="card-title">Active Orders</span><button class="btn btn-ghost btn-sm" onclick="app.navigate(\'orders\')">View all</button></div><div class="table-wrapper"><table><thead><tr><th>Order</th><th>Customer</th><th>Delivery</th><th>Status</th></tr></thead><tbody>' +
+        DATA.orders.slice(0, 4).map(function(o) {
+          var c = getCustomer(o.customer);
+          return '<tr onclick="app.viewOrder(\'' + o.id + '\')"><td class="cell-primary">' + o.id + '</td><td>' + (c ? c.name : o.customer) + '</td><td>' + formatDate(o.deliveryDate) + '</td><td>' + statusBadge(o.status) + '</td></tr>';
+        }).join('') +
+      '</tbody></table></div></div>' +
+    '</div>';
+  },
+
+  // ===== QUOTES =====
+  renderQuotes() {
+    return '<div class="filter-bar">' +
+      '<span class="filter-chip active" onclick="app.filterQuotes(\'all\', this)">All</span>' +
+      '<span class="filter-chip" onclick="app.filterQuotes(\'draft\', this)">Draft</span>' +
+      '<span class="filter-chip" onclick="app.filterQuotes(\'sent\', this)">Sent</span>' +
+      '<span class="filter-chip" onclick="app.filterQuotes(\'accepted\', this)">Accepted</span>' +
+      '<span class="filter-chip" onclick="app.filterQuotes(\'expired\', this)">Expired</span>' +
+    '</div>' +
+    '<div class="card"><div class="table-wrapper"><table><thead><tr><th>Quote #</th><th>Customer</th><th>Date</th><th>Valid Until</th><th>Items</th><th>Total</th><th>Status</th><th></th></tr></thead><tbody id="quotesTable">' +
+      this.renderQuoteRows(DATA.quotes) +
+    '</tbody></table></div></div>';
+  },
+
+  renderQuoteRows(quotes) {
+    return quotes.map(function(q) {
+      var c = getCustomer(q.customer);
+      var total = calcQuoteTotal(q);
+      return '<tr onclick="app.viewQuote(\'' + q.id + '\')">' +
+        '<td class="cell-primary">' + q.id + '</td>' +
+        '<td><div>' + (c ? c.name : q.customer) + '</div><div class="cell-secondary">' + (c ? c.country : '') + '</div></td>' +
+        '<td>' + formatDate(q.date) + '</td>' +
+        '<td>' + formatDate(q.validUntil) + '</td>' +
+        '<td>' + q.items.length + ' item' + (q.items.length !== 1 ? 's' : '') + '</td>' +
+        '<td style="font-weight:600">' + formatCurrency(total) + '</td>' +
+        '<td>' + statusBadge(q.status) + '</td>' +
+        '<td>' +
+          (q.status === 'accepted' ? '<button class="btn btn-success btn-sm" onclick="event.stopPropagation();app.convertToOrder(\'' + q.id + '\')">Convert to Order</button>' : '') +
+          (q.status === 'draft' ? '<button class="btn btn-primary btn-sm" onclick="event.stopPropagation();app.sendQuote(\'' + q.id + '\')">Send</button>' : '') +
+        '</td></tr>';
+    }).join('');
+  },
+
+  filterQuotes(status, el) {
+    document.querySelectorAll('.filter-chip').forEach(function(c) { c.classList.remove('active'); });
+    el.classList.add('active');
+    var filtered = status === 'all' ? DATA.quotes : DATA.quotes.filter(function(q) { return q.status === status; });
+    document.getElementById('quotesTable').innerHTML = this.renderQuoteRows(filtered);
+  },
+
+  viewQuote(id) {
+    var q = DATA.quotes.find(function(x) { return x.id === id; });
+    if (!q) return;
+    var c = getCustomer(q.customer);
+    var total = calcQuoteTotal(q);
+
+    document.getElementById('content').innerHTML =
+      '<button class="back-btn" onclick="app.navigate(\'quotes\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> Back to Quotes</button>' +
+      '<div class="detail-header"><div class="detail-header-left"><span class="detail-id">' + q.id + '</span>' + statusBadge(q.status) + '</div><div style="display:flex;gap:8px">' +
+        (q.status === 'draft' ? '<button class="btn btn-primary" onclick="app.sendQuote(\'' + q.id + '\')">Send to Customer</button>' : '') +
+        (q.status === 'accepted' ? '<button class="btn btn-success" onclick="app.convertToOrder(\'' + q.id + '\')">Convert to Order</button>' : '') +
+        '<button class="btn" onclick="app.duplicateQuote(\'' + q.id + '\')">Duplicate</button></div></div>' +
+      '<div class="detail-meta">' +
+        '<div><div class="meta-item-label">Customer</div><div class="meta-item-value">' + (c ? c.name : q.customer) + '</div></div>' +
+        '<div><div class="meta-item-label">Created</div><div class="meta-item-value">' + formatDate(q.date) + '</div></div>' +
+        '<div><div class="meta-item-label">Valid Until</div><div class="meta-item-value">' + formatDate(q.validUntil) + '</div></div>' +
+        '<div><div class="meta-item-label">Total</div><div class="meta-item-value">' + formatCurrency(total) + '</div></div></div>' +
+      (q.notes ? '<div class="card" style="margin-bottom:16px"><div class="card-title" style="margin-bottom:8px">Notes</div><p style="color:var(--text-secondary);font-size:13px">' + q.notes + '</p></div>' : '') +
+      '<div class="card"><div class="card-title" style="margin-bottom:12px">Line Items</div><table><thead><tr><th>Product</th><th>Article #</th><th>Qty</th><th>Unit Price</th><th>Discount</th><th style="text-align:right">Total</th></tr></thead><tbody>' +
+        q.items.map(function(item) {
+          var p = getProduct(item.productId);
+          var lineTotal = calcLineTotal(item);
+          return '<tr><td><div style="font-weight:600">' + (p ? p.name : item.productId) + '</div><div class="cell-secondary">' + (p ? p.description : '') + '</div></td><td class="cell-secondary">' + item.productId + '</td><td>' + item.qty + '</td><td>' + (p ? formatCurrency(p.price) : '-') + '</td><td>' + (item.discount ? item.discount + '%' : '-') + '</td><td style="text-align:right;font-weight:600">' + formatCurrency(lineTotal) + '</td></tr>';
+        }).join('') +
+      '</tbody></table><div class="quote-total-bar"><span class="quote-total-label">Total excl. VAT</span><span class="quote-total-value">' + formatCurrency(total) + '</span></div></div>';
+  },
+
+  // ===== ORDERS =====
+  renderOrders() {
+    return '<div class="filter-bar">' +
+      '<span class="filter-chip active" onclick="app.filterOrders(\'all\', this)">All</span>' +
+      '<span class="filter-chip" onclick="app.filterOrders(\'confirmed\', this)">Confirmed</span>' +
+      '<span class="filter-chip" onclick="app.filterOrders(\'in_production\', this)">In Production</span>' +
+      '<span class="filter-chip" onclick="app.filterOrders(\'delivered\', this)">Delivered</span>' +
+    '</div>' +
+    '<div class="card"><div class="table-wrapper"><table><thead><tr><th>Order #</th><th>From Quote</th><th>Customer</th><th>Order Date</th><th>Delivery Date</th><th>Items</th><th>Total</th><th>Status</th></tr></thead><tbody id="ordersTable">' +
+      this.renderOrderRows(DATA.orders) +
+    '</tbody></table></div></div>';
+  },
+
+  renderOrderRows(orders) {
+    return orders.map(function(o) {
+      var c = getCustomer(o.customer);
+      var total = o.items.reduce(function(s, i) { return s + calcLineTotal(i); }, 0);
+      return '<tr onclick="app.viewOrder(\'' + o.id + '\')">' +
+        '<td class="cell-primary">' + o.id + '</td>' +
+        '<td class="cell-secondary">' + (o.quoteId || '-') + '</td>' +
+        '<td>' + (c ? c.name : o.customer) + '</td>' +
+        '<td>' + formatDate(o.date) + '</td>' +
+        '<td>' + formatDate(o.deliveryDate) + '</td>' +
+        '<td>' + o.items.length + ' item' + (o.items.length !== 1 ? 's' : '') + '</td>' +
+        '<td style="font-weight:600">' + formatCurrency(total) + '</td>' +
+        '<td>' + statusBadge(o.status) + '</td></tr>';
+    }).join('');
+  },
+
+  filterOrders(status, el) {
+    document.querySelectorAll('.filter-chip').forEach(function(c) { c.classList.remove('active'); });
+    el.classList.add('active');
+    var filtered = status === 'all' ? DATA.orders : DATA.orders.filter(function(o) { return o.status === status; });
+    document.getElementById('ordersTable').innerHTML = this.renderOrderRows(filtered);
+  },
+
+  viewOrder(id) {
+    var o = DATA.orders.find(function(x) { return x.id === id; });
+    if (!o) return;
+    var c = getCustomer(o.customer);
+    var total = o.items.reduce(function(s, i) { return s + calcLineTotal(i); }, 0);
+
+    document.getElementById('content').innerHTML =
+      '<button class="back-btn" onclick="app.navigate(\'orders\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> Back to Orders</button>' +
+      '<div class="detail-header"><div class="detail-header-left"><span class="detail-id">' + o.id + '</span>' + statusBadge(o.status) + '</div><div style="display:flex;gap:8px">' +
+        (o.status === 'delivered' ? '<button class="btn btn-primary">Create Invoice</button>' : '') +
+        '<button class="btn">Print Order Confirmation</button></div></div>' +
+      '<div class="detail-meta">' +
+        '<div><div class="meta-item-label">Customer</div><div class="meta-item-value">' + (c ? c.name : o.customer) + '</div></div>' +
+        '<div><div class="meta-item-label">Order Date</div><div class="meta-item-value">' + formatDate(o.date) + '</div></div>' +
+        '<div><div class="meta-item-label">Delivery Date</div><div class="meta-item-value">' + formatDate(o.deliveryDate) + '</div></div>' +
+        '<div><div class="meta-item-label">Total</div><div class="meta-item-value">' + formatCurrency(total) + '</div></div></div>' +
+      '<div class="card"><div class="card-title" style="margin-bottom:12px">Order Lines</div><table><thead><tr><th>Product</th><th>Article #</th><th>Qty</th><th>Unit Price</th><th>Discount</th><th style="text-align:right">Total</th></tr></thead><tbody>' +
+        o.items.map(function(item) {
+          var p = getProduct(item.productId);
+          var lineTotal = calcLineTotal(item);
+          return '<tr><td style="font-weight:600">' + (p ? p.name : item.productId) + '</td><td class="cell-secondary">' + item.productId + '</td><td>' + item.qty + '</td><td>' + (p ? formatCurrency(p.price) : '-') + '</td><td>' + (item.discount ? item.discount + '%' : '-') + '</td><td style="text-align:right;font-weight:600">' + formatCurrency(lineTotal) + '</td></tr>';
+        }).join('') +
+      '</tbody></table><div class="quote-total-bar"><span class="quote-total-label">Total excl. VAT</span><span class="quote-total-value">' + formatCurrency(total) + '</span></div></div>';
+  },
+
+  // ===== CUSTOMERS =====
+  renderCustomers() {
+    return '<div class="card"><div class="table-wrapper"><table><thead><tr><th>Company</th><th>Contact</th><th>Email</th><th>Phone</th><th>Country</th><th>Type</th></tr></thead><tbody>' +
+      DATA.customers.map(function(c) {
+        return '<tr><td style="font-weight:600">' + c.name + '</td><td>' + c.contact + '</td><td><a href="mailto:' + c.email + '" style="color:var(--primary);text-decoration:none">' + c.email + '</a></td><td class="cell-secondary">' + c.phone + '</td><td>' + c.city + ', ' + c.country + '</td><td>' + statusBadge(c.type === 'Distributor' ? 'sent' : c.type === 'Group Company' ? 'in_production' : 'accepted') + '</td></tr>';
+      }).join('') +
+    '</tbody></table></div></div>';
+  },
+
+  // ===== PRODUCTS =====
+  renderProducts() {
+    var categories = [];
+    DATA.products.forEach(function(p) { if (categories.indexOf(p.category) === -1) categories.push(p.category); });
+    return '<div class="filter-bar">' +
+      '<span class="filter-chip active" onclick="app.filterProducts(\'all\', this)">All</span>' +
+      categories.map(function(cat) { return '<span class="filter-chip" onclick="app.filterProducts(\'' + cat + '\', this)">' + cat + '</span>'; }).join('') +
+    '</div>' +
+    '<div class="product-grid" id="productGrid">' + this.renderProductCards(DATA.products) + '</div>';
+  },
+
+  renderProductCards(products) {
+    return products.map(function(p) {
+      var stockClass = p.stock > 10 ? 'stock-ok' : p.stock > 3 ? 'stock-low' : 'stock-out';
+      var stockLabel = p.stock > 10 ? p.stock + ' in stock' : p.stock > 0 ? 'Low: ' + p.stock + ' left' : 'Out of stock';
+      return '<div class="product-card"><div class="product-category">' + p.category + '</div><div class="product-name">' + p.name + '</div><div class="product-desc">' + p.description + '</div><div class="product-footer"><span class="product-price">' + formatCurrency(p.price) + '</span><span class="product-stock ' + stockClass + '">' + stockLabel + '</span></div></div>';
+    }).join('');
+  },
+
+  filterProducts(category, el) {
+    document.querySelectorAll('.filter-chip').forEach(function(c) { c.classList.remove('active'); });
+    el.classList.add('active');
+    var filtered = category === 'all' ? DATA.products : DATA.products.filter(function(p) { return p.category === category; });
+    document.getElementById('productGrid').innerHTML = this.renderProductCards(filtered);
+  },
+
+  // ===== NEW QUOTE MODAL =====
+  showNewQuote() {
+    this.lineItemCounter = 0;
+    document.getElementById('modalTitle').textContent = 'New Quote';
+    document.getElementById('modalBody').innerHTML =
+      '<form onsubmit="event.preventDefault();app.saveQuote()">' +
+      '<div class="form-row"><div class="form-group"><label class="form-label">Customer</label><select class="form-select" id="quoteCustomer" required><option value="">Select customer...</option>' +
+        DATA.customers.map(function(c) { return '<option value="' + c.id + '">' + c.name + ' (' + c.country + ')</option>'; }).join('') +
+      '</select></div><div class="form-group"><label class="form-label">Valid Until</label><input type="date" class="form-input" id="quoteValidUntil" value="' + this.futureDate(30) + '" required></div></div>' +
+      '<div class="form-divider"></div>' +
+      '<div class="form-group"><label class="form-label">Line Items</label>' +
+        '<div class="line-item" style="margin-bottom:4px"><span class="cell-secondary" style="font-size:11px;font-weight:600">PRODUCT</span><span class="cell-secondary" style="font-size:11px;font-weight:600">QTY</span><span class="cell-secondary" style="font-size:11px;font-weight:600">DISC %</span><span class="cell-secondary" style="font-size:11px;font-weight:600;text-align:right">LINE TOTAL</span><span></span></div>' +
+        '<div class="line-items" id="lineItems"></div>' +
+        '<button type="button" class="add-line-btn" onclick="app.addLineItem()">+ Add product</button></div>' +
+      '<div class="quote-total-bar" id="quoteTotalBar"><span class="quote-total-label">Total excl. VAT</span><span class="quote-total-value" id="newQuoteTotal">' + formatCurrency(0) + '</span></div>' +
+      '<div class="form-divider"></div>' +
+      '<div class="form-group"><label class="form-label">Notes</label><textarea class="form-textarea" id="quoteNotes" placeholder="Internal notes or message to customer..."></textarea></div>' +
+      '<div class="form-actions"><button type="button" class="btn" onclick="app.closeModal()">Cancel</button><button type="button" class="btn" onclick="app.saveQuote(\'draft\')">Save as Draft</button><button type="submit" class="btn btn-primary" onclick="app.saveQuote(\'sent\')">Save & Send</button></div></form>';
+    this.addLineItem();
+    this.openModal();
+  },
+
+  addLineItem() {
+    var id = this.lineItemCounter++;
+    var container = document.getElementById('lineItems');
+    var div = document.createElement('div');
+    div.className = 'line-item';
+    div.id = 'line-' + id;
+    div.innerHTML =
+      '<select class="form-select" onchange="app.updateLineTotal()" id="lineProduct-' + id + '"><option value="">Select product...</option>' +
+        DATA.products.map(function(p) { return '<option value="' + p.id + '">' + p.name + ' - ' + formatCurrency(p.price) + '</option>'; }).join('') +
+      '</select>' +
+      '<input type="number" class="form-input" value="1" min="1" onchange="app.updateLineTotal()" id="lineQty-' + id + '">' +
+      '<input type="number" class="form-input" value="0" min="0" max="100" onchange="app.updateLineTotal()" id="lineDisc-' + id + '">' +
+      '<span class="line-total" id="lineTotal-' + id + '">' + formatCurrency(0) + '</span>' +
+      '<button type="button" class="remove-line" onclick="app.removeLine(' + id + ')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>';
+    container.appendChild(div);
+  },
+
+  removeLine(id) {
+    var el = document.getElementById('line-' + id);
+    if (el) el.remove();
+    this.updateLineTotal();
+  },
+
+  updateLineTotal() {
+    var grandTotal = 0;
+    document.querySelectorAll('.line-item[id^="line-"]').forEach(function(line) {
+      var id = line.id.replace('line-', '');
+      var productEl = document.getElementById('lineProduct-' + id);
+      var qtyEl = document.getElementById('lineQty-' + id);
+      var discEl = document.getElementById('lineDisc-' + id);
+      var productId = productEl ? productEl.value : '';
+      var qty = parseInt(qtyEl ? qtyEl.value : '0') || 0;
+      var disc = parseFloat(discEl ? discEl.value : '0') || 0;
+      var product = getProduct(productId);
+      var lineTotal = 0;
+      if (product) {
+        lineTotal = product.price * qty;
+        lineTotal -= lineTotal * disc / 100;
+      }
+      var totalEl = document.getElementById('lineTotal-' + id);
+      if (totalEl) totalEl.textContent = formatCurrency(lineTotal);
+      grandTotal += lineTotal;
+    });
+    var totalEl = document.getElementById('newQuoteTotal');
+    if (totalEl) totalEl.textContent = formatCurrency(grandTotal);
+  },
+
+  saveQuote(status) {
+    var customerEl = document.getElementById('quoteCustomer');
+    var customer = customerEl ? customerEl.value : '';
+    if (!customer) { this.toast('Please select a customer', 'error'); return; }
+
+    var items = [];
+    document.querySelectorAll('.line-item[id^="line-"]').forEach(function(line) {
+      var id = line.id.replace('line-', '');
+      var productEl = document.getElementById('lineProduct-' + id);
+      var qtyEl = document.getElementById('lineQty-' + id);
+      var discEl = document.getElementById('lineDisc-' + id);
+      var productId = productEl ? productEl.value : '';
+      var qty = parseInt(qtyEl ? qtyEl.value : '0') || 0;
+      var disc = parseFloat(discEl ? discEl.value : '0') || 0;
+      if (productId && qty > 0) items.push({ productId: productId, qty: qty, discount: disc });
+    });
+
+    if (items.length === 0) { this.toast('Add at least one product', 'error'); return; }
+
+    var validEl = document.getElementById('quoteValidUntil');
+    var notesEl = document.getElementById('quoteNotes');
+    var newQuote = {
+      id: 'Q-2026-' + String(DATA.quotes.length + 1).padStart(3, '0'),
+      customer: customer,
+      date: new Date().toISOString().split('T')[0],
+      validUntil: validEl ? validEl.value : '',
+      status: status || 'draft',
+      items: items,
+      notes: notesEl ? notesEl.value : '',
+    };
+
+    DATA.quotes.unshift(newQuote);
+    this.closeModal();
+    this.navigate('quotes');
+    this.toast(status === 'sent' ? 'Quote ' + newQuote.id + ' created and sent!' : 'Quote ' + newQuote.id + ' saved as draft', 'success');
+  },
+
+  // ===== ACTIONS =====
+  sendQuote(id) {
+    var q = DATA.quotes.find(function(x) { return x.id === id; });
+    if (q) { q.status = 'sent'; this.render(); this.toast('Quote ' + id + ' sent to customer!', 'success'); }
+  },
+
+  convertToOrder(quoteId) {
+    var q = DATA.quotes.find(function(x) { return x.id === quoteId; });
+    if (!q) return;
+    var newOrder = {
+      id: 'O-2026-' + String(DATA.orders.length + 1).padStart(3, '0'),
+      quoteId: q.id,
+      customer: q.customer,
+      date: new Date().toISOString().split('T')[0],
+      deliveryDate: this.futureDate(21),
+      status: 'confirmed',
+      items: q.items.map(function(i) { return { productId: i.productId, qty: i.qty, discount: i.discount }; }),
+    };
+    q.status = 'accepted';
+    DATA.orders.unshift(newOrder);
+    this.navigate('orders');
+    this.toast('Order ' + newOrder.id + ' created from ' + quoteId + '!', 'success');
+  },
+
+  duplicateQuote(id) {
+    var q = DATA.quotes.find(function(x) { return x.id === id; });
+    if (!q) return;
+    var dup = {
+      id: 'Q-2026-' + String(DATA.quotes.length + 1).padStart(3, '0'),
+      customer: q.customer,
+      date: new Date().toISOString().split('T')[0],
+      validUntil: this.futureDate(30),
+      status: 'draft',
+      items: q.items.map(function(i) { return { productId: i.productId, qty: i.qty, discount: i.discount }; }),
+      notes: q.notes,
+    };
+    DATA.quotes.unshift(dup);
+    this.navigate('quotes');
+    this.toast('Quote duplicated as ' + dup.id, 'success');
+  },
+
+  // ===== MODAL =====
+  openModal() { document.getElementById('modalOverlay').classList.add('open'); },
+  closeModal() { document.getElementById('modalOverlay').classList.remove('open'); },
+
+  // ===== UTILITIES =====
+  toast(message, type) {
+    var container = document.getElementById('toastContainer');
+    var t = document.createElement('div');
+    t.className = 'toast ' + (type || '');
+    t.textContent = message;
+    container.appendChild(t);
+    setTimeout(function() { t.remove(); }, 3500);
+  },
+
+  futureDate(days) {
+    var d = new Date();
+    d.setDate(d.getDate() + days);
+    return d.toISOString().split('T')[0];
+  },
+};
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() { app.init(); });
+  </script>
+</body>
+</html>
