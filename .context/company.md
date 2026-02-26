@@ -42,9 +42,27 @@ Provides complete UV CIPP relining systems for sewer pipe rehabilitation: machin
 
 Tool that simplifies complex documents (ISO standards, technical data sheets, norms, regulations, laws). Makes them understandable to non-technical users via step-by-step breakdowns and visual explanations.
 
+## Storm and Sons Properties AB
+
+- **Type:** Privately owned holding/property company
+- **Bank:** Nordea (Nordea Business)
+- **Accountant:** Emelie Lindqvist, Finans Balans
+
+## Storm and Sons Holding AB
+
+- **Type:** Privately owned holding company
+- **Bank:** Nordea (Nordea Business)
+- **Accountant:** Emelie Lindqvist, Finans Balans
+
+## Key Service Providers
+
+- **Accountant:** Emelie Lindqvist — Finans Balans (handles books for Storm and Sons companies)
+- **Bank:** Nordea — business banking via Nordea Business platform (corporate.nordea.se)
+
 ## Founder Profile
 
 - Works at the intersection of technical engineering and non-technical stakeholders
 - Strong domain insight from daily contact with technical engineers
 - Non-developer -- bridges business/commercial and technical worlds
 - Sees overcomplexity as a solvable problem
+- Owns Storm and Sons Properties AB and Storm and Sons Holding AB privately (separate from UVRelining/Sacpro)
