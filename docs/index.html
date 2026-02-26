@@ -1681,7 +1681,7 @@ function buildGauge(actual, target, size, color, showAmounts) {
   var radius = (size - sw - 8) / 2;
   var cx = size / 2;
   var svgH = Math.round(size * 0.88);
-  var cy = Math.round(svgH * 0.52);
+  var cy = radius + Math.round(sw / 2) + 2;
   var circ = 2 * Math.PI * radius;
   var arcDeg = 260;
   var arcLen = (arcDeg / 360) * circ;
