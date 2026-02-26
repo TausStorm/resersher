@@ -955,6 +955,215 @@ tbody tr:last-child td {
   height: 16px;
 }
 
+/* === Activity Timeline === */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -24px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--surface);
+}
+
+.timeline-dot.meeting { background: var(--primary); }
+.timeline-dot.call { background: var(--success); }
+.timeline-dot.email { background: var(--warning); }
+.timeline-dot.note { background: var(--text-muted); }
+
+.timeline-date {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+}
+
+.timeline-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.timeline-type.meeting { background: var(--primary-light); color: var(--primary); }
+.timeline-type.call { background: var(--success-light); color: var(--success); }
+.timeline-type.email { background: var(--warning-light); color: var(--warning); }
+.timeline-type.note { background: #f3f4f6; color: #6b7280; }
+
+.timeline-desc {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+.timeline-followup {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.timeline-followup.overdue {
+  color: var(--danger);
+  background: var(--danger-light);
+}
+
+/* === Customer Detail === */
+.customer-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.customer-avatar-lg {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.customer-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.info-card {
+  padding: 14px 16px;
+  background: var(--bg);
+  border-radius: var(--radius);
+}
+
+.info-card-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.info-card-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.info-card-value a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* === Follow-up List === */
+.followup-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.followup-item:last-child {
+  border-bottom: none;
+}
+
+.followup-date {
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 80px;
+}
+
+.followup-date.overdue {
+  color: var(--danger);
+}
+
+.followup-date.upcoming {
+  color: var(--primary);
+}
+
+.followup-customer {
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 160px;
+}
+
+.followup-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.followup-done-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+
+.followup-done-btn:hover {
+  border-color: var(--success);
+  background: var(--success-light);
+  color: var(--success);
+}
+
 /* === iPad / Tablet tweaks === */
 @media (max-width: 1200px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1232,11 +1441,26 @@ const DATA = {
       ],
     },
   ],
+
+  activities: [
+    { id: 'A001', customer: 'C001', type: 'meeting', date: '2026-02-24', description: 'Kickoff meeting in Houston. Discussed US market launch, training schedule, and first shipment timeline.', followUp: '2026-03-10', followUpDone: false, user: 'Taus' },
+    { id: 'A002', customer: 'C001', type: 'call', date: '2026-02-20', description: 'Mike confirmed interest in 2x UV XAIR systems. Wants on-site training included.', followUp: null, followUpDone: false, user: 'Taus' },
+    { id: 'A003', customer: 'C003', type: 'email', date: '2026-02-15', description: 'Sent quarterly consumables quote Q-2026-002. Hans asked for 10% on resin.', followUp: '2026-02-28', followUpDone: false, user: 'Taus' },
+    { id: 'A004', customer: 'C002', type: 'meeting', date: '2026-02-18', description: 'Met Erik at Gothenburg office. Their UV360RS+ needs replacement. Ordered new unit + patch tool.', followUp: null, followUpDone: false, user: 'Taus' },
+    { id: 'A005', customer: 'C004', type: 'call', date: '2026-02-22', description: 'James said budget not approved for Q1. Wants to revisit in April. Quote expired.', followUp: '2026-04-01', followUpDone: false, user: 'Taus' },
+    { id: 'A006', customer: 'C006', type: 'email', date: '2026-02-20', description: 'Sent pre-impregnated liner trial quote to Matti. Helsinki project starts March.', followUp: '2026-03-05', followUpDone: false, user: 'Taus' },
+    { id: 'A007', customer: 'C005', type: 'note', date: '2026-02-10', description: 'Sacpro Norge placing internal order for UV XAIR system. Group discount applied (10%).', followUp: null, followUpDone: false, user: 'Taus' },
+    { id: 'A008', customer: 'C007', type: 'call', date: '2026-02-12', description: 'Lars ordered consumables direct. No quote needed. Repeat customer, very straightforward.', followUp: null, followUpDone: false, user: 'Taus' },
+    { id: 'A009', customer: 'C008', type: 'meeting', date: '2026-02-05', description: 'Video call with Pierre. Interested in becoming distributor for southern France. Needs demo unit.', followUp: '2026-03-15', followUpDone: false, user: 'Taus' },
+    { id: 'A010', customer: 'C002', type: 'note', date: '2026-01-20', description: 'NordicReline renewed annual service agreement. Good relationship, potential for upselling UV XAIR.', followUp: null, followUpDone: false, user: 'Taus' },
+  ],
 };
 
 // Helper functions
 function getCustomer(id) { return DATA.customers.find(c => c.id === id); }
 function getProduct(id) { return DATA.products.find(p => p.id === id); }
+function getActivities(customerId) { return DATA.activities.filter(function(a) { return a.customer === customerId; }).sort(function(a, b) { return b.date.localeCompare(a.date); }); }
+function getUpcomingFollowUps() { return DATA.activities.filter(function(a) { return a.followUp && !a.followUpDone; }).sort(function(a, b) { return a.followUp.localeCompare(b.followUp); }); }
 
 function calcLineTotal(item) {
   const product = getProduct(item.productId);
@@ -1351,6 +1575,24 @@ const app = {
       '<div class="quick-action" onclick="app.navigate(\'orders\')"><div class="quick-action-icon" style="background:var(--success-light);color:var(--success)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="quick-action-text"><h3>Convert Quote to Order</h3><p>' + acceptedQuotes.length + ' quote' + (acceptedQuotes.length !== 1 ? 's' : '') + ' ready to convert</p></div></div>' +
       '<div class="quick-action" onclick="app.navigate(\'products\')"><div class="quick-action-icon" style="background:var(--warning-light);color:var(--warning)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="quick-action-text"><h3>Check Stock</h3><p>View inventory levels</p></div></div>' +
     '</div>' +
+
+    (function() {
+      var followUps = getUpcomingFollowUps();
+      var today = new Date().toISOString().split('T')[0];
+      return followUps.length > 0 ?
+        '<div class="card" style="margin-bottom:24px"><div class="card-header"><span class="card-title">Upcoming Follow-ups</span></div>' +
+          followUps.slice(0, 5).map(function(a) {
+            var c = getCustomer(a.customer);
+            var isOverdue = a.followUp < today;
+            return '<div class="followup-item">' +
+              '<span class="followup-date ' + (isOverdue ? 'overdue' : 'upcoming') + '">' + formatDate(a.followUp) + (isOverdue ? ' (overdue)' : '') + '</span>' +
+              '<span class="followup-customer" style="cursor:pointer;color:var(--primary)" onclick="app.viewCustomer(\'' + a.customer + '\')">' + (c ? c.name : a.customer) + '</span>' +
+              '<span class="followup-desc">' + a.description.substring(0, 80) + (a.description.length > 80 ? '...' : '') + '</span>' +
+              '<button class="followup-done-btn" onclick="app.markFollowUpDone(\'' + a.id + '\')" title="Mark done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="20 6 9 17 4 12"/></svg></button>' +
+            '</div>';
+          }).join('') +
+        '</div>' : '';
+    })() +
 
     '<div class="grid-2">' +
       '<div class="card"><div class="card-header"><span class="card-title">Recent Quotes</span><button class="btn btn-ghost btn-sm" onclick="app.navigate(\'quotes\')">View all</button></div><div class="table-wrapper"><table><thead><tr><th>Quote</th><th>Customer</th><th>Total</th><th>Status</th></tr></thead><tbody>' +
@@ -1498,11 +1740,91 @@ const app = {
 
   // ===== CUSTOMERS =====
   renderCustomers() {
-    return '<div class="card"><div class="table-wrapper"><table><thead><tr><th>Company</th><th>Contact</th><th>Email</th><th>Phone</th><th>Country</th><th>Type</th></tr></thead><tbody>' +
+    return '<div class="card"><div class="table-wrapper"><table><thead><tr><th>Company</th><th>Contact</th><th>Email</th><th>Phone</th><th>Country</th><th>Type</th><th>Activities</th></tr></thead><tbody>' +
       DATA.customers.map(function(c) {
-        return '<tr><td style="font-weight:600">' + c.name + '</td><td>' + c.contact + '</td><td><a href="mailto:' + c.email + '" style="color:var(--primary);text-decoration:none">' + c.email + '</a></td><td class="cell-secondary">' + c.phone + '</td><td>' + c.city + ', ' + c.country + '</td><td>' + statusBadge(c.type === 'Distributor' ? 'sent' : c.type === 'Group Company' ? 'in_production' : 'accepted') + '</td></tr>';
+        var actCount = getActivities(c.id).length;
+        var followUps = DATA.activities.filter(function(a) { return a.customer === c.id && a.followUp && !a.followUpDone; }).length;
+        return '<tr onclick="app.viewCustomer(\'' + c.id + '\')">' +
+          '<td style="font-weight:600">' + c.name + '</td>' +
+          '<td>' + c.contact + '</td>' +
+          '<td><span style="color:var(--primary)">' + c.email + '</span></td>' +
+          '<td class="cell-secondary">' + c.phone + '</td>' +
+          '<td>' + c.city + ', ' + c.country + '</td>' +
+          '<td>' + statusBadge(c.type === 'Distributor' ? 'sent' : c.type === 'Group Company' ? 'in_production' : 'accepted') + '</td>' +
+          '<td>' + actCount + (followUps > 0 ? ' <span style="color:var(--primary);font-weight:600">(' + followUps + ' follow-up' + (followUps > 1 ? 's' : '') + ')</span>' : '') + '</td></tr>';
       }).join('') +
     '</tbody></table></div></div>';
+  },
+
+  viewCustomer(id) {
+    var c = getCustomer(id);
+    if (!c) return;
+    var activities = getActivities(id);
+    var custQuotes = DATA.quotes.filter(function(q) { return q.customer === id; });
+    var custOrders = DATA.orders.filter(function(o) { return o.customer === id; });
+    var totalRevenue = custOrders.reduce(function(sum, o) {
+      return sum + o.items.reduce(function(s, i) { return s + calcLineTotal(i); }, 0);
+    }, 0);
+    var initials = c.name.split(' ').map(function(w) { return w[0]; }).join('').substring(0, 2).toUpperCase();
+
+    var activityTypeLabels = { meeting: 'Meeting', call: 'Call', email: 'Email', note: 'Note' };
+    var today = new Date().toISOString().split('T')[0];
+
+    document.getElementById('content').innerHTML =
+      '<button class="back-btn" onclick="app.navigate(\'customers\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> Back to Customers</button>' +
+
+      '<div class="customer-header"><div class="customer-avatar-lg">' + initials + '</div><div style="flex:1"><div style="display:flex;align-items:center;gap:12px;margin-bottom:4px"><span class="detail-id" style="font-size:22px">' + c.name + '</span>' + statusBadge(c.type === 'Distributor' ? 'sent' : c.type === 'Group Company' ? 'in_production' : 'accepted') + '</div><div class="cell-secondary">' + c.city + ', ' + c.country + '</div></div>' +
+      '<div style="display:flex;gap:8px"><button class="btn btn-primary" onclick="app.showNewActivity(\'' + id + '\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Log Activity</button><button class="btn" onclick="app.showNewQuoteFor(\'' + id + '\')">New Quote</button></div></div>' +
+
+      '<div class="customer-info-grid">' +
+        '<div class="info-card"><div class="info-card-label">Contact Person</div><div class="info-card-value">' + c.contact + '</div></div>' +
+        '<div class="info-card"><div class="info-card-label">Email</div><div class="info-card-value"><a href="mailto:' + c.email + '">' + c.email + '</a></div></div>' +
+        '<div class="info-card"><div class="info-card-label">Phone</div><div class="info-card-value">' + c.phone + '</div></div>' +
+        '<div class="info-card"><div class="info-card-label">Quotes</div><div class="info-card-value">' + custQuotes.length + '</div></div>' +
+        '<div class="info-card"><div class="info-card-label">Orders</div><div class="info-card-value">' + custOrders.length + '</div></div>' +
+        '<div class="info-card"><div class="info-card-label">Total Revenue</div><div class="info-card-value">' + formatCurrency(totalRevenue) + '</div></div>' +
+      '</div>' +
+
+      '<div class="grid-2">' +
+        '<div class="card"><div class="card-header"><span class="card-title">Activity History</span><button class="btn btn-primary btn-sm" onclick="app.showNewActivity(\'' + id + '\')">+ Log Activity</button></div>' +
+          (activities.length > 0 ?
+            '<div class="timeline">' + activities.map(function(a) {
+              var isOverdue = a.followUp && !a.followUpDone && a.followUp < today;
+              return '<div class="timeline-item"><div class="timeline-dot ' + a.type + '"></div>' +
+                '<div class="timeline-date">' + formatDate(a.date) + '</div>' +
+                '<span class="timeline-type ' + a.type + '">' + (activityTypeLabels[a.type] || a.type) + '</span>' +
+                '<div class="timeline-desc">' + a.description + '</div>' +
+                (a.followUp && !a.followUpDone ? '<div class="timeline-followup' + (isOverdue ? ' overdue' : '') + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Follow up ' + formatDate(a.followUp) + '</div>' : '') +
+              '</div>';
+            }).join('') + '</div>'
+          : '<div class="empty-state"><h3>No activities yet</h3><p>Log your first meeting, call, or note</p></div>') +
+        '</div>' +
+
+        '<div><div class="card" style="margin-bottom:16px"><div class="card-header"><span class="card-title">Quotes</span></div>' +
+          (custQuotes.length > 0 ?
+            '<table><thead><tr><th>Quote</th><th>Total</th><th>Status</th></tr></thead><tbody>' +
+            custQuotes.map(function(q) {
+              return '<tr onclick="app.viewQuote(\'' + q.id + '\')"><td class="cell-primary">' + q.id + '</td><td>' + formatCurrency(calcQuoteTotal(q)) + '</td><td>' + statusBadge(q.status) + '</td></tr>';
+            }).join('') + '</tbody></table>'
+          : '<p style="color:var(--text-muted);font-size:13px;padding:8px 0">No quotes yet</p>') +
+        '</div>' +
+
+        '<div class="card"><div class="card-header"><span class="card-title">Orders</span></div>' +
+          (custOrders.length > 0 ?
+            '<table><thead><tr><th>Order</th><th>Total</th><th>Status</th></tr></thead><tbody>' +
+            custOrders.map(function(o) {
+              var total = o.items.reduce(function(s, i) { return s + calcLineTotal(i); }, 0);
+              return '<tr onclick="app.viewOrder(\'' + o.id + '\')"><td class="cell-primary">' + o.id + '</td><td>' + formatCurrency(total) + '</td><td>' + statusBadge(o.status) + '</td></tr>';
+            }).join('') + '</tbody></table>'
+          : '<p style="color:var(--text-muted);font-size:13px;padding:8px 0">No orders yet</p>') +
+        '</div></div>' +
+      '</div>';
+  },
+
+  showNewQuoteFor(customerId) {
+    this.showNewQuote();
+    var sel = document.getElementById('quoteCustomer');
+    if (sel) sel.value = customerId;
   },
 
   // ===== PRODUCTS =====
@@ -1676,6 +1998,60 @@ const app = {
     DATA.quotes.unshift(dup);
     this.navigate('quotes');
     this.toast('Quote duplicated as ' + dup.id, 'success');
+  },
+
+  // ===== ACTIVITY MODAL =====
+  showNewActivity(customerId) {
+    document.getElementById('modalTitle').textContent = 'Log Activity';
+    document.getElementById('modalBody').innerHTML =
+      '<form onsubmit="event.preventDefault();app.saveActivity()">' +
+      '<div class="form-row"><div class="form-group"><label class="form-label">Customer</label><select class="form-select" id="actCustomer" required>' +
+        DATA.customers.map(function(c) { return '<option value="' + c.id + '"' + (c.id === customerId ? ' selected' : '') + '>' + c.name + '</option>'; }).join('') +
+      '</select></div>' +
+      '<div class="form-group"><label class="form-label">Activity Type</label><select class="form-select" id="actType" required><option value="meeting">Meeting</option><option value="call">Call</option><option value="email">Email</option><option value="note">Note</option></select></div></div>' +
+      '<div class="form-row"><div class="form-group"><label class="form-label">Date</label><input type="date" class="form-input" id="actDate" value="' + new Date().toISOString().split('T')[0] + '" required></div>' +
+      '<div class="form-group"><label class="form-label">Follow-up Date (optional)</label><input type="date" class="form-input" id="actFollowUp"></div></div>' +
+      '<div class="form-group"><label class="form-label">Description</label><textarea class="form-textarea" id="actDesc" rows="4" placeholder="What happened? Key takeaways, action items..." required style="min-height:120px"></textarea></div>' +
+      '<div class="form-actions"><button type="button" class="btn" onclick="app.closeModal()">Cancel</button><button type="submit" class="btn btn-primary">Save Activity</button></div></form>';
+    this.openModal();
+  },
+
+  saveActivity() {
+    var customer = (document.getElementById('actCustomer') || {}).value;
+    var desc = (document.getElementById('actDesc') || {}).value;
+    if (!customer) { this.toast('Please select a customer', 'error'); return; }
+    if (!desc || !desc.trim()) { this.toast('Please enter a description', 'error'); return; }
+
+    var followUpVal = (document.getElementById('actFollowUp') || {}).value;
+    var newActivity = {
+      id: 'A' + String(DATA.activities.length + 1).padStart(3, '0'),
+      customer: customer,
+      type: (document.getElementById('actType') || {}).value || 'note',
+      date: (document.getElementById('actDate') || {}).value || new Date().toISOString().split('T')[0],
+      description: desc.trim(),
+      followUp: followUpVal || null,
+      followUpDone: false,
+      user: 'Taus',
+    };
+
+    DATA.activities.unshift(newActivity);
+    this.closeModal();
+    // Go back to customer detail if we were on it
+    if (this.currentPage === 'customers') {
+      this.viewCustomer(customer);
+    } else {
+      this.render();
+    }
+    this.toast('Activity logged!', 'success');
+  },
+
+  markFollowUpDone(activityId) {
+    var a = DATA.activities.find(function(x) { return x.id === activityId; });
+    if (a) {
+      a.followUpDone = true;
+      this.render();
+      this.toast('Follow-up marked done!', 'success');
+    }
   },
 
   // ===== TOP BAR ACTION =====
