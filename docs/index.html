@@ -955,6 +955,196 @@ tbody tr:last-child td {
   height: 16px;
 }
 
+/* === Gauge / Speedometer === */
+.gauge-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.gauge-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 16px 16px;
+  text-align: center;
+  transition: box-shadow var(--transition);
+}
+
+.gauge-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.gauge-svg {
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.gauge-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.gauge-detail {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.gauge-value-text {
+  font-size: 22px;
+  font-weight: 800;
+  fill: var(--text);
+}
+
+.gauge-percent-text {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.gauge-amounts {
+  font-size: 11px;
+  fill: var(--text-secondary);
+}
+
+/* === Category Gauges === */
+.cat-gauge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.cat-gauge-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow var(--transition);
+}
+
+.cat-gauge-card:hover {
+  box-shadow: var(--shadow);
+}
+
+/* === Top Customers === */
+.top-customers-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-customer-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.top-customer-row:hover {
+  background: var(--bg);
+  margin: 0 -20px;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+}
+
+.top-customer-row:last-child {
+  border-bottom: none;
+}
+
+.top-customer-rank {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.rank-1 { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: white; }
+.rank-2 { background: linear-gradient(135deg, #9ca3af, #6b7280); color: white; }
+.rank-3 { background: linear-gradient(135deg, #d97706, #b45309); color: white; }
+.rank-4, .rank-5 { background: var(--bg); color: var(--text-secondary); }
+
+.top-customer-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.top-customer-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.top-customer-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.top-customer-revenue {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: right;
+}
+
+.top-customer-trend {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.trend-up { color: var(--success); }
+.trend-down { color: var(--danger); }
+.trend-stable { color: var(--text-muted); }
+
+/* === Section Headers === */
+.dashboard-section {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashboard-section h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dashboard-section .section-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text-muted);
+}
+
+@media (max-width: 1200px) {
+  .gauge-grid { grid-template-columns: repeat(2, 1fr); }
+  .cat-gauge-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .gauge-grid { grid-template-columns: 1fr; }
+  .cat-gauge-grid { grid-template-columns: 1fr; }
+}
+
 /* === Activity Timeline === */
 .timeline {
   position: relative;
@@ -1457,9 +1647,76 @@ const DATA = {
 };
 
 // Helper functions
+  // Budget targets & actuals (2026)
+  budgets: {
+    monthlySales: { target: 350000, actual: 287000, label: 'Monthly Sales', month: 'February' },
+    yearlySales: { target: 4200000, actual: 685000, label: 'Yearly Sales', period: '2026' },
+    travel: { target: 45000, actual: 28500, label: 'Travel', period: '2026' },
+    representation: { target: 18000, actual: 11200, label: 'Representation', period: '2026' },
+    // Product category budgets (yearly)
+    categories: {
+      uvSystems: { target: 2200000, actual: 513000, label: 'UV Systems' },
+      liners: { target: 1100000, actual: 298000, label: 'Liners' },
+      resins: { target: 650000, actual: 187000, label: 'Resins' },
+    },
+  },
+
+  // Top customers by revenue (simulated YTD)
+  topCustomers: [
+    { id: 'C001', revenue: 580400, orders: 2, trend: 'up' },
+    { id: 'C002', revenue: 203750, orders: 3, trend: 'up' },
+    { id: 'C005', revenue: 262080, orders: 1, trend: 'up' },
+    { id: 'C007', revenue: 108775, orders: 2, trend: 'stable' },
+    { id: 'C003', revenue: 89460, orders: 1, trend: 'down' },
+  ],
+};
+
 function getCustomer(id) { return DATA.customers.find(c => c.id === id); }
 function getProduct(id) { return DATA.products.find(p => p.id === id); }
 function getActivities(customerId) { return DATA.activities.filter(function(a) { return a.customer === customerId; }).sort(function(a, b) { return b.date.localeCompare(a.date); }); }
+
+// SVG Speedometer gauge builder
+function buildGauge(actual, target, size, color, showAmounts) {
+  var pct = Math.min(actual / target, 1.2); // allow up to 120%
+  var displayPct = Math.round((actual / target) * 100);
+  var radius = (size - 16) / 2;
+  var cx = size / 2;
+  var cy = size / 2 + 8;
+  // Arc from 220deg to -40deg (total 260deg sweep)
+  var startAngle = 220 * Math.PI / 180;
+  var totalSweep = 260 * Math.PI / 180;
+  var endAngle = startAngle - totalSweep;
+  var fillSweep = totalSweep * Math.min(pct, 1);
+
+  function polarToCart(angle, r) {
+    return { x: cx + r * Math.cos(angle), y: cy - r * Math.sin(angle) };
+  }
+
+  var bgStart = polarToCart(startAngle, radius);
+  var bgEnd = polarToCart(endAngle, radius);
+  var fillEnd = polarToCart(startAngle - fillSweep, radius);
+  var largeArcBg = totalSweep > Math.PI ? 1 : 0;
+  var largeArcFill = fillSweep > Math.PI ? 1 : 0;
+
+  // Pick color based on percentage if not specified
+  var gaugeColor = color || (displayPct >= 90 ? '#059669' : displayPct >= 60 ? '#2563eb' : displayPct >= 40 ? '#d97706' : '#dc2626');
+  // Over budget for expense items - show red
+  if (pct > 1 && (color === '#d97706' || color === '#7c3aed')) gaugeColor = '#dc2626';
+
+  var amountText = '';
+  if (showAmounts !== false) {
+    amountText = '<text x="' + cx + '" y="' + (cy + 22) + '" text-anchor="middle" class="gauge-amounts">' +
+      formatCurrency(actual).replace(/,/g, ',') + ' / ' + formatCurrency(target).replace(/,/g, ',') +
+    '</text>';
+  }
+
+  return '<svg class="gauge-svg" width="' + size + '" height="' + (size - 10) + '" viewBox="0 0 ' + size + ' ' + (size - 10) + '">' +
+    '<path d="M ' + bgStart.x + ' ' + bgStart.y + ' A ' + radius + ' ' + radius + ' 0 ' + largeArcBg + ' 0 ' + bgEnd.x + ' ' + bgEnd.y + '" fill="none" stroke="#e5e7eb" stroke-width="10" stroke-linecap="round"/>' +
+    (pct > 0 ? '<path d="M ' + bgStart.x + ' ' + bgStart.y + ' A ' + radius + ' ' + radius + ' 0 ' + largeArcFill + ' 0 ' + fillEnd.x + ' ' + fillEnd.y + '" fill="none" stroke="' + gaugeColor + '" stroke-width="10" stroke-linecap="round"/>' : '') +
+    '<text x="' + cx + '" y="' + (cy - 2) + '" text-anchor="middle" class="gauge-value-text" style="fill:' + gaugeColor + '">' + displayPct + '%</text>' +
+    amountText +
+  '</svg>';
+}
 function getUpcomingFollowUps() { return DATA.activities.filter(function(a) { return a.followUp && !a.followUpDone; }).sort(function(a, b) { return a.followUp.localeCompare(b.followUp); }); }
 
 function calcLineTotal(item) {
@@ -1556,45 +1813,87 @@ const app = {
 
   // ===== DASHBOARD =====
   renderDashboard() {
-    const activeQuotes = DATA.quotes.filter(q => q.status === 'sent' || q.status === 'draft');
-    const acceptedQuotes = DATA.quotes.filter(q => q.status === 'accepted');
-    const activeOrders = DATA.orders.filter(o => o.status !== 'delivered' && o.status !== 'invoiced');
-    const pipelineValue = DATA.quotes
-      .filter(q => q.status === 'sent')
-      .reduce((sum, q) => sum + calcQuoteTotal(q), 0);
+    var b = DATA.budgets;
+    var activeQuotes = DATA.quotes.filter(function(q) { return q.status === 'sent' || q.status === 'draft'; });
+    var acceptedQuotes = DATA.quotes.filter(function(q) { return q.status === 'accepted'; });
+    var activeOrders = DATA.orders.filter(function(o) { return o.status !== 'delivered' && o.status !== 'invoiced'; });
+    var pipelineValue = DATA.quotes.filter(function(q) { return q.status === 'sent'; }).reduce(function(sum, q) { return sum + calcQuoteTotal(q); }, 0);
 
-    return '<div class="stats-grid">' +
+    return '' +
+
+    // === SALES BUDGET GAUGES ===
+    '<div class="dashboard-section"><h2>Sales vs Budget</h2></div>' +
+    '<div class="gauge-grid">' +
+      '<div class="gauge-card">' + buildGauge(b.monthlySales.actual, b.monthlySales.target, 150, '#2563eb') + '<div class="gauge-label">Monthly Sales</div><div class="gauge-detail">' + b.monthlySales.month + ' 2026</div></div>' +
+      '<div class="gauge-card">' + buildGauge(b.yearlySales.actual, b.yearlySales.target, 150, '#2563eb') + '<div class="gauge-label">Yearly Sales</div><div class="gauge-detail">YTD 2026</div></div>' +
+      '<div class="gauge-card">' + buildGauge(b.travel.actual, b.travel.target, 150, '#d97706') + '<div class="gauge-label">Travel Budget</div><div class="gauge-detail">YTD 2026</div></div>' +
+      '<div class="gauge-card">' + buildGauge(b.representation.actual, b.representation.target, 150, '#7c3aed') + '<div class="gauge-label">Representation</div><div class="gauge-detail">YTD 2026</div></div>' +
+    '</div>' +
+
+    // === PRODUCT CATEGORY PERFORMANCE ===
+    '<div class="dashboard-section"><h2>Top Sellers vs Budget</h2><span class="section-badge">Yearly Target</span></div>' +
+    '<div class="cat-gauge-grid">' +
+      '<div class="cat-gauge-card">' + buildGauge(b.categories.uvSystems.actual, b.categories.uvSystems.target, 140, '#2563eb') + '<div class="gauge-label">UV Systems</div><div class="gauge-detail">Machines & complete systems</div></div>' +
+      '<div class="cat-gauge-card">' + buildGauge(b.categories.liners.actual, b.categories.liners.target, 140, '#059669') + '<div class="gauge-label">Liners</div><div class="gauge-detail">UVHL & pre-impregnated</div></div>' +
+      '<div class="cat-gauge-card">' + buildGauge(b.categories.resins.actual, b.categories.resins.target, 140, '#d97706') + '<div class="gauge-label">Resins</div><div class="gauge-detail">UVLCR chemistry</div></div>' +
+    '</div>' +
+
+    // === QUICK STATS ROW ===
+    '<div class="stats-grid">' +
       '<div class="stat-card"><div class="stat-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="stat-label">Active Quotes</div><div class="stat-value">' + activeQuotes.length + '</div><div class="stat-change up">2 sent, awaiting response</div></div>' +
       '<div class="stat-card"><div class="stat-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div class="stat-label">Won This Month</div><div class="stat-value">' + acceptedQuotes.length + '</div><div class="stat-change up">+1 from last month</div></div>' +
       '<div class="stat-card"><div class="stat-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></div><div class="stat-label">Open Orders</div><div class="stat-value">' + activeOrders.length + '</div><div class="stat-change up">1 in production</div></div>' +
       '<div class="stat-card"><div class="stat-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="stat-label">Pipeline Value</div><div class="stat-value">' + formatCurrency(pipelineValue) + '</div><div class="stat-change up">Quotes sent, awaiting decision</div></div>' +
     '</div>' +
 
-    '<div class="quick-actions">' +
+    // === TOP 5 CUSTOMERS + FOLLOW-UPS ===
+    '<div class="grid-2">' +
+      // Top 5 customers
+      '<div class="card"><div class="card-header"><span class="card-title">Top 5 Customers</span><span class="section-badge">YTD Revenue</span></div>' +
+        '<div class="top-customers-list">' +
+          DATA.topCustomers.map(function(tc, i) {
+            var c = getCustomer(tc.id);
+            var trendIcon = tc.trend === 'up' ? '&#9650;' : tc.trend === 'down' ? '&#9660;' : '&#9654;';
+            var trendLabel = tc.trend === 'up' ? 'Growing' : tc.trend === 'down' ? 'Declining' : 'Stable';
+            return '<div class="top-customer-row" onclick="app.viewCustomer(\'' + tc.id + '\')">' +
+              '<div class="top-customer-rank rank-' + (i + 1) + '">' + (i + 1) + '</div>' +
+              '<div class="top-customer-info"><div class="top-customer-name">' + (c ? c.name : tc.id) + '</div><div class="top-customer-meta">' + (c ? c.city + ', ' + c.country : '') + ' &middot; ' + tc.orders + ' order' + (tc.orders !== 1 ? 's' : '') + '</div></div>' +
+              '<div><div class="top-customer-revenue">' + formatCurrency(tc.revenue) + '</div><div class="top-customer-trend trend-' + tc.trend + '">' + trendIcon + ' ' + trendLabel + '</div></div>' +
+            '</div>';
+          }).join('') +
+        '</div>' +
+      '</div>' +
+
+      // Follow-ups
+      '<div class="card"><div class="card-header"><span class="card-title">Upcoming Follow-ups</span></div>' +
+        (function() {
+          var followUps = getUpcomingFollowUps();
+          var today = new Date().toISOString().split('T')[0];
+          return followUps.length > 0 ?
+            followUps.slice(0, 6).map(function(a) {
+              var c = getCustomer(a.customer);
+              var isOverdue = a.followUp < today;
+              return '<div class="followup-item">' +
+                '<span class="followup-date ' + (isOverdue ? 'overdue' : 'upcoming') + '">' + formatDate(a.followUp) + (isOverdue ? ' !' : '') + '</span>' +
+                '<span class="followup-customer" style="cursor:pointer;color:var(--primary)" onclick="app.viewCustomer(\'' + a.customer + '\')">' + (c ? c.name : a.customer) + '</span>' +
+                '<span class="followup-desc">' + a.description.substring(0, 60) + (a.description.length > 60 ? '...' : '') + '</span>' +
+                '<button class="followup-done-btn" onclick="app.markFollowUpDone(\'' + a.id + '\')" title="Mark done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="20 6 9 17 4 12"/></svg></button>' +
+              '</div>';
+            }).join('') :
+            '<div class="empty-state" style="padding:24px"><h3>All clear!</h3><p>No pending follow-ups</p></div>';
+        })() +
+      '</div>' +
+    '</div>' +
+
+    // === QUICK ACTIONS ===
+    '<div style="margin-top:24px" class="quick-actions">' +
       '<div class="quick-action" onclick="app.showNewQuote()"><div class="quick-action-icon" style="background:var(--primary-light);color:var(--primary)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="quick-action-text"><h3>New Quote</h3><p>Create and send a new offer</p></div></div>' +
-      '<div class="quick-action" onclick="app.navigate(\'orders\')"><div class="quick-action-icon" style="background:var(--success-light);color:var(--success)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="quick-action-text"><h3>Convert Quote to Order</h3><p>' + acceptedQuotes.length + ' quote' + (acceptedQuotes.length !== 1 ? 's' : '') + ' ready to convert</p></div></div>' +
+      '<div class="quick-action" onclick="app.navigate(\'orders\')"><div class="quick-action-icon" style="background:var(--success-light);color:var(--success)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="quick-action-text"><h3>Convert Quote</h3><p>' + acceptedQuotes.length + ' ready to convert</p></div></div>' +
       '<div class="quick-action" onclick="app.navigate(\'products\')"><div class="quick-action-icon" style="background:var(--warning-light);color:var(--warning)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="quick-action-text"><h3>Check Stock</h3><p>View inventory levels</p></div></div>' +
     '</div>' +
 
-    (function() {
-      var followUps = getUpcomingFollowUps();
-      var today = new Date().toISOString().split('T')[0];
-      return followUps.length > 0 ?
-        '<div class="card" style="margin-bottom:24px"><div class="card-header"><span class="card-title">Upcoming Follow-ups</span></div>' +
-          followUps.slice(0, 5).map(function(a) {
-            var c = getCustomer(a.customer);
-            var isOverdue = a.followUp < today;
-            return '<div class="followup-item">' +
-              '<span class="followup-date ' + (isOverdue ? 'overdue' : 'upcoming') + '">' + formatDate(a.followUp) + (isOverdue ? ' (overdue)' : '') + '</span>' +
-              '<span class="followup-customer" style="cursor:pointer;color:var(--primary)" onclick="app.viewCustomer(\'' + a.customer + '\')">' + (c ? c.name : a.customer) + '</span>' +
-              '<span class="followup-desc">' + a.description.substring(0, 80) + (a.description.length > 80 ? '...' : '') + '</span>' +
-              '<button class="followup-done-btn" onclick="app.markFollowUpDone(\'' + a.id + '\')" title="Mark done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="20 6 9 17 4 12"/></svg></button>' +
-            '</div>';
-          }).join('') +
-        '</div>' : '';
-    })() +
-
-    '<div class="grid-2">' +
+    // === RECENT QUOTES + ORDERS ===
+    '<div class="grid-2" style="margin-top:24px">' +
       '<div class="card"><div class="card-header"><span class="card-title">Recent Quotes</span><button class="btn btn-ghost btn-sm" onclick="app.navigate(\'quotes\')">View all</button></div><div class="table-wrapper"><table><thead><tr><th>Quote</th><th>Customer</th><th>Total</th><th>Status</th></tr></thead><tbody>' +
         DATA.quotes.slice(0, 4).map(function(q) {
           var c = getCustomer(q.customer);
