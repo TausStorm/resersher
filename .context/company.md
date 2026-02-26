@@ -24,7 +24,7 @@ Founder operates across two businesses:
 - **Taus Gerner-Rasmussen** — CSO, UVRelining
 - **Billy** — UVRelining team, decision-maker
 - **Peter** — UVRelining team, decision-maker
-- **Jockum** — Head of FLEX liner development
+- **Jockum Borden (JB)** — Head of FLEX liner development
 - **Markus** — Based at Sacpro Stockholm
 - **Fredrik Sterner** — CEO, Sacpro Group
 

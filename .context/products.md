@@ -65,6 +65,19 @@ Compact UV light-head system. Slim body navigates 90-degree bends down to DN70. 
 - Spare parts and accessories
 - Reseller of Picote products
 
+### Technical Data Provided to Customers
+
+- Ring stiffness and E-modulus of finished product
+- Chemical resistance sheets for resins (UVLCR)
+- Customers responsible for verifying product suitability for their installation conditions (depth, groundwater pressure, chemical environment)
+
+### Key Documentation Systems
+
+- **BRAWO** — installation documentation system
+- **Egenkontrolldokument** — self-inspection document used per installation
+- **Härdningsprotokoll** — curing protocol, submitted via email
+- **Provbit** — 15cm sample piece with batch number + dimension, kept from each installation
+
 ## Researcher
 
 Tool that simplifies complicated documents.
