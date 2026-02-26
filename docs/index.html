@@ -1805,8 +1805,8 @@ function getActivities(customerId) { return DATA.activities.filter(function(a) {
 function buildGauge(actual, target, size) {
   var pct = Math.min(actual / target, 1.2);
   var displayPct = Math.round((actual / target) * 100);
-  var sw = 12;
-  var radius = (size - sw - 14) / 2;
+  var sw = 20;
+  var radius = (size - sw - 16) / 2;
   var cx = size / 2;
   var svgH = size;
   var cy = radius + sw / 2 + 8;
