@@ -989,7 +989,7 @@ tbody tr:last-child td {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--success));
+  background: linear-gradient(90deg, #6f297f, #9b51e0);
   opacity: 0;
   transition: opacity 0.2s ease;
 }
@@ -1131,7 +1131,7 @@ tbody tr:last-child td {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--success));
+  background: linear-gradient(90deg, #6f297f, #9b51e0);
   opacity: 0;
   transition: opacity 0.2s ease;
 }
@@ -1817,11 +1817,11 @@ function buildGauge(actual, target, size) {
   var fillLen = arcLen * Math.min(pct, 1);
   var rot = 140;
 
-  var gaugeColor = displayPct >= 70 ? '#059669' : displayPct > 50 ? '#d97706' : '#dc2626';
+  var gaugeColor = '#6f297f';
 
   return '<svg class="gauge-svg" width="' + size + '" height="' + svgH + '" viewBox="0 0 ' + size + ' ' + svgH + '" overflow="visible">' +
-    '<circle cx="' + cx + '" cy="' + cy + '" r="' + radius + '" fill="none" stroke="#f0f1f3" stroke-width="' + sw + '" stroke-linecap="round" stroke-dasharray="' + arcLen + ' ' + gapLen + '" transform="rotate(' + rot + ' ' + cx + ' ' + cy + ')"/>' +
-    (pct > 0 ? '<circle cx="' + cx + '" cy="' + cy + '" r="' + radius + '" fill="none" stroke="' + gaugeColor + '" stroke-width="' + sw + '" stroke-linecap="round" stroke-dasharray="' + fillLen + ' ' + circ + '" transform="rotate(' + rot + ' ' + cx + ' ' + cy + ')"/>' : '') +
+    '<circle cx="' + cx + '" cy="' + cy + '" r="' + radius + '" fill="none" stroke="#f0f1f3" stroke-width="' + sw + '" stroke-linecap="butt" stroke-dasharray="' + arcLen + ' ' + gapLen + '" transform="rotate(' + rot + ' ' + cx + ' ' + cy + ')"/>' +
+    (pct > 0 ? '<circle cx="' + cx + '" cy="' + cy + '" r="' + radius + '" fill="none" stroke="' + gaugeColor + '" stroke-width="' + sw + '" stroke-linecap="butt" stroke-dasharray="' + fillLen + ' ' + circ + '" transform="rotate(' + rot + ' ' + cx + ' ' + cy + ')"/>' : '') +
     '<text x="' + cx + '" y="' + (cy - 6) + '" text-anchor="middle" dominant-baseline="central" class="gauge-value-text" style="fill:' + gaugeColor + '">' + displayPct + '%</text>' +
     '<text x="' + cx + '" y="' + (cy + 18) + '" text-anchor="middle" class="gauge-amounts">' + formatCurrency(actual) + ' / ' + formatCurrency(target) + '</text>' +
   '</svg>';
@@ -1835,10 +1835,7 @@ function buildMiniChart(monthlyData, monthTarget, color) {
   var barH = 100;
   var currentMonth = new Date().getMonth(); // 0-indexed
   var startMonth = currentMonth - monthlyData.length + 1;
-  var gaugeColor = function(v) {
-    var p = monthTarget ? Math.round(v / monthTarget * 100) : 100;
-    return p >= 70 ? '#059669' : p > 50 ? '#d97706' : '#dc2626';
-  };
+  var gaugeColor = function() { return '#6f297f'; };
 
   var bars = monthlyData.map(function(v, i) {
     var h = maxVal > 0 ? Math.max(Math.round(v / maxVal * barH), 4) : 4;
