@@ -337,15 +337,21 @@ body {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 20px;
+  margin-bottom: 28px;
 }
 
 .stat-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 20px;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
 }
 
 .stat-label {
@@ -501,17 +507,18 @@ tbody tr:last-child td {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 16px 20px;
+  padding: 18px 22px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: 16px;
   cursor: pointer;
-  transition: all var(--transition);
+  transition: all 0.2s ease;
 }
 
 .quick-action:hover {
   border-color: var(--primary);
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
 }
 
 .quick-action-icon {
@@ -959,22 +966,49 @@ tbody tr:last-child td {
 .gauge-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 20px;
+  margin-bottom: 28px;
 }
 
 .gauge-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 20px 16px 16px;
+  border-radius: 16px;
+  padding: 24px 20px 20px;
   text-align: center;
-  transition: box-shadow var(--transition);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.gauge-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--success));
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .gauge-card:hover {
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
 }
+
+.gauge-card:hover::before { opacity: 1; }
+
+.gauge-card .gauge-view,
+.gauge-card .chart-view {
+  transition: opacity 0.25s ease;
+}
+
+.gauge-card .chart-view { display: none; }
+.gauge-card.show-chart .gauge-view { display: none; }
+.gauge-card.show-chart .chart-view { display: block; }
 
 .gauge-svg {
   display: block;
@@ -984,11 +1018,11 @@ tbody tr:last-child td {
 }
 
 .gauge-label {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   color: var(--text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   margin-bottom: 2px;
 }
 
@@ -997,42 +1031,126 @@ tbody tr:last-child td {
   color: var(--text-muted);
 }
 
-.gauge-value-text {
-  font-size: 22px;
-  font-weight: 800;
-  fill: var(--text);
+.gauge-hint {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-.gauge-percent-text {
-  font-size: 11px;
-  font-weight: 600;
+.gauge-card:hover .gauge-hint { opacity: 1; }
+
+.gauge-value-text {
+  font-size: 24px;
+  font-weight: 800;
 }
 
 .gauge-amounts {
-  font-size: 11px;
+  font-size: 10px;
   fill: var(--text-secondary);
+}
+
+/* === Mini bar chart inside gauge card === */
+.mini-chart {
+  height: 140px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 4px 0;
+}
+
+.mini-chart-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  max-width: 48px;
+}
+
+.mini-chart-bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+  transition: height 0.3s ease;
+  position: relative;
+}
+
+.mini-chart-val {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.mini-chart-lbl {
+  font-size: 9px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.chart-target-line {
+  width: 100%;
+  border-top: 2px dashed var(--text-muted);
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.chart-target-label {
+  font-size: 9px;
+  color: var(--text-muted);
+  text-align: right;
 }
 
 /* === Category Gauges === */
 .cat-gauge-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 20px;
+  margin-bottom: 28px;
 }
 
 .cat-gauge-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 20px;
+  border-radius: 16px;
+  padding: 24px 20px 20px;
   text-align: center;
-  transition: box-shadow var(--transition);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.cat-gauge-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--success));
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .cat-gauge-card:hover {
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
 }
+
+.cat-gauge-card:hover::before { opacity: 1; }
+
+.cat-gauge-card .gauge-view,
+.cat-gauge-card .chart-view {
+  transition: opacity 0.25s ease;
+}
+
+.cat-gauge-card .chart-view { display: none; }
+.cat-gauge-card.show-chart .gauge-view { display: none; }
+.cat-gauge-card.show-chart .chart-view { display: block; }
 
 /* === Top Customers === */
 .top-customers-list {
@@ -1054,7 +1172,7 @@ tbody tr:last-child td {
   background: var(--bg);
   margin: 0 -20px;
   padding: 12px 20px;
-  border-radius: var(--radius);
+  border-radius: 10px;
 }
 
 .top-customer-row:last-child {
@@ -1116,25 +1234,27 @@ tbody tr:last-child td {
 
 /* === Section Headers === */
 .dashboard-section {
-  margin-bottom: 8px;
+  margin-bottom: 14px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .dashboard-section h2 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--text);
+  letter-spacing: -0.2px;
 }
 
 .dashboard-section .section-badge {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 4px;
-  background: var(--bg);
-  color: var(--text-muted);
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--primary-light);
+  color: var(--primary);
+  letter-spacing: 0.3px;
 }
 
 @media (max-width: 1200px) {
@@ -1649,15 +1769,21 @@ const DATA = {
 
   // Budget targets & actuals (2026)
   budgets: {
-    monthlySales: { target: 350000, actual: 287000, label: 'Monthly Sales', month: 'February' },
-    yearlySales: { target: 4200000, actual: 685000, label: 'Yearly Sales', period: '2026' },
-    travel: { target: 45000, actual: 28500, label: 'Travel', period: '2026' },
-    representation: { target: 18000, actual: 11200, label: 'Representation', period: '2026' },
-    // Product category budgets (yearly)
+    monthlySales: { target: 350000, actual: 287000, label: 'Monthly Sales', month: 'February',
+      monthly: [310000, 287000] },
+    yearlySales: { target: 4200000, actual: 685000, label: 'Yearly Sales', period: '2026',
+      monthly: [398000, 287000] },
+    travel: { target: 45000, actual: 28500, label: 'Travel', period: '2026',
+      monthly: [12800, 15700] },
+    representation: { target: 18000, actual: 11200, label: 'Representation', period: '2026',
+      monthly: [5400, 5800] },
     categories: {
-      uvSystems: { target: 2200000, actual: 513000, label: 'UV Systems' },
-      liners: { target: 1100000, actual: 298000, label: 'Liners' },
-      resins: { target: 650000, actual: 187000, label: 'Resins' },
+      uvSystems: { target: 2200000, actual: 513000, label: 'UV Systems',
+        monthly: [278000, 235000] },
+      liners: { target: 1100000, actual: 298000, label: 'Liners',
+        monthly: [162000, 136000] },
+      resins: { target: 650000, actual: 187000, label: 'Resins',
+        monthly: [98000, 89000] },
     },
   },
 
@@ -1676,10 +1802,10 @@ function getProduct(id) { return DATA.products.find(p => p.id === id); }
 function getActivities(customerId) { return DATA.activities.filter(function(a) { return a.customer === customerId; }).sort(function(a, b) { return b.date.localeCompare(a.date); }); }
 
 // SVG Speedometer gauge builder (circle + stroke-dasharray approach)
-function buildGauge(actual, target, size, color, showAmounts) {
+function buildGauge(actual, target, size) {
   var pct = Math.min(actual / target, 1.2);
   var displayPct = Math.round((actual / target) * 100);
-  var sw = 10;
+  var sw = 12;
   var radius = (size - sw - 14) / 2;
   var cx = size / 2;
   var svgH = size;
@@ -1689,23 +1815,51 @@ function buildGauge(actual, target, size, color, showAmounts) {
   var arcLen = (arcDeg / 360) * circ;
   var gapLen = circ - arcLen;
   var fillLen = arcLen * Math.min(pct, 1);
-  // rotate so gap sits at the bottom: 90° (south) + half-gap (50°) = 140°
   var rot = 140;
 
   var gaugeColor = displayPct >= 70 ? '#059669' : displayPct > 50 ? '#d97706' : '#dc2626';
 
-  var amountText = '';
-  if (showAmounts !== false) {
-    amountText = '<text x="' + cx + '" y="' + (cy + 24) + '" text-anchor="middle" class="gauge-amounts">' +
-      formatCurrency(actual) + ' / ' + formatCurrency(target) + '</text>';
-  }
-
   return '<svg class="gauge-svg" width="' + size + '" height="' + svgH + '" viewBox="0 0 ' + size + ' ' + svgH + '" overflow="visible">' +
-    '<circle cx="' + cx + '" cy="' + cy + '" r="' + radius + '" fill="none" stroke="#e5e7eb" stroke-width="' + sw + '" stroke-linecap="round" stroke-dasharray="' + arcLen + ' ' + gapLen + '" transform="rotate(' + rot + ' ' + cx + ' ' + cy + ')"/>' +
+    '<circle cx="' + cx + '" cy="' + cy + '" r="' + radius + '" fill="none" stroke="#f0f1f3" stroke-width="' + sw + '" stroke-linecap="round" stroke-dasharray="' + arcLen + ' ' + gapLen + '" transform="rotate(' + rot + ' ' + cx + ' ' + cy + ')"/>' +
     (pct > 0 ? '<circle cx="' + cx + '" cy="' + cy + '" r="' + radius + '" fill="none" stroke="' + gaugeColor + '" stroke-width="' + sw + '" stroke-linecap="round" stroke-dasharray="' + fillLen + ' ' + circ + '" transform="rotate(' + rot + ' ' + cx + ' ' + cy + ')"/>' : '') +
-    '<text x="' + cx + '" y="' + cy + '" text-anchor="middle" dominant-baseline="central" class="gauge-value-text" style="fill:' + gaugeColor + '">' + displayPct + '%</text>' +
-    amountText +
+    '<text x="' + cx + '" y="' + (cy - 6) + '" text-anchor="middle" dominant-baseline="central" class="gauge-value-text" style="fill:' + gaugeColor + '">' + displayPct + '%</text>' +
+    '<text x="' + cx + '" y="' + (cy + 18) + '" text-anchor="middle" class="gauge-amounts">' + formatCurrency(actual) + ' / ' + formatCurrency(target) + '</text>' +
   '</svg>';
+}
+
+// Mini bar chart for gauge card flip
+var MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function buildMiniChart(monthlyData, monthTarget, color) {
+  if (!monthlyData || monthlyData.length === 0) return '<div class="mini-chart"><span style="color:var(--text-muted);font-size:11px">No data</span></div>';
+  var maxVal = Math.max.apply(null, monthlyData.concat([monthTarget || 0]));
+  var barH = 100;
+  var currentMonth = new Date().getMonth(); // 0-indexed
+  var startMonth = currentMonth - monthlyData.length + 1;
+  var gaugeColor = function(v) {
+    var p = monthTarget ? Math.round(v / monthTarget * 100) : 100;
+    return p >= 70 ? '#059669' : p > 50 ? '#d97706' : '#dc2626';
+  };
+
+  var bars = monthlyData.map(function(v, i) {
+    var h = maxVal > 0 ? Math.max(Math.round(v / maxVal * barH), 4) : 4;
+    var c = gaugeColor(v);
+    var mi = startMonth + i;
+    var label = MONTHS_SHORT[mi >= 0 ? mi : mi + 12];
+    return '<div class="mini-chart-bar-wrap">' +
+      '<div class="mini-chart-val">' + (v >= 1000 ? Math.round(v / 1000) + 'k' : v) + '</div>' +
+      '<div class="mini-chart-bar" style="height:' + h + 'px;background:' + c + '"></div>' +
+      '<div class="mini-chart-lbl">' + label + '</div>' +
+    '</div>';
+  }).join('');
+
+  return '<div class="mini-chart">' + bars + '</div>' +
+    (monthTarget ? '<div class="chart-target-label">Target: ' + formatCurrency(monthTarget) + '/mo</div>' : '');
+}
+
+// Toggle gauge/chart on card click
+function toggleGaugeChart(el) {
+  var card = el.closest('.gauge-card') || el.closest('.cat-gauge-card');
+  if (card) card.classList.toggle('show-chart');
 }
 function getUpcomingFollowUps() { return DATA.activities.filter(function(a) { return a.followUp && !a.followUpDone; }).sort(function(a, b) { return a.followUp.localeCompare(b.followUp); }); }
 
@@ -1812,20 +1966,41 @@ const app = {
     return '' +
 
     // === SALES BUDGET GAUGES ===
-    '<div class="dashboard-section"><h2>Sales vs Budget</h2></div>' +
+    '<div class="dashboard-section"><h2>Sales vs Budget</h2><span class="section-badge">Click gauge for trend</span></div>' +
     '<div class="gauge-grid">' +
-      '<div class="gauge-card">' + buildGauge(b.monthlySales.actual, b.monthlySales.target, 200) + '<div class="gauge-label">Monthly Sales</div><div class="gauge-detail">' + b.monthlySales.month + ' 2026</div></div>' +
-      '<div class="gauge-card">' + buildGauge(b.yearlySales.actual, b.yearlySales.target, 200) + '<div class="gauge-label">Yearly Sales</div><div class="gauge-detail">YTD 2026</div></div>' +
-      '<div class="gauge-card">' + buildGauge(b.travel.actual, b.travel.target, 200) + '<div class="gauge-label">Travel Budget</div><div class="gauge-detail">YTD 2026</div></div>' +
-      '<div class="gauge-card">' + buildGauge(b.representation.actual, b.representation.target, 200) + '<div class="gauge-label">Representation</div><div class="gauge-detail">YTD 2026</div></div>' +
+      '<div class="gauge-card" onclick="toggleGaugeChart(this)">' +
+        '<div class="gauge-view">' + buildGauge(b.monthlySales.actual, b.monthlySales.target, 200) + '</div>' +
+        '<div class="chart-view">' + buildMiniChart(b.monthlySales.monthly, b.monthlySales.target) + '</div>' +
+        '<div class="gauge-label">Monthly Sales</div><div class="gauge-detail">' + b.monthlySales.month + ' 2026</div></div>' +
+      '<div class="gauge-card" onclick="toggleGaugeChart(this)">' +
+        '<div class="gauge-view">' + buildGauge(b.yearlySales.actual, b.yearlySales.target, 200) + '</div>' +
+        '<div class="chart-view">' + buildMiniChart(b.yearlySales.monthly, b.yearlySales.target / 12) + '</div>' +
+        '<div class="gauge-label">Yearly Sales</div><div class="gauge-detail">YTD 2026</div></div>' +
+      '<div class="gauge-card" onclick="toggleGaugeChart(this)">' +
+        '<div class="gauge-view">' + buildGauge(b.travel.actual, b.travel.target, 200) + '</div>' +
+        '<div class="chart-view">' + buildMiniChart(b.travel.monthly, b.travel.target / 12) + '</div>' +
+        '<div class="gauge-label">Travel Budget</div><div class="gauge-detail">YTD 2026</div></div>' +
+      '<div class="gauge-card" onclick="toggleGaugeChart(this)">' +
+        '<div class="gauge-view">' + buildGauge(b.representation.actual, b.representation.target, 200) + '</div>' +
+        '<div class="chart-view">' + buildMiniChart(b.representation.monthly, b.representation.target / 12) + '</div>' +
+        '<div class="gauge-label">Representation</div><div class="gauge-detail">YTD 2026</div></div>' +
     '</div>' +
 
     // === PRODUCT CATEGORY PERFORMANCE ===
     '<div class="dashboard-section"><h2>Top Sellers vs Budget</h2><span class="section-badge">Yearly Target</span></div>' +
     '<div class="cat-gauge-grid">' +
-      '<div class="cat-gauge-card">' + buildGauge(b.categories.uvSystems.actual, b.categories.uvSystems.target, 190) + '<div class="gauge-label">UV Systems</div><div class="gauge-detail">Machines & complete systems</div></div>' +
-      '<div class="cat-gauge-card">' + buildGauge(b.categories.liners.actual, b.categories.liners.target, 190) + '<div class="gauge-label">Liners</div><div class="gauge-detail">UVHL & pre-impregnated</div></div>' +
-      '<div class="cat-gauge-card">' + buildGauge(b.categories.resins.actual, b.categories.resins.target, 190) + '<div class="gauge-label">Resins</div><div class="gauge-detail">UVLCR chemistry</div></div>' +
+      '<div class="cat-gauge-card" onclick="toggleGaugeChart(this)">' +
+        '<div class="gauge-view">' + buildGauge(b.categories.uvSystems.actual, b.categories.uvSystems.target, 190) + '</div>' +
+        '<div class="chart-view">' + buildMiniChart(b.categories.uvSystems.monthly, b.categories.uvSystems.target / 12) + '</div>' +
+        '<div class="gauge-label">UV Systems</div><div class="gauge-detail">Machines & complete systems</div></div>' +
+      '<div class="cat-gauge-card" onclick="toggleGaugeChart(this)">' +
+        '<div class="gauge-view">' + buildGauge(b.categories.liners.actual, b.categories.liners.target, 190) + '</div>' +
+        '<div class="chart-view">' + buildMiniChart(b.categories.liners.monthly, b.categories.liners.target / 12) + '</div>' +
+        '<div class="gauge-label">Liners</div><div class="gauge-detail">UVHL & pre-impregnated</div></div>' +
+      '<div class="cat-gauge-card" onclick="toggleGaugeChart(this)">' +
+        '<div class="gauge-view">' + buildGauge(b.categories.resins.actual, b.categories.resins.target, 190) + '</div>' +
+        '<div class="chart-view">' + buildMiniChart(b.categories.resins.monthly, b.categories.resins.target / 12) + '</div>' +
+        '<div class="gauge-label">Resins</div><div class="gauge-detail">UVLCR chemistry</div></div>' +
     '</div>' +
 
     // === QUICK STATS ROW ===
