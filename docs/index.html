@@ -1673,45 +1673,36 @@ function getCustomer(id) { return DATA.customers.find(c => c.id === id); }
 function getProduct(id) { return DATA.products.find(p => p.id === id); }
 function getActivities(customerId) { return DATA.activities.filter(function(a) { return a.customer === customerId; }).sort(function(a, b) { return b.date.localeCompare(a.date); }); }
 
-// SVG Speedometer gauge builder
+// SVG Speedometer gauge builder (circle + stroke-dasharray approach)
 function buildGauge(actual, target, size, color, showAmounts) {
-  var pct = Math.min(actual / target, 1.2); // allow up to 120%
+  var pct = Math.min(actual / target, 1.2);
   var displayPct = Math.round((actual / target) * 100);
-  var radius = (size - 16) / 2;
+  var sw = 10;
+  var radius = (size - sw - 8) / 2;
   var cx = size / 2;
-  var cy = size / 2 + 8;
-  // Arc from 220deg to -40deg (total 260deg sweep)
-  var startAngle = 220 * Math.PI / 180;
-  var totalSweep = 260 * Math.PI / 180;
-  var endAngle = startAngle - totalSweep;
-  var fillSweep = totalSweep * Math.min(pct, 1);
+  var svgH = Math.round(size * 0.88);
+  var cy = Math.round(svgH * 0.52);
+  var circ = 2 * Math.PI * radius;
+  var arcDeg = 260;
+  var arcLen = (arcDeg / 360) * circ;
+  var gapLen = circ - arcLen;
+  var fillLen = arcLen * Math.min(pct, 1);
+  // rotate so gap sits at the bottom: 90° (south) + half-gap (50°) = 140°
+  var rot = 140;
 
-  function polarToCart(angle, r) {
-    return { x: cx + r * Math.cos(angle), y: cy - r * Math.sin(angle) };
-  }
-
-  var bgStart = polarToCart(startAngle, radius);
-  var bgEnd = polarToCart(endAngle, radius);
-  var fillEnd = polarToCart(startAngle - fillSweep, radius);
-  var largeArcBg = totalSweep > Math.PI ? 1 : 0;
-  var largeArcFill = fillSweep > Math.PI ? 1 : 0;
-
-  // Pick color based on percentage if not specified
   var gaugeColor = color || (displayPct >= 90 ? '#059669' : displayPct >= 60 ? '#2563eb' : displayPct >= 40 ? '#d97706' : '#dc2626');
-  // Over budget for expense items - show red
   if (pct > 1 && (color === '#d97706' || color === '#7c3aed')) gaugeColor = '#dc2626';
 
   var amountText = '';
   if (showAmounts !== false) {
-    amountText = '<text x="' + cx + '" y="' + (cy + 22) + '" text-anchor="middle" class="gauge-amounts">' +
-      formatCurrency(actual).replace(/,/g, ',') + ' / ' + formatCurrency(target).replace(/,/g, ',') +
-    '</text>';
+    amountText = '<text x="' + cx + '" y="' + (cy + 24) + '" text-anchor="middle" class="gauge-amounts">' +
+      formatCurrency(actual) + ' / ' + formatCurrency(target) + '</text>';
   }
 
-  return '<svg class="gauge-svg" width="' + size + '" height="' + (size - 10) + '" viewBox="0 0 ' + size + ' ' + (size - 10) + '">' +
-    '<path d="M ' + bgStart.x + ' ' + bgStart.y + ' A ' + radius + ' ' + radius + ' 0 ' + largeArcBg + ' 0 ' + bgEnd.x + ' ' + bgEnd.y + '" fill="none" stroke="#e5e7eb" stroke-width="10" stroke-linecap="round"/>' +
-    (pct > 0 ? '<path d="M ' + bgStart.x + ' ' + bgStart.y + ' A ' + radius + ' ' + radius + ' 0 ' + largeArcFill + ' 0 ' + fillEnd.x + ' ' + fillEnd.y + '" fill="none" stroke="' + gaugeColor + '" stroke-width="10" stroke-linecap="round"/>' : '') +
-    '<text x="' + cx + '" y="' + (cy - 2) + '" text-anchor="middle" class="gauge-value-text" style="fill:' + gaugeColor + '">' + displayPct + '%</text>' +
+  return '<svg class="gauge-svg" width="' + size + '" height="' + svgH + '" viewBox="0 0 ' + size + ' ' + svgH + '">' +
+    '<circle cx="' + cx + '" cy="' + cy + '" r="' + radius + '" fill="none" stroke="#e5e7eb" stroke-width="' + sw + '" stroke-linecap="round" stroke-dasharray="' + arcLen + ' ' + gapLen + '" transform="rotate(' + rot + ' ' + cx + ' ' + cy + ')"/>' +
+    (pct > 0 ? '<circle cx="' + cx + '" cy="' + cy + '" r="' + radius + '" fill="none" stroke="' + gaugeColor + '" stroke-width="' + sw + '" stroke-linecap="round" stroke-dasharray="' + fillLen + ' ' + circ + '" transform="rotate(' + rot + ' ' + cx + ' ' + cy + ')"/>' : '') +
+    '<text x="' + cx + '" y="' + cy + '" text-anchor="middle" dominant-baseline="central" class="gauge-value-text" style="fill:' + gaugeColor + '">' + displayPct + '%</text>' +
     amountText +
   '</svg>';
 }
