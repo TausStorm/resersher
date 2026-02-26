@@ -27,6 +27,17 @@
 - Close with forward-looking partnership sentiment
 - Include contact info for both parties
 
+### Internal / Sacpro Communication
+
+- **Language:** Swedish for internal and Sacpro emails
+- **Tone:** Professional but direct — don't soften issues, state them clearly
+- **Style:** Structured with bullet points for decisions/actions, paragraphs for context
+
+### Email Formatting Preference
+
+- **Font:** Calibri, size 11
+- When drafting emails as files, use HTML with Calibri 11pt styling so formatting carries over on copy-paste
+
 ## Researcher Voice
 
 ### Tone

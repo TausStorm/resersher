@@ -13,6 +13,21 @@ Founder operates across two businesses:
 - **Parent company:** Acquired by Sacpro Group (April 2025)
 - **Status:** Active, expanding globally. UVRelining management retained leadership and became shareholders in Sacpro Group.
 
+### Sacpro Group Structure
+
+- **Stockholm office** — Markus based here
+- **Falun office** — curing tests and liner testing facility
+- Sacpro handles internal distribution decisions for UV systems
+
+### Key People
+
+- **Taus Gerner-Rasmussen** — CSO, UVRelining
+- **Billy** — UVRelining team, decision-maker
+- **Peter** — UVRelining team, decision-maker
+- **Jockum** — Head of FLEX liner development
+- **Markus** — Based at Sacpro Stockholm
+- **Fredrik Sterner** — CEO, Sacpro Group
+
 ### What UVRelining does
 
 Provides complete UV CIPP relining systems for sewer pipe rehabilitation: machines, tools, chemistry, liners, and accessories. Known for LED UV curing technology.

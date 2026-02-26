@@ -32,3 +32,33 @@
 - Focus product is the UV XAIR (not the full UVRelining catalog)
 - Partnership framed as LED UV curing entering the American market
 - Tone: excited, confident, welcoming APS to the UVRelining family
+
+## Robocana (France) — Prospective Reseller
+
+- **Status:** Hot lead, time-sensitive
+- **Interest:** FLEX liner (or similar)
+- **Deadline:** Mid-March 2026 — must receive test material close to final FLEX product before end of March
+- **Risk:** If missed, they certify their current liner alternative and likely won't switch for years
+- **Priority:** Highest urgency of all three liner prospects
+
+## S1E (UK) — Prospective Reseller
+
+- **Status:** Active opportunity
+- **Interest:** Liner supply — evaluating UVRelining as new supplier
+- **Deadline:** End of March 2026 for test material delivery
+- **Flexibility:** Slightly more flexible than Robocana
+
+## Picote — Liner Customer Opportunity
+
+- **Existing relationship:** UVRelining resells Picote products
+- **New opportunity:** Picote interested in liner from UVRelining
+- **Status:** Wants answer within 4 weeks on when testing can happen (not the test itself, just timeline)
+- **Flexibility:** Most flexible of the three prospects
+
+## Linervent — Potential Liner Supplier
+
+- **Product:** Felt liner
+- **Status:** Under consideration as alternative/supplement
+- **Context:** If FLEX liner timeline doesn't meet reseller deadlines, Linervent felt liner could fill the gap
+- **Next step:** Decision depends on getting a definitive FLEX timeline from Jockum first
+- **Open items:** Pricing, delivery times, territory agreements — not yet discussed

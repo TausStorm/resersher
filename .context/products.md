@@ -31,6 +31,31 @@ Compact UV light-head system. Slim body navigates 90-degree bends down to DN70. 
 - Available in multiple dimensions
 - Market-leading reliability
 
+### FLEX Liner (In Development)
+
+- **Own-manufactured liner** — key differentiator vs third-party liners
+- Lower production cost → more competitive pricing for resellers
+- Head of development: Jockum
+- Status: pre-production, test material pending
+- Strategic importance: previous attempts to sell third-party liners (WO, HouseLiner, UVHL) to resellers had limited success due to cost. FLEX changes the equation.
+
+### WO Liner
+
+- Third-party produced liner
+- Limited reseller uptake due to pricing
+
+### HouseLiner
+
+- Third-party produced liner for house connections
+- Requires curing tests in Falun before it can be offered to customers
+- Currently the only alternative while UVHL is unavailable
+
+### UVHL Status
+
+- **Currently unavailable** (as of early 2026)
+- HouseLiner being tested as replacement option
+- Testing requires UV system on-site in Falun
+
 ### Other Products
 
 - Preimpregnated liners (UVHL + UVLCR combined)
