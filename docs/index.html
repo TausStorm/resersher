@@ -1071,9 +1071,9 @@ tbody tr:last-child td {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             <input type="text" placeholder="Search customers, quotes, orders..." id="globalSearch">
           </div>
-          <button class="btn btn-primary" id="newQuoteBtn" onclick="app.showNewQuote()">
+          <button class="btn btn-primary" id="topBarAction" onclick="app.topBarAction()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            New Quote
+            <span id="topBarActionLabel">New Quote</span>
           </button>
         </div>
       </header>
@@ -1304,6 +1304,18 @@ const app = {
     const [title, sub] = titles[page] || [page, ''];
     document.getElementById('pageTitle').textContent = title;
     document.getElementById('breadcrumb').textContent = sub;
+
+    // Update top bar action button per page
+    var actionLabels = {
+      dashboard: 'New Quote',
+      quotes: 'New Quote',
+      orders: 'New Order',
+      customers: 'New Customer',
+      products: 'New Article',
+    };
+    var label = document.getElementById('topBarActionLabel');
+    if (label) label.textContent = actionLabels[page] || 'New Quote';
+
     this.render();
   },
 
@@ -1664,6 +1676,151 @@ const app = {
     DATA.quotes.unshift(dup);
     this.navigate('quotes');
     this.toast('Quote duplicated as ' + dup.id, 'success');
+  },
+
+  // ===== TOP BAR ACTION =====
+  topBarAction() {
+    switch (this.currentPage) {
+      case 'orders': this.showNewOrder(); break;
+      case 'customers': this.showNewCustomer(); break;
+      case 'products': this.showNewProduct(); break;
+      default: this.showNewQuote(); break;
+    }
+  },
+
+  // ===== NEW ORDER MODAL =====
+  showNewOrder() {
+    this.lineItemCounter = 0;
+    document.getElementById('modalTitle').textContent = 'New Order';
+    document.getElementById('modalBody').innerHTML =
+      '<form onsubmit="event.preventDefault();app.saveOrder()">' +
+      '<div class="form-row"><div class="form-group"><label class="form-label">Customer</label><select class="form-select" id="orderCustomer" required><option value="">Select customer...</option>' +
+        DATA.customers.map(function(c) { return '<option value="' + c.id + '">' + c.name + ' (' + c.country + ')</option>'; }).join('') +
+      '</select></div><div class="form-group"><label class="form-label">Delivery Date</label><input type="date" class="form-input" id="orderDeliveryDate" value="' + this.futureDate(21) + '" required></div></div>' +
+      '<div class="form-divider"></div>' +
+      '<div class="form-group"><label class="form-label">Line Items</label>' +
+        '<div class="line-item" style="margin-bottom:4px"><span class="cell-secondary" style="font-size:11px;font-weight:600">PRODUCT</span><span class="cell-secondary" style="font-size:11px;font-weight:600">QTY</span><span class="cell-secondary" style="font-size:11px;font-weight:600">DISC %</span><span class="cell-secondary" style="font-size:11px;font-weight:600;text-align:right">LINE TOTAL</span><span></span></div>' +
+        '<div class="line-items" id="lineItems"></div>' +
+        '<button type="button" class="add-line-btn" onclick="app.addLineItem()">+ Add product</button></div>' +
+      '<div class="quote-total-bar"><span class="quote-total-label">Total excl. VAT</span><span class="quote-total-value" id="newQuoteTotal">' + formatCurrency(0) + '</span></div>' +
+      '<div class="form-divider"></div>' +
+      '<div class="form-group"><label class="form-label">Notes</label><textarea class="form-textarea" id="orderNotes" placeholder="Delivery instructions or internal notes..."></textarea></div>' +
+      '<div class="form-actions"><button type="button" class="btn" onclick="app.closeModal()">Cancel</button><button type="submit" class="btn btn-primary">Create Order</button></div></form>';
+    this.addLineItem();
+    this.openModal();
+  },
+
+  saveOrder() {
+    var customerEl = document.getElementById('orderCustomer');
+    var customer = customerEl ? customerEl.value : '';
+    if (!customer) { this.toast('Please select a customer', 'error'); return; }
+
+    var items = [];
+    document.querySelectorAll('.line-item[id^="line-"]').forEach(function(line) {
+      var id = line.id.replace('line-', '');
+      var productEl = document.getElementById('lineProduct-' + id);
+      var qtyEl = document.getElementById('lineQty-' + id);
+      var discEl = document.getElementById('lineDisc-' + id);
+      var productId = productEl ? productEl.value : '';
+      var qty = parseInt(qtyEl ? qtyEl.value : '0') || 0;
+      var disc = parseFloat(discEl ? discEl.value : '0') || 0;
+      if (productId && qty > 0) items.push({ productId: productId, qty: qty, discount: disc });
+    });
+
+    if (items.length === 0) { this.toast('Add at least one product', 'error'); return; }
+
+    var deliveryEl = document.getElementById('orderDeliveryDate');
+    var newOrder = {
+      id: 'O-2026-' + String(DATA.orders.length + 1).padStart(3, '0'),
+      quoteId: null,
+      customer: customer,
+      date: new Date().toISOString().split('T')[0],
+      deliveryDate: deliveryEl ? deliveryEl.value : this.futureDate(21),
+      status: 'confirmed',
+      items: items,
+    };
+
+    DATA.orders.unshift(newOrder);
+    this.closeModal();
+    this.navigate('orders');
+    this.toast('Order ' + newOrder.id + ' created!', 'success');
+  },
+
+  // ===== NEW CUSTOMER MODAL =====
+  showNewCustomer() {
+    document.getElementById('modalTitle').textContent = 'New Customer';
+    document.getElementById('modalBody').innerHTML =
+      '<form onsubmit="event.preventDefault();app.saveCustomer()">' +
+      '<div class="form-group"><label class="form-label">Company Name</label><input type="text" class="form-input" id="custName" placeholder="e.g. PipeWorks GmbH" required></div>' +
+      '<div class="form-row"><div class="form-group"><label class="form-label">Contact Person</label><input type="text" class="form-input" id="custContact" placeholder="Full name" required></div>' +
+      '<div class="form-group"><label class="form-label">Type</label><select class="form-select" id="custType" required><option value="Contractor">Contractor</option><option value="Distributor">Distributor</option><option value="Group Company">Group Company</option></select></div></div>' +
+      '<div class="form-row"><div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" id="custEmail" placeholder="contact@company.com" required></div>' +
+      '<div class="form-group"><label class="form-label">Phone</label><input type="tel" class="form-input" id="custPhone" placeholder="+46 70 123 4567"></div></div>' +
+      '<div class="form-row"><div class="form-group"><label class="form-label">City</label><input type="text" class="form-input" id="custCity" placeholder="e.g. Stockholm" required></div>' +
+      '<div class="form-group"><label class="form-label">Country</label><select class="form-select" id="custCountry" required>' +
+        '<option value="SE">Sweden</option><option value="NO">Norway</option><option value="DK">Denmark</option><option value="FI">Finland</option><option value="DE">Germany</option><option value="UK">United Kingdom</option><option value="FR">France</option><option value="US">United States</option><option value="NL">Netherlands</option><option value="PL">Poland</option><option value="IT">Italy</option><option value="ES">Spain</option><option value="AT">Austria</option><option value="CH">Switzerland</option>' +
+      '</select></div></div>' +
+      '<div class="form-actions"><button type="button" class="btn" onclick="app.closeModal()">Cancel</button><button type="submit" class="btn btn-primary">Add Customer</button></div></form>';
+    this.openModal();
+  },
+
+  saveCustomer() {
+    var name = document.getElementById('custName');
+    if (!name || !name.value.trim()) { this.toast('Please enter company name', 'error'); return; }
+
+    var newCustomer = {
+      id: 'C' + String(DATA.customers.length + 1).padStart(3, '0'),
+      name: name.value.trim(),
+      contact: (document.getElementById('custContact') || {}).value || '',
+      email: (document.getElementById('custEmail') || {}).value || '',
+      phone: (document.getElementById('custPhone') || {}).value || '',
+      city: (document.getElementById('custCity') || {}).value || '',
+      country: (document.getElementById('custCountry') || {}).value || 'SE',
+      type: (document.getElementById('custType') || {}).value || 'Contractor',
+    };
+
+    DATA.customers.push(newCustomer);
+    this.closeModal();
+    this.navigate('customers');
+    this.toast('Customer ' + newCustomer.name + ' added!', 'success');
+  },
+
+  // ===== NEW PRODUCT/ARTICLE MODAL =====
+  showNewProduct() {
+    document.getElementById('modalTitle').textContent = 'New Article';
+    document.getElementById('modalBody').innerHTML =
+      '<form onsubmit="event.preventDefault();app.saveProduct()">' +
+      '<div class="form-group"><label class="form-label">Article Name</label><input type="text" class="form-input" id="prodName" placeholder="e.g. UVHL DN250 (50m)" required></div>' +
+      '<div class="form-row"><div class="form-group"><label class="form-label">Category</label><select class="form-select" id="prodCategory" required><option value="Machines">Machines</option><option value="Chemistry">Chemistry</option><option value="Liners">Liners</option><option value="Accessories">Accessories</option><option value="Spare Parts">Spare Parts</option></select></div>' +
+      '<div class="form-group"><label class="form-label">Unit</label><select class="form-select" id="prodUnit"><option value="st">st (piece)</option><option value="m">m (meter)</option><option value="kg">kg</option><option value="l">l (liter)</option><option value="roll">roll</option></select></div></div>' +
+      '<div class="form-row"><div class="form-group"><label class="form-label">Price (EUR)</label><input type="number" class="form-input" id="prodPrice" placeholder="0" min="0" step="1" required></div>' +
+      '<div class="form-group"><label class="form-label">Stock Quantity</label><input type="number" class="form-input" id="prodStock" placeholder="0" min="0" value="0"></div></div>' +
+      '<div class="form-group"><label class="form-label">Description</label><textarea class="form-textarea" id="prodDesc" placeholder="Short description of the article..."></textarea></div>' +
+      '<div class="form-actions"><button type="button" class="btn" onclick="app.closeModal()">Cancel</button><button type="submit" class="btn btn-primary">Add Article</button></div></form>';
+    this.openModal();
+  },
+
+  saveProduct() {
+    var name = document.getElementById('prodName');
+    var price = document.getElementById('prodPrice');
+    if (!name || !name.value.trim()) { this.toast('Please enter article name', 'error'); return; }
+    if (!price || !price.value) { this.toast('Please enter a price', 'error'); return; }
+
+    var newProduct = {
+      id: 'P' + String(DATA.products.length + 1).padStart(3, '0'),
+      name: name.value.trim(),
+      category: (document.getElementById('prodCategory') || {}).value || 'Accessories',
+      price: parseFloat(price.value) || 0,
+      currency: 'EUR',
+      unit: (document.getElementById('prodUnit') || {}).value || 'st',
+      stock: parseInt((document.getElementById('prodStock') || {}).value) || 0,
+      description: (document.getElementById('prodDesc') || {}).value || '',
+    };
+
+    DATA.products.push(newProduct);
+    this.closeModal();
+    this.navigate('products');
+    this.toast('Article ' + newProduct.name + ' added!', 'success');
   },
 
   // ===== MODAL =====
