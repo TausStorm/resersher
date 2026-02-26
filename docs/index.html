@@ -1690,8 +1690,7 @@ function buildGauge(actual, target, size, color, showAmounts) {
   // rotate so gap sits at the bottom: 90° (south) + half-gap (50°) = 140°
   var rot = 140;
 
-  var gaugeColor = color || (displayPct >= 90 ? '#059669' : displayPct >= 60 ? '#2563eb' : displayPct >= 40 ? '#d97706' : '#dc2626');
-  if (pct > 1 && (color === '#d97706' || color === '#7c3aed')) gaugeColor = '#dc2626';
+  var gaugeColor = displayPct >= 70 ? '#059669' : displayPct > 50 ? '#d97706' : '#dc2626';
 
   var amountText = '';
   if (showAmounts !== false) {
@@ -1813,18 +1812,18 @@ const app = {
     // === SALES BUDGET GAUGES ===
     '<div class="dashboard-section"><h2>Sales vs Budget</h2></div>' +
     '<div class="gauge-grid">' +
-      '<div class="gauge-card">' + buildGauge(b.monthlySales.actual, b.monthlySales.target, 150, '#2563eb') + '<div class="gauge-label">Monthly Sales</div><div class="gauge-detail">' + b.monthlySales.month + ' 2026</div></div>' +
-      '<div class="gauge-card">' + buildGauge(b.yearlySales.actual, b.yearlySales.target, 150, '#2563eb') + '<div class="gauge-label">Yearly Sales</div><div class="gauge-detail">YTD 2026</div></div>' +
-      '<div class="gauge-card">' + buildGauge(b.travel.actual, b.travel.target, 150, '#d97706') + '<div class="gauge-label">Travel Budget</div><div class="gauge-detail">YTD 2026</div></div>' +
-      '<div class="gauge-card">' + buildGauge(b.representation.actual, b.representation.target, 150, '#7c3aed') + '<div class="gauge-label">Representation</div><div class="gauge-detail">YTD 2026</div></div>' +
+      '<div class="gauge-card">' + buildGauge(b.monthlySales.actual, b.monthlySales.target, 150) + '<div class="gauge-label">Monthly Sales</div><div class="gauge-detail">' + b.monthlySales.month + ' 2026</div></div>' +
+      '<div class="gauge-card">' + buildGauge(b.yearlySales.actual, b.yearlySales.target, 150) + '<div class="gauge-label">Yearly Sales</div><div class="gauge-detail">YTD 2026</div></div>' +
+      '<div class="gauge-card">' + buildGauge(b.travel.actual, b.travel.target, 150) + '<div class="gauge-label">Travel Budget</div><div class="gauge-detail">YTD 2026</div></div>' +
+      '<div class="gauge-card">' + buildGauge(b.representation.actual, b.representation.target, 150) + '<div class="gauge-label">Representation</div><div class="gauge-detail">YTD 2026</div></div>' +
     '</div>' +
 
     // === PRODUCT CATEGORY PERFORMANCE ===
     '<div class="dashboard-section"><h2>Top Sellers vs Budget</h2><span class="section-badge">Yearly Target</span></div>' +
     '<div class="cat-gauge-grid">' +
-      '<div class="cat-gauge-card">' + buildGauge(b.categories.uvSystems.actual, b.categories.uvSystems.target, 140, '#2563eb') + '<div class="gauge-label">UV Systems</div><div class="gauge-detail">Machines & complete systems</div></div>' +
-      '<div class="cat-gauge-card">' + buildGauge(b.categories.liners.actual, b.categories.liners.target, 140, '#059669') + '<div class="gauge-label">Liners</div><div class="gauge-detail">UVHL & pre-impregnated</div></div>' +
-      '<div class="cat-gauge-card">' + buildGauge(b.categories.resins.actual, b.categories.resins.target, 140, '#d97706') + '<div class="gauge-label">Resins</div><div class="gauge-detail">UVLCR chemistry</div></div>' +
+      '<div class="cat-gauge-card">' + buildGauge(b.categories.uvSystems.actual, b.categories.uvSystems.target, 140) + '<div class="gauge-label">UV Systems</div><div class="gauge-detail">Machines & complete systems</div></div>' +
+      '<div class="cat-gauge-card">' + buildGauge(b.categories.liners.actual, b.categories.liners.target, 140) + '<div class="gauge-label">Liners</div><div class="gauge-detail">UVHL & pre-impregnated</div></div>' +
+      '<div class="cat-gauge-card">' + buildGauge(b.categories.resins.actual, b.categories.resins.target, 140) + '<div class="gauge-label">Resins</div><div class="gauge-detail">UVLCR chemistry</div></div>' +
     '</div>' +
 
     // === QUICK STATS ROW ===
