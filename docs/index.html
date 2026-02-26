@@ -239,6 +239,91 @@ body {
   color: var(--text-muted);
 }
 
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  max-height: 360px;
+  overflow-y: auto;
+  z-index: 999;
+  display: none;
+}
+
+.search-results.open { display: block; }
+
+.search-group-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  padding: 10px 14px 4px;
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.search-item:hover { background: var(--bg); }
+
+.search-item-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+}
+
+.search-item-icon.si-customer { background: var(--primary); }
+.search-item-icon.si-quote { background: #6f297f; }
+.search-item-icon.si-order { background: var(--success); }
+.search-item-icon.si-product { background: var(--warning); }
+
+.search-item-text { flex: 1; min-width: 0; }
+
+.search-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-item-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.search-empty {
+  padding: 20px 14px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.search-item mark {
+  background: #f3e8ff;
+  color: #6f297f;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
 .content {
   flex: 1;
   overflow-y: auto;
@@ -1590,7 +1675,8 @@ tbody tr:last-child td {
         <div class="top-bar-actions">
           <div class="search-box">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="text" placeholder="Search customers, quotes, orders..." id="globalSearch">
+            <input type="text" placeholder="Search customers, quotes, orders..." id="globalSearch" autocomplete="off">
+            <div class="search-results" id="searchResults"></div>
           </div>
           <button class="btn btn-primary" id="topBarAction" onclick="app.topBarAction()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -1895,15 +1981,158 @@ function statusBadge(status) {
   return '<span class="badge badge-' + status + '">' + (labels[status] || status) + '</span>';
 }
 
+// ===== PERSISTENCE =====
+var DATA_DEFAULTS = JSON.parse(JSON.stringify(DATA)); // deep copy of original mock data
+
+function saveData() {
+  try {
+    localStorage.setItem('uvr_data', JSON.stringify({
+      customers: DATA.customers,
+      products: DATA.products,
+      quotes: DATA.quotes,
+      orders: DATA.orders,
+      activities: DATA.activities,
+      budgets: DATA.budgets,
+      topCustomers: DATA.topCustomers,
+    }));
+  } catch(e) { /* storage full or unavailable */ }
+}
+
+function loadData() {
+  try {
+    var stored = localStorage.getItem('uvr_data');
+    if (!stored) return;
+    var parsed = JSON.parse(stored);
+    if (parsed.customers) DATA.customers = parsed.customers;
+    if (parsed.products) DATA.products = parsed.products;
+    if (parsed.quotes) DATA.quotes = parsed.quotes;
+    if (parsed.orders) DATA.orders = parsed.orders;
+    if (parsed.activities) DATA.activities = parsed.activities;
+    if (parsed.budgets) DATA.budgets = parsed.budgets;
+    if (parsed.topCustomers) DATA.topCustomers = parsed.topCustomers;
+  } catch(e) { /* corrupted data, ignore */ }
+}
+
+function resetData() {
+  localStorage.removeItem('uvr_data');
+  DATA.customers = JSON.parse(JSON.stringify(DATA_DEFAULTS.customers));
+  DATA.products = JSON.parse(JSON.stringify(DATA_DEFAULTS.products));
+  DATA.quotes = JSON.parse(JSON.stringify(DATA_DEFAULTS.quotes));
+  DATA.orders = JSON.parse(JSON.stringify(DATA_DEFAULTS.orders));
+  DATA.activities = JSON.parse(JSON.stringify(DATA_DEFAULTS.activities));
+  DATA.budgets = JSON.parse(JSON.stringify(DATA_DEFAULTS.budgets));
+  DATA.topCustomers = JSON.parse(JSON.stringify(DATA_DEFAULTS.topCustomers));
+}
+
+// ===== SEARCH =====
+function highlightMatch(text, query) {
+  if (!query) return text;
+  var idx = text.toLowerCase().indexOf(query.toLowerCase());
+  if (idx === -1) return text;
+  return text.substring(0, idx) + '<mark>' + text.substring(idx, idx + query.length) + '</mark>' + text.substring(idx + query.length);
+}
+
+function searchAll(query) {
+  if (!query || query.length < 2) return [];
+  var q = query.toLowerCase();
+  var results = [];
+
+  DATA.customers.forEach(function(c) {
+    var match = [c.name, c.contact, c.city, c.country, c.email, c.id].some(function(f) { return f && f.toLowerCase().indexOf(q) !== -1; });
+    if (match) results.push({ type: 'customer', id: c.id, title: c.name, sub: c.contact + ' \u00b7 ' + c.city + ', ' + c.country });
+  });
+
+  DATA.quotes.forEach(function(r) {
+    var c = getCustomer(r.customer);
+    var cname = c ? c.name : r.customer;
+    var match = [r.id, cname].some(function(f) { return f && f.toLowerCase().indexOf(q) !== -1; });
+    if (match) results.push({ type: 'quote', id: r.id, title: r.id, sub: cname + ' \u00b7 ' + r.status });
+  });
+
+  DATA.orders.forEach(function(r) {
+    var c = getCustomer(r.customer);
+    var cname = c ? c.name : r.customer;
+    var match = [r.id, cname].some(function(f) { return f && f.toLowerCase().indexOf(q) !== -1; });
+    if (match) results.push({ type: 'order', id: r.id, title: r.id, sub: cname + ' \u00b7 ' + r.status });
+  });
+
+  DATA.products.forEach(function(p) {
+    var match = [p.name, p.category, p.id, p.description].some(function(f) { return f && f.toLowerCase().indexOf(q) !== -1; });
+    if (match) results.push({ type: 'product', id: p.id, title: p.name, sub: p.category + ' \u00b7 ' + formatCurrency(p.price) });
+  });
+
+  return results.slice(0, 12);
+}
+
 // ===== APP =====
 const app = {
   currentPage: 'dashboard',
   lineItemCounter: 0,
 
   init() {
+    loadData();
     document.querySelectorAll('.nav-item').forEach(item => {
       item.addEventListener('click', () => this.navigate(item.dataset.page));
     });
+
+    // Wire up search
+    var searchInput = document.getElementById('globalSearch');
+    var searchResults = document.getElementById('searchResults');
+    var self = this;
+    searchInput.addEventListener('input', function() {
+      var q = this.value.trim();
+      var results = searchAll(q);
+      if (results.length === 0 && q.length >= 2) {
+        searchResults.innerHTML = '<div class="search-empty">No results for "' + q + '"</div>';
+        searchResults.classList.add('open');
+      } else if (results.length > 0) {
+        var grouped = {};
+        results.forEach(function(r) {
+          if (!grouped[r.type]) grouped[r.type] = [];
+          grouped[r.type].push(r);
+        });
+        var labels = { customer: 'Customers', quote: 'Quotes', order: 'Orders', product: 'Products' };
+        var icons = { customer: 'si-customer', quote: 'si-quote', order: 'si-order', product: 'si-product' };
+        var letters = { customer: 'C', quote: 'Q', order: 'O', product: 'P' };
+        var html = '';
+        ['customer','quote','order','product'].forEach(function(type) {
+          if (!grouped[type]) return;
+          html += '<div class="search-group-label">' + labels[type] + '</div>';
+          grouped[type].forEach(function(r) {
+            html += '<div class="search-item" data-type="' + r.type + '" data-id="' + r.id + '">' +
+              '<div class="search-item-icon ' + icons[type] + '">' + letters[type] + '</div>' +
+              '<div class="search-item-text"><div class="search-item-title">' + highlightMatch(r.title, q) + '</div>' +
+              '<div class="search-item-sub">' + highlightMatch(r.sub, q) + '</div></div></div>';
+          });
+        });
+        searchResults.innerHTML = html;
+        searchResults.classList.add('open');
+      } else {
+        searchResults.classList.remove('open');
+      }
+    });
+
+    searchResults.addEventListener('click', function(e) {
+      var item = e.target.closest('.search-item');
+      if (!item) return;
+      var type = item.dataset.type;
+      var id = item.dataset.id;
+      searchInput.value = '';
+      searchResults.classList.remove('open');
+      if (type === 'customer') self.viewCustomer(id);
+      else if (type === 'quote') self.viewQuote(id);
+      else if (type === 'order') self.viewOrder(id);
+      else if (type === 'product') self.navigate('products');
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.search-box')) searchResults.classList.remove('open');
+    });
+
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { searchResults.classList.remove('open'); searchInput.blur(); }
+    });
+
     this.navigate('dashboard');
   },
 
@@ -2415,6 +2644,7 @@ const app = {
     };
 
     DATA.quotes.unshift(newQuote);
+    saveData();
     this.closeModal();
     this.navigate('quotes');
     this.toast(status === 'sent' ? 'Quote ' + newQuote.id + ' created and sent!' : 'Quote ' + newQuote.id + ' saved as draft', 'success');
@@ -2423,7 +2653,7 @@ const app = {
   // ===== ACTIONS =====
   sendQuote(id) {
     var q = DATA.quotes.find(function(x) { return x.id === id; });
-    if (q) { q.status = 'sent'; this.render(); this.toast('Quote ' + id + ' sent to customer!', 'success'); }
+    if (q) { q.status = 'sent'; saveData(); this.render(); this.toast('Quote ' + id + ' sent to customer!', 'success'); }
   },
 
   convertToOrder(quoteId) {
@@ -2440,6 +2670,7 @@ const app = {
     };
     q.status = 'accepted';
     DATA.orders.unshift(newOrder);
+    saveData();
     this.navigate('orders');
     this.toast('Order ' + newOrder.id + ' created from ' + quoteId + '!', 'success');
   },
@@ -2457,6 +2688,7 @@ const app = {
       notes: q.notes,
     };
     DATA.quotes.unshift(dup);
+    saveData();
     this.navigate('quotes');
     this.toast('Quote duplicated as ' + dup.id, 'success');
   },
@@ -2496,6 +2728,7 @@ const app = {
     };
 
     DATA.activities.unshift(newActivity);
+    saveData();
     this.closeModal();
     // Go back to customer detail if we were on it
     if (this.currentPage === 'customers') {
@@ -2510,6 +2743,7 @@ const app = {
     var a = DATA.activities.find(function(x) { return x.id === activityId; });
     if (a) {
       a.followUpDone = true;
+      saveData();
       this.render();
       this.toast('Follow-up marked done!', 'success');
     }
@@ -2578,6 +2812,7 @@ const app = {
     };
 
     DATA.orders.unshift(newOrder);
+    saveData();
     this.closeModal();
     this.navigate('orders');
     this.toast('Order ' + newOrder.id + ' created!', 'success');
@@ -2617,6 +2852,7 @@ const app = {
     };
 
     DATA.customers.push(newCustomer);
+    saveData();
     this.closeModal();
     this.navigate('customers');
     this.toast('Customer ' + newCustomer.name + ' added!', 'success');
@@ -2655,6 +2891,7 @@ const app = {
     };
 
     DATA.products.push(newProduct);
+    saveData();
     this.closeModal();
     this.navigate('products');
     this.toast('Article ' + newProduct.name + ' added!', 'success');
