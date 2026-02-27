@@ -10,7 +10,11 @@ Hej,
 
 Vi skriver detta mejl gemensamt som före detta ägare av UVRelining och nuvarande aktieägare i Sacpro Group. Vi har under de senaste sex månaderna — genom mejl, möten och direkta samtal med VD — upprepade gånger adresserat frågor, lagt fram förslag och flaggat för problem. Inget av detta har lett till beslut eller förändring. Vi ser oss nu tvungna att vända oss direkt till styrelsen.
 
-Det här mejlet är skrivet i konstruktiv anda. Vi vill att Sacpro Group ska lyckas. Vi brinner för det vi håller på med och vi har investerat år av arbete, kunskap och relationer i det som idag utgör en väsentlig del av koncernen. Men vi kan inte längre sitta tysta medan vi ser bolaget röra sig i en riktning som vi bedömer som allvarlig.
+Det här mejlet är skrivet i konstruktiv anda. Vi vill att Sacpro Group ska lyckas. Vi brinner för det vi håller på med och vi har investerat år av arbete, kunskap och relationer i det som idag utgör en väsentlig del av koncernen.
+
+Innan vi fortsätter vill vi ge kontext: UVRelining har under de senaste tre åren genomgått en medveten resa mot att bli ett mer professionellt och strukturerat bolag. Vi har byggt processer, definierat roller, skapat rutiner och drivit en kultur av ansvarstagande. Det var den resan som gjorde UVRelining attraktivt att förvärva. Vi förväntade oss att Sacpro Group som koncern skulle vara minst på samma nivå — eller högre. Det vi har mött är motsatsen, och det har genuint överraskat oss. Bristen på struktur, ledningsförmåga och beslutsfattande från VD:s sida är inte vad vi förväntade oss när vi sålde vårt bolag.
+
+Vi kan inte längre sitta tysta medan vi ser bolaget röra sig i en riktning som vi bedömer som allvarlig.
 
 ---
 
@@ -78,7 +82,9 @@ Sedan förvärvet har vi upprepade gånger bett om:
 - **Ramverk** för vem som ansvarar för vad och vem som har mandat att fatta beslut
 - **Kontrakt** med leverantörer, återförsäljare och stora kunder — som vi chockerades av att de inte existerade
 
-Erik arbetar hårt med att strukturera det finansiella, och det är värdefullt. Men utan att den operativa ledningen fattar och driver igenom beslut, kan inte resten av organisationen fungera.
+Vi vill vara tydliga: Erik gör ett utmärkt arbete. Han är den person i ledningen som faktiskt driver struktur, ordning och professionalisering framåt. Vi har fullt förtroende för honom. Problemet är att CFO:n rapporterar till VD — och så länge VD inte fattar beslut, inte driver igenom förändringar och inte skapar de ramar som krävs, finns det en gräns för hur mycket Erik faktiskt kan åstadkomma. Strukturen ovanför honom begränsar honom.
+
+Det gör situationen ännu mer frustrerande. Viljan och kompetensen finns — men den blockeras.
 
 ---
 
