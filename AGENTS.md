@@ -29,8 +29,9 @@ This is a VLTRA business project for research, writing, and strategic work.
 
 ## Key Documents
 
-- email-draft-styrelsen-oro.md          # Formal board escalation letter (Taus + Peter)
-- bilaga-sammanfattning-forslag-och-initiativ.md  # All 17 initiatives raised, with status
+- board/email-draft-styrelsen-oro.md          # Formal board escalation letter (Taus + Peter)
+- board/bilaga-sammanfattning-forslag-och-initiativ.md  # All 17 initiatives raised, with status
+- board/bilaga-sammanfattning-forslag-och-initiativ.pdf # PDF version of bilaga (for attachment)
 - linervent-strategic-analysis.md       # Strategic analysis of Linervent/FLEX situation
 - sacpro-picote-cooperation-proposal.md # Picote partnership proposal
 - iso-audit-prep-forsaljning.md         # ISO audit prep for sales process
