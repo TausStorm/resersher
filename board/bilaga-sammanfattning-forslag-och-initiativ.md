@@ -167,7 +167,7 @@ Nedanstående tabell sammanfattar varje initiativ som tagits, vad som föreslogs
 - Ville + assistent för demo i Finland
 - Frågade Jockum om FLEX-material och tidslinje
 
-**Vad som hände:** Demo genomfördes tack vare Taus och Villes insats trots kaotisk utgångspunkt.
+**Vad som hände:** Demon har ännu inte genomförts, men vi är tillbaka på spår och planerar att genomföra den så snart vi har en liner redo.
 
 ---
 
