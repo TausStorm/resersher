@@ -5,9 +5,12 @@
 - Acquired UVRelining in April 2025
 - Leading producer/supplier of materials and equipment for pipe rehabilitation
 - CEO: Fredrik Sterner (fredrik@sacpro.se, +46 70 327 24 22)
+- CFO: Erik
 - Website: sacpro.se
 - UVRelining management retained, became shareholders in Sacpro Group
 - Combined offering: broader product portfolio + deeper industry expertise
+- **Pre-acquisition promise:** Own production liner (FLEX) would be ready. One year later, still no hard date.
+- **Relationship status (Feb 2026):** Taus and Peter (former UVR owners) have low confidence in CEO. Preparing formal escalation to board. See `email-draft-styrelsen-oro.md` and `bilaga-sammanfattning-forslag-och-initiativ.md`.
 
 ## American Pipelining Solutions (APS) -- US Distributor
 
@@ -40,6 +43,7 @@
 - **Deadline:** Mid-March 2026 — must receive test material close to final FLEX product before end of March
 - **Risk:** If missed, they certify their current liner alternative and likely won't switch for years
 - **Priority:** Highest urgency of all three liner prospects
+- **Pricing issue:** Has shown what they pay other suppliers. Sacpro's prices too high.
 
 ## S1E (UK) — Prospective Reseller
 
@@ -47,6 +51,12 @@
 - **Interest:** Liner supply — evaluating UVRelining as new supplier
 - **Deadline:** End of March 2026 for test material delivery
 - **Flexibility:** Slightly more flexible than Robocana
+- **Pricing issue:** Same as Robocana — Sacpro pricing above market.
+
+## Pipe Core — Prospective Reseller
+
+- **Status:** Active opportunity
+- **Pricing issue:** Does not want to sell Sacpro's assortment/equipment — too expensive. Has shown competitor pricing and target price.
 
 ## Picote — Liner Customer Opportunity
 
@@ -54,6 +64,7 @@
 - **New opportunity:** Picote interested in liner from UVRelining
 - **Status:** Wants answer within 4 weeks on when testing can happen (not the test itself, just timeline)
 - **Flexibility:** Most flexible of the three prospects
+- **Near-miss:** Almost cancelled demo and deal after receiving prices from Fredrik (CEO). Taus intervened to save it. See `sacpro-picote-cooperation-proposal.md`.
 
 ## Linervent — Potential Liner Supplier
 

@@ -35,9 +35,12 @@ Compact UV light-head system. Slim body navigates 90-degree bends down to DN70. 
 
 - **Own-manufactured liner** — key differentiator vs third-party liners
 - Lower production cost → more competitive pricing for resellers
-- Head of development: Jockum
-- Status: pre-production, test material pending
+- Head of development: Jockum Brodén
+- Status: pre-production, test material pending. **18 months delayed.**
+- Was promised to be ready before UVRelining acquisition (April 2025). Still no hard date as of Feb 2026.
+- Suspicion: delays partly caused by CEO constantly changing specs/requirements, pushing for "world's best" instead of "competitive enough to ship"
 - Strategic importance: previous attempts to sell third-party liners (WO, HouseLiner, UVHL) to resellers had limited success due to cost. FLEX changes the equation.
+- **Without FLEX, every strategic decision is made in the dark** (from Linervent analysis)
 
 ### WO Liner
 
@@ -60,7 +63,7 @@ Compact UV light-head system. Slim body navigates 90-degree bends down to DN70. 
 
 - Preimpregnated liners (UVHL + UVLCR combined)
 - T-Liner and Patch Tool
-- Inversion drums
+- Inversion drums (internally produced — too expensive, should be outsourced to third party)
 - UV system upgrades (UV600 -> UV360RS+)
 - Spare parts and accessories
 - Reseller of Picote products

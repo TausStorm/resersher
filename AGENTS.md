@@ -19,12 +19,23 @@ This is a VLTRA business project for research, writing, and strategic work.
 
 ```
 .context/           # Business context (created by /onboard)
-├── company.md      # Identity, industry, story
+├── company.md      # Identity, industry, story, Sacpro internal issues
 ├── products.md     # Offerings, differentiators
 ├── customers.md    # Audience, personas, pain points
-├── competitors.md  # Landscape, positioning
+├── competitors.md  # Landscape, positioning (incl. Boldan/Trelleborg, Linervent)
+├── partnerships.md # Sacpro, APS, resellers, Linervent, Picote
 ├── voice.md        # Tone, terminology
-└── goals.md        # Priorities, challenges
+└── goals.md        # Priorities, challenges, financial notes
+
+## Key Documents
+
+- email-draft-styrelsen-oro.md          # Formal board escalation letter (Taus + Peter)
+- bilaga-sammanfattning-forslag-och-initiativ.md  # All 17 initiatives raised, with status
+- linervent-strategic-analysis.md       # Strategic analysis of Linervent/FLEX situation
+- sacpro-picote-cooperation-proposal.md # Picote partnership proposal
+- iso-audit-prep-forsaljning.md         # ISO audit prep for sales process
+- email-draft-lucas-iso-concerns.md     # ISO concerns flagged to Lucas
+- research/T&C/email-draft-fredrik.md   # T&C/warranty feedback to CEO
 ```
 
 ## Git Workflow
