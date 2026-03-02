@@ -35,7 +35,44 @@ The 17 MSEK goodwill amortization from the UVRelining acquisition is a significa
 
 ---
 
-## 2. UVRelining - Department Breakdown
+## 2. Personnel Costs vs Revenue - Per Entity
+
+This is the core comparison. How much does each company spend on people relative to what it brings in?
+
+| Entity | Revenue (TSEK) | Personnel (TSEK) | Personnel % of Revenue |
+|--------|---------------:|------------------:|-----------------------:|
+| **UVRelining** | **79,851** | **6,949** | **8.7%** |
+| Sacpro AB | 161,556 | 18,254 | 11.3% |
+| Sacpro FI | 10,068 | 1,495 | 14.8% |
+| Svedlunds | 2,200 | 2,562 | **116.5%** |
+| Sacpro Group (holding) | 0 | 1,903 | n/a |
+| **Group total** | **243,055** | **31,163** | **12.8%** |
+
+### What This Shows
+
+- **UVRelining is the leanest entity in the group at 8.7%.** Far below Sacpro AB (11.3%) and Sacpro FI (14.8%). This means UVRelining is subsidizing the group's profitability with low headcount.
+- **Sacpro AB** spends 11.3% on personnel - reasonable, but has ~2.6x the personnel cost of UVRelining while having only ~2x the revenue.
+- **Svedlunds spends 116.5% of its revenue on personnel alone** - before any material costs or other expenses. Every krona of revenue goes to staff and then some.
+- **Group holding** pays 1.9 MSEK in personnel (likely CEO/management salary) with zero revenue.
+
+### UVRelining: 7 Employees, Budget Shows 4 Salary Lines
+
+The budget has 4 distinct salary lines across cost centers:
+
+| Cost Center | Monthly Base Salary | From April |
+|-------------|--------------------:|-----------:|
+| Sales (KST 110) | 118,300 | 118,300 (no increase) |
+| R&D (KST 111) | 86,100 | 88,683 |
+| Direct Production (KST 103) | 104,500 | 107,635 |
+| Production OH (KST 130) | 60,000 | 61,800 |
+
+Total budgeted personnel: 6,949 TSEK for the year. With 7 actual employees this means either some staff are on Sacpro AB's books or the budget doesn't fully reflect reality.
+
+**Revenue per employee at UVRelining: 79.9 MSEK / 7 = 11.4 MSEK.** Still very high for a team that handles sales, R&D, production, and logistics.
+
+---
+
+## 3. UVRelining Department Breakdown
 
 From "UVR All_kst budget" (figures in SEK):
 
@@ -62,151 +99,157 @@ From "UVR All_kst budget" (figures in SEK):
 | **Production OH (KST 130)** | 1,461,583 | 1,114,925 | **2,576,508** |
 | **Total** | **6,041,583** | **6,949,287** | **12,990,870** |
 
-### UVRelining P&L Summary
-
-| Line | SEK |
-|------|----:|
-| Gross Profit | 29,669,942 |
-| Total department costs | -12,990,870 |
-| **EBITDA** | **~16,679,000** |
-| **EBITDA margin** | **~20.9%** |
-
 ---
 
-## 3. Employees - Sacpro vs UVRelining
+## 4. All Growth-Related & Customer-Facing Costs (UVRelining)
 
-### UVRelining: 4 Budgeted Employees
+This is all spending that relates to winning business, keeping customers, expanding markets, or developing new products. Pulled from every cost center, not just sales.
 
-The budget reveals exactly 4 salaried employees at UVRelining:
+### Sales Department (KST 110) - Budget Labels Included
 
-| Department | Monthly Salary (SEK) | Likely Person | Full Cost/Year |
-|------------|--------------------:|---------------|---------------:|
-| Sales | 118,300 | Taus (CSO) | 2,244,443 |
-| R&D | 86,100 → 88,683* | Jockum (FLEX) | 1,662,972 |
-| Direct Production | 104,500 → 107,635* | Billy | 1,926,947 |
-| Production OH | 60,000 → 61,800* | Warehouse/logistics | 1,114,925 |
-| **Total** | | **4 people** | **6,949,287** |
+The budget itself labels each line as growth or maintenance:
 
-*3% salary increase from April 2026.
-
-### Revenue Per Employee Comparison
-
-| Entity | Revenue | Est. Employees | Revenue/Employee |
-|--------|--------:|---------------:|-----------------:|
-| **UVRelining** | **79.9 MSEK** | **4** | **20.0 MSEK** |
-| Sacpro AB | 161.6 MSEK | ~10-11 | ~14.7 MSEK |
-| Sacpro FI | 10.1 MSEK | ~1 | ~10.1 MSEK |
-
-**UVRelining generates 36% more revenue per employee than Sacpro AB.** This confirms the overwork situation documented in the board letter - same headcount for 2 years, ~50% revenue growth, team at breaking point.
-
-### Personnel Cost Distribution
-
-| Entity | Personnel Cost (TSEK) | % of Group Total |
-|--------|----------------------:|-----------------:|
-| Sacpro AB | 18,254 | 58.6% |
-| UVRelining | 6,949 | 22.3% |
-| Svedlunds | 2,562 | 8.2% |
-| Sacpro Group (holding) | 1,903 | 6.1% |
-| Sacpro FI | 1,495 | 4.8% |
-| **Total** | **31,163** | **100%** |
-
-UVRelining generates 32.9% of group revenue but carries only 22.3% of personnel costs. Sacpro AB uses 58.6% of personnel budget for 66.5% of revenue.
-
----
-
-## 4. Sales Department Deep Dive
-
-### UVRelining Sales Budget (KST 110)
-
-**One salesperson. 79.9 MSEK in revenue. No additional hires budgeted.**
-
-| Category | Annual (SEK) | Monthly (SEK) |
-|----------|-------------:|---------------:|
-| **Personnel** | | |
-| Salary | 1,419,600 | 118,300 |
-| Pension | 181,176 | 15,098 |
-| Social charges | 505,454 | ~42,121 |
-| Other personnel | 89,000 | 7,417 |
-| Vacation accrual | 49,213 | ~4,101 |
-| **Subtotal personnel** | **2,244,443** | **~187,037** |
+| Item | Annual (TSEK) | Budget Label |
+|------|-----:|------|
+| Kost och logi utlandet (travel abroad) | 300 | **Tillvaxt / business case** |
+| Reklam och PR | 250 | **Tillvaxt / business case** |
+| Massor och utstallningar | 60 | **Tillvaxt / business case** |
+| **Subtotal growth-labeled** | **610** | |
 | | | |
-| **Operating expenses** | | |
-| Marketing (reklam + PR) | 250,000 | 20,833 |
-| Trade shows (mässor) | 60,000 | 5,000 |
-| Travel abroad (growth) | 300,000 | 25,000 |
-| Travel (customer maintenance) | 300,000 | 25,000 |
-| Representation | 222,000 | 18,500 |
-| Car (leasing + insurance) | 156,000 | 13,000 |
-| Work clothes | 36,000 | 3,000 |
-| Other | 25,000 | 2,083 |
-| **Subtotal opex** | **1,349,000** | **~112,417** |
+| Ovriga resekostnader (other travel) | 300 | Kundunderhall |
+| Representation | 222 | Lopande kundunderhall |
+| **Subtotal maintenance-labeled** | **522** | |
 | | | |
-| **Total Sales Dept** | **3,593,443** | **~299,454** |
+| Car (leasing + insurance) | 156 | (enables travel) |
+| Work clothes | 36 | |
+| Ovriga externa | 25 | |
+| **Total sales opex** | **1,349** | |
 
-### What "Sales" Actually Means Here
+### Other Departments - Customer/Market Costs
 
-The sales department budget covers Taus's salary, a car, travel, and a tiny marketing budget. It's essentially one person doing everything: sales strategy, customer relationships, international expansion, trade shows, and marketing.
+| Source | Item | Annual (TSEK) |
+|--------|------|-----:|
+| Production OH (KST 130) | Representation | 12 |
+| Production OH (KST 130) | Vehicle costs (fuel, insurance, other) | 130 |
+| Production OH (KST 130) | Phone/mobile | 60 |
+| R&D (KST 111) | Car leasing | 132 |
+| R&D (KST 111) | Data/communication | 120 |
 
-There are no other Sacpro group sales staff charged to UVRelining. The Sacpro AB sales team (Tomas, Markus, Nathaniel, Ville) are on Sacpro AB's books, selling Sacpro products. UVRelining's 79.9 MSEK revenue target rests on one person.
+### R&D as Growth Investment (KST 111)
 
----
+R&D is product development - FLEX liner, patents, testing. This is growth investment:
 
-## 5. Marketing & Growth - Does It Scale?
+| Item | Annual (TSEK) |
+|------|-----:|
+| Patents | 350 |
+| Consultants | 200 |
+| Materials (test/dev) | 120 |
+| Legal/IP | 96 |
+| Testing/certification | 50 |
+| Car leasing | 132 |
+| Data/communication | 120 |
+| **R&D external total** | **1,068** |
+| R&D personnel (1 person) | 1,663 |
+| **R&D total** | **2,731** |
 
-### Marketing Spend vs Revenue
+### Complete Growth & Customer Investment Summary
 
-| Item | Amount (SEK) | % of UVR Revenue |
-|------|-------------:|-----------------:|
-| Reklam & PR | 250,000 | 0.31% |
-| Trade shows | 60,000 | 0.08% |
-| **Total marketing** | **310,000** | **0.39%** |
-| Travel for growth | 300,000 | 0.38% |
-| **All growth-related** | **610,000** | **0.76%** |
+| Category | Annual (TSEK) | % of UVR Revenue |
+|----------|-----:|---------:|
+| **Growth-labeled (tillvaxt)** | **610** | **0.76%** |
+| Marketing (reklam + massor) | 310 | 0.39% |
+| Travel for new business | 300 | 0.38% |
+| **Customer maintenance** | **522** | **0.65%** |
+| Travel (kundunderhall) | 300 | 0.38% |
+| Representation | 222 | 0.28% |
+| Prod OH representation | 12 | 0.02% |
+| **R&D / product development** | **2,731** | **3.42%** |
+| **Total growth + customer investment** | **3,863** | **4.84%** |
 
-**0.39% of revenue on marketing. For a company planning US expansion and global growth.**
+### What's Missing
 
-### Industry Comparison
+Notable items budgeted at **zero** in the sales department:
+- Kundutbildning (customer training) - 3 line items, all 0
+- Kundaktiviteter/projektstyrt (customer activities) - 0
+- Film/radio/TV/internet reklam - 0
+- PR, sponsring - 0
+- Reklamtrycksaker (printed marketing materials) - 0
+- Resekostnader utlandet + flygbiljetter (international flights) - 0
+- Utbildning (education/training for staff) - 0
 
-| Company Stage | Typical Marketing Spend |
-|--------------|------------------------|
-| B2B maintenance mode | 2-3% of revenue |
-| B2B moderate growth | 5-7% of revenue |
-| B2B aggressive growth | 8-12% of revenue |
-| **UVRelining budget** | **0.39% of revenue** |
-
-Even a conservative 3% would mean 2.4 MSEK - nearly **8x the current budget**.
-
-### Growth Signals in the Budget
-
-**There are essentially none.** The budget reveals:
-
-- No new sales hires
-- No step-up in marketing spend
-- No investment in US market entry
-- No additional trade shows or events budget
-- Flat monthly cost structure (identical every month)
-- Only change: 3% salary increase in April and new premises in July
-
-The revenue budget varies month to month (seasonal pattern, summer dip in July), but all costs are flat. This is a **maintenance budget, not a growth budget**.
-
-### New Premises (from July 2026)
-
-The one investment visible is new/expanded premises:
-
-| Item | Jan-Jun (monthly) | Jul-Dec (monthly) | Annual Impact |
-|------|-------------------:|-------------------:|--------------:|
-| Rent | 45,000 | 65,833 | +~125,000 |
-| Heat | 0 | 8,750 | +52,500 |
-| Fitting costs | 0 | 200,000 (one-time Jul) | +200,000 |
-| Other premises | 0 | 18,083 | +108,500 |
-
-Total annual cost increase from new premises: ~486 TSEK. This suggests physical expansion (more warehouse/production space) but no corresponding increase in people or marketing.
+No customer training budget. No digital marketing. No international flight budget (despite US expansion). No PR. Zero.
 
 ---
 
-## 6. Problem Areas
+## 5. Does Marketing & Growth Spending Scale With Expected Revenue?
 
-### Svedlunds Flaggstänger - Bleeding Cash
+### The Budget Structure is Flat
+
+Every single cost line at UVRelining is **identical every month** (except July vacation adjustment on salary accruals). The revenue varies significantly month to month:
+
+| Month | Revenue (TSEK) | Sales Opex (TSEK) | Growth Spend (TSEK) |
+|-------|--------:|---------:|---------:|
+| Jan | 4,820 | 112 | ~51 |
+| Feb | 6,615 | 112 | ~51 |
+| Mar | 6,292 | 112 | ~51 |
+| Apr | 7,418 | 112 | ~51 |
+| May | 6,828 | 112 | ~51 |
+| Jun | 7,953 | 112 | ~51 |
+| Jul | 2,811 | 112 | ~51 |
+| Aug | 7,765 | 112 | ~51 |
+| Sep | 7,686 | 112 | ~51 |
+| Oct | 8,221 | 112 | ~51 |
+| Nov | 8,221 | 112 | ~51 |
+| Dec | 5,221 | 112 | ~51 |
+
+Revenue ranges from 2.8 to 8.2 MSEK/month. Marketing spend is dead flat at ~51 TSEK/month (reklam + massor + growth travel). No seasonal push, no launch investment, no ramp-up.
+
+### Combined Growth Investment vs Revenue Scale
+
+| Metric | UVRelining |
+|--------|--------:|
+| Revenue | 79,851 TSEK |
+| Pure marketing (reklam + massor) | 310 TSEK (0.39%) |
+| All growth-labeled costs | 610 TSEK (0.76%) |
+| Growth + customer maintenance | 1,132 TSEK (1.42%) |
+| Growth + maintenance + R&D | 3,863 TSEK (4.84%) |
+
+Even including ALL of R&D as growth investment, total growth spending is 4.84% of revenue. But R&D is really FLEX liner development (product), not market expansion. The actual market-facing investment (sales opex) is 1,349 TSEK = **1.69% of revenue**.
+
+### No Investment in Launches or Expansion
+
+The budget has no provisions for:
+- **US market launch costs** (APS partnership)
+- **New reseller onboarding** (Robocana, S1E, Pipe Core)
+- **FLEX liner launch** (marketing, demos, samples)
+- **Customer training** (3 accounts exist, all budgeted zero)
+- **Digital marketing** (website, social, content)
+- **International flights** (despite global expansion - separate line exists, budgeted zero)
+
+---
+
+## 6. Sacpro AB vs UVRelining - Side by Side
+
+| Metric | Sacpro AB | UVRelining | Ratio |
+|--------|----------:|-----------:|------:|
+| Revenue | 161,556 | 79,851 | 2.0x |
+| Personnel cost | 18,254 | 6,949 | 2.6x |
+| Personnel % of revenue | 11.3% | 8.7% | |
+| External costs | 13,742 | 6,042 | 2.3x |
+| Gross margin | 40.5% | 36.3% | |
+| EBITDA | 34,583 | 16,679 | 2.1x |
+| EBITDA % | 21.4% | 20.9% | |
+| Actual employees | ? | 7 | |
+
+Sacpro AB has **2.6x the personnel cost** of UVRelining but only **2.0x the revenue**. UVRelining runs leaner and delivers similar margins.
+
+We don't have the Sacpro AB cost center breakdown from these files, so we can't compare their marketing/travel/representation spend. This analysis covers UVRelining only.
+
+---
+
+## 7. Problem Areas
+
+### Svedlunds Flaggstanger - Bleeding Cash
 
 | Item | TSEK |
 |------|-----:|
@@ -217,65 +260,71 @@ Total annual cost increase from new premises: ~486 TSEK. This suggests physical 
 | Other costs | -1,115 |
 | **EBITDA** | **-5,513** |
 
-Svedlunds costs more to make products than they sell for. It has 1-2 employees and loses 5.5 MSEK/year. It's consuming resources that could fund UVRelining growth.
+Costs more to make products than they sell for. Personnel alone exceeds revenue by 16.5%. Losing 5.5 MSEK/year.
 
 ### Sacpro FI (Finland) - Marginal
 
-Revenue 10.1 MSEK, EBITDA 439 TSEK (4.4%). One employee (Ville). Barely profitable. The low gross margin (31.6%) suggests pricing pressure or unfavorable product mix.
+Revenue 10.1 MSEK, EBITDA 439 TSEK (4.4%). Personnel at 14.8% of revenue - the highest ratio of any operating entity. Low gross margin (31.6%) suggests pricing pressure.
+
+### Group Holding Overhead
+
+Personnel 1,903 TSEK + external costs 618 TSEK = 2,521 TSEK. Zero revenue. This is management/CEO cost layer on top of the operating entities.
 
 ### Admin Fully Outsourced
 
-UVRelining's admin department (KST 112) has zero personnel. All admin is via external services:
+UVRelining's admin (KST 112) has zero personnel. All via external services:
 
 | Service | Annual (SEK) |
 |---------|-------------:|
-| Accounting (redovisning) | 600,000 |
+| Accounting | 600,000 |
 | Consultants | 480,000 |
-| Software/programs | 250,000 |
+| Software | 250,000 |
 | Audit | 150,000 |
 | IT services | 120,000 |
 | Insurance | 62,000 |
 | Other | 261,000 |
 | **Total admin** | **1,923,000** |
 
-600 TSEK on accounting + 480 TSEK on consultants + 150 TSEK audit alone. This is a reasonable setup for a small team, but it means no internal admin capacity.
+### New Premises (from July 2026)
 
-### R&D Costs Include Legal/IP
+Production OH shows a step-up from July (new/expanded premises):
 
-UVRelining's R&D (KST 111) costs 2.73 MSEK/year. Notable items:
-- Patents: 350 TSEK
-- Consultants: 200 TSEK
-- Legal/IP counsel: 96 TSEK
-- Testing/certification: 50 TSEK
-- Materials: 120 TSEK
-- One person salary (Jockum): 1,663 TSEK
+| Item | Jan-Jun (monthly) | Jul-Dec (monthly) |
+|------|------------------:|------------------:|
+| Rent | 45,000 | 65,833 |
+| Heat | 0 | 8,750 |
+| Fitting costs | 0 | 200,000 (one-time Jul) |
+| Other premises | 0 | 18,083 |
 
-This is the FLEX liner development budget. It's modest for a product development initiative that's time-critical.
+Annual cost increase ~486 TSEK. Physical expansion without corresponding increase in people or marketing.
 
 ---
 
-## 7. Summary - What This Budget Really Says
+## 8. Summary
 
-### The Good
-- UVRelining is a strong profit engine: 20.9% EBITDA margin
-- Sacpro AB equally strong: 21.4% EBITDA margin
-- Group generates ~44 MSEK EBITDA before goodwill
-- Lean cost structure
+### The Numbers
 
-### The Concerning
-1. **No growth investment.** Marketing at 0.39% of revenue doesn't support global expansion
-2. **No new hires at UVRelining.** 4 people generating 79.9 MSEK. The team is maxed out
-3. **Budget assumes status quo.** Flat costs, modest salary increases, no step-ups
-4. **Svedlunds is a money pit.** Losing 5.5 MSEK with no visible turnaround plan
-5. **Group holding costs 2.5 MSEK** for what? No revenue allocated
-6. **Finland barely viable** at 4.4% EBITDA margin
+- Group revenue 243 MSEK, EBITDA 44 MSEK (18%)
+- UVRelining is the leanest entity: 8.7% personnel cost vs 11.3% at Sacpro AB
+- UVRelining 7 employees, 79.9 MSEK revenue = 11.4 MSEK/person
+- UVRelining EBITDA margin 20.9% - strong
+
+### Growth Investment at UVRelining
+
+- Pure marketing: 310 TSEK (0.39% of revenue)
+- All growth-labeled costs: 610 TSEK (0.76%)
+- Including customer maintenance: 1,132 TSEK (1.42%)
+- Including R&D: 3,863 TSEK (4.84%)
+- Customer training, digital marketing, international flights, PR: all zero
 
 ### The Disconnect
-The budget does not match the stated ambitions. You can't simultaneously:
-- Target US expansion via APS
-- Grow globally with 3 new resellers
-- Develop FLEX liner
-- Handle 79.9 MSEK revenue
-- ...with 4 people, 310 TSEK in marketing, and zero new hires
 
-**This is a budget for running the current business, not growing it.**
+The budget labels its own growth items as "Tillvaxt / business case" - totaling 610 TSEK. That's 0.76% of revenue earmarked for growth. The rest is maintenance.
+
+Meanwhile:
+- US expansion via APS is underway
+- 3 new international resellers need onboarding (Robocana, S1E, Pipe Core)
+- FLEX liner needs market launch
+- Revenue target is 79.9 MSEK with 7 people
+
+**The budget funds maintenance of existing business. Growth activities have no meaningful budget allocation. If the company expects to grow, the budget doesn't reflect it.**
