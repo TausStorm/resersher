@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shhh — Exklusiv Vernissage &amp; Open House</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1a1a1a;
+    line-height: 1.7;
+    font-size: 15px;
+    background: #fff;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 32px 48px;
+  }
+
+  /* === Header === */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .header-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+
+  .header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+  }
+
+  .header h1 span {
+    display: block;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0;
+    color: #555;
+  }
+
+  .header-sub {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  .header-meta {
+    font-size: 13px;
+    color: #666;
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  /* === Intro === */
+  .intro {
+    text-align: center;
+    margin-bottom: 48px;
+    padding: 0 16px;
+  }
+
+  .intro p {
+    margin-bottom: 14px;
+    color: #333;
+  }
+
+  .intro .tagline {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+    margin-top: 8px;
+  }
+
+  /* === Divider === */
+  .divider {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .divider span {
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: #ddd;
+  }
+
+  /* === Sections === */
+  .section {
+    margin-bottom: 44px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+  }
+
+  .section p {
+    margin-bottom: 12px;
+    color: #333;
+  }
+
+  .section .highlight {
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  .section ul {
+    list-style: none;
+    margin: 16px 0;
+    padding: 0;
+  }
+
+  .section ul li {
+    padding: 5px 0 5px 20px;
+    position: relative;
+    color: #333;
+  }
+
+  .section ul li::before {
+    content: "\2014";
+    position: absolute;
+    left: 0;
+    color: #bbb;
+  }
+
+  /* === Profiles === */
+  .profiles {
+    margin-bottom: 44px;
+  }
+
+  .profile {
+    margin-bottom: 24px;
+  }
+
+  .profile h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .profile p {
+    color: #444;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* === Praktisk Info === */
+  .info-box {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-bottom: 36px;
+  }
+
+  .info-box .info-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .info-box .info-label {
+    font-weight: 700;
+    min-width: 80px;
+    color: #1a1a1a;
+  }
+
+  .info-box .info-value {
+    color: #333;
+  }
+
+  .info-box .morning-note {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #e8e8e8;
+    font-size: 12px;
+    color: #999;
+    line-height: 1.6;
+  }
+
+  /* === Closing === */
+  .closing {
+    margin-bottom: 44px;
+  }
+
+  .closing p {
+    color: #333;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .closing .osa {
+    font-size: 14px;
+    color: #555;
+    margin-top: 20px;
+  }
+
+  /* === Signature === */
+  .signature {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid #eee;
+  }
+
+  .signature .names {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+
+  .signature .company {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 500;
+  }
+
+  .signature .company em {
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  /* === Print/PDF === */
+  @media print {
+    body { font-size: 14px; }
+    .page { padding: 40px 24px; max-width: 100%; }
+    .info-box { break-inside: avoid; }
+    .profile { break-inside: avoid; }
+    .section { break-inside: avoid; }
+  }
+
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-label">En inbjudan fr&aring;n Shhh AB</div>
+    <h1>Exklusiv Vernissage<span>&amp; Open House</span></h1>
+    <div class="header-meta">26 mars 2026 &nbsp;&bull;&nbsp; 11:30 &ndash; 15:00 &nbsp;&bull;&nbsp; Innovationshuset, Kl&aring;gerup</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    <p>Vi vill bjuda in dig till en exklusiv eftermiddag p&aring; Innovationshuset i Kl&aring;gerup. Den 26 mars &ouml;ppnar vi d&ouml;rrarna f&ouml;r ett f&aring;tal utvalda g&auml;ster &mdash; en vernissage, en produktvisning och en inblick i vad som h&auml;nder n&auml;r konst, teknik och entrepren&ouml;rskap m&ouml;ts under samma tak.</p>
+    <p class="tagline">Det h&auml;r &auml;r inte ett vanligt event. Det h&auml;r &auml;r Shhh.</p>
+  </div>
+
+  <div class="divider"><span></span></div>
+
+  <!-- Konstupplevelsen -->
+  <div class="section">
+    <div class="section-label">K O N S T U P P L E V E L S E N</div>
+    <h2>Magoz &mdash; Limiterad utst&auml;llning</h2>
+    <p>Vi st&auml;ller ut 3&ndash;4 av Magoz mest ikoniska verk i en extrem limiterad upplaga &mdash; mellan 5 och 10 signerade och numrerade exemplar per motiv.</p>
+    <p>Magoz &auml;r en internationellt prisbelönt konstn&auml;r baserad i Malm&ouml; som har skapat verk f&ouml;r Apple, Meta och The New York Times. Han har mottagit Guld- och Silverlejon i Cannes, Silver Medal fr&aring;n Society of Illustrators i New York samt World Illustration Awards.</p>
+    <p>Verken finns normalt inte tillg&auml;ngliga i denna form. Detta &auml;r en unik m&ouml;jlighet att f&ouml;rv&auml;rva signerad originalkonst ur en strikt begr&auml;nsad serie.</p>
+    <p>Vi presenterar &auml;ven en exklusiv dekorativ skulptur i liten upplaga.</p>
+  </div>
+
+  <div class="divider"><span></span></div>
+
+  <!-- Produktpremiär -->
+  <div class="section">
+    <div class="section-label">P R O D U K T P R E M I &Auml; R</div>
+    <h2>Veveil &mdash; Hemligheten p&aring; v&auml;ggen</h2>
+    <p>En v&auml;ggmonterad hemlig f&ouml;rvaringsl&ouml;sning &mdash; f&ouml;rkl&auml;dd till konst. Det du ser &auml;r en tavla. Inget mer. Men med ett knapptryck lyfts konstverket och avsl&ouml;jar ett dolt sk&aring;p bakom.</p>
+    <p>Smycken, v&auml;rdesaker, det personliga &mdash; g&ouml;mt i &ouml;ppen dager, bakom ett verk du faktiskt vill ha p&aring; v&auml;ggen. Veveil visas live f&ouml;r f&ouml;rsta g&aring;ngen.</p>
+  </div>
+
+  <div class="divider"><span></span></div>
+
+  <!-- Teknik & Innovation -->
+  <div class="section">
+    <div class="section-label">T E K N I K &amp; I N N O V A T I O N</div>
+    <h2>Fr&aring;n id&eacute; till verklighet</h2>
+    <p>Vi visar hur vi p&aring; Shhh hj&auml;lper f&ouml;retag att l&ouml;sa komplexa problem &mdash; genom att kombinera kreativt t&auml;nkande med avancerad teknik:</p>
+    <ul>
+      <li>Egenutvecklad AI-plattform &mdash; byggd fr&aring;n grunden f&ouml;r strategisk aff&auml;rsutveckling och probleml&ouml;sning</li>
+      <li>3D-printing, laserskärning &amp; lasergravyr &mdash; fr&aring;n id&eacute; till f&auml;rdig produkt</li>
+      <li>Tv&aring; robotarmar byggda helt fr&aring;n grunden &mdash; konstruerade h&auml;r i huset, av oss</li>
+    </ul>
+    <p>Vi visar &auml;ven EAU &mdash; en designad vattenflaska skapad av Henrik Johansson.</p>
+  </div>
+
+  <div class="divider"><span></span></div>
+
+  <!-- Vilka vi är -->
+  <div class="section">
+    <div class="section-label">V I L K A &nbsp; V I &nbsp; &Auml; R</div>
+    <h2>Tre v&auml;rldar. Ett tak.</h2>
+
+    <div class="profiles">
+      <div class="profile">
+        <h3>Taus Gerner-Rasmussen</h3>
+        <p>Serieentrepren&ouml;r och strategisk aff&auml;rsutvecklare. Medgrundare av UVRelining, som han ledde genom en tre&aring;rig tillv&auml;xtresa med 32 s&aring;lda system, tre nya internationella &aring;terf&ouml;rs&auml;ljare och expansion till den amerikanska marknaden &mdash; innan bolaget f&ouml;rv&auml;rvades av Sacpro Group. Bygger i sk&auml;rningspunkten mellan teknik och aff&auml;r.</p>
+      </div>
+
+      <div class="profile">
+        <h3>Henrik Johansson</h3>
+        <p>Ingenj&ouml;r, uppfinnare och produktutvecklare. Tidigare Head Developer p&aring; Light My Fire &mdash; det globalt erk&auml;nda svenska friluftsvarum&auml;rket. Ingenj&ouml;ren bakom Duck och Stratazon i Malm&ouml;, och skaparen av EAU Bottle. Funktionell elegans och teknisk precision i varje detalj.</p>
+      </div>
+
+      <div class="profile">
+        <h3>Mike &ldquo;Magoz&rdquo;</h3>
+        <p>Internationellt prisbelönt konstn&auml;r med n&auml;ra tv&aring; decenniers karri&auml;r. Har arbetat med v&auml;rldens mest k&auml;nda varum&auml;rken och vunnit branschens tyngsta priser &mdash; fr&aring;n Cannes Lions till World Illustration Awards. Skapar verk som balanserar enkelhet med djup.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><span></span></div>
+
+  <!-- Praktisk Information -->
+  <div class="section">
+    <div class="section-label">P R A K T I S K &nbsp; I N F O R M A T I O N</div>
+
+    <div class="info-box">
+      <div class="info-row">
+        <span class="info-label">Datum:</span>
+        <span class="info-value">26 mars 2026</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Tid:</span>
+        <span class="info-value">11:30 &ndash; 15:00</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Plats:</span>
+        <span class="info-value">Innovationshuset, Vismarl&ouml;vsv&auml;gen 21, Kl&aring;gerup</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Kostnad:</span>
+        <span class="info-value">Kostnadsfritt &mdash; p&aring; personlig inbjudan</span>
+      </div>
+      <div class="morning-note">Innovationshuset &auml;r samma dag v&auml;rd f&ouml;r Svedala kommuns f&ouml;retagsfrukost p&aring; f&ouml;rmiddagen. V&aring;rt event forts&auml;tter d&auml;refter.</div>
+    </div>
+  </div>
+
+  <!-- Closing -->
+  <div class="closing">
+    <p>L&auml;ttare f&ouml;rt&auml;ring serveras. Antal platser &auml;r strikt begr&auml;nsade.</p>
+    <p>Vi bjuder medvetet in ett begr&auml;nsat antal g&auml;ster &mdash; personer som uppskattar hantverk, innovation och det ovanliga. Vi tror att det vi g&ouml;r kan vara av s&auml;rskilt intresse f&ouml;r just dig, och ser fram emot att visa vad vi bygger.</p>
+    <p class="osa">OSA senast [DATUM] till [KONTAKT-EMAIL] eller [TELEFON].</p>
+  </div>
+
+  <!-- Signature -->
+  <div class="signature">
+    <div class="names">Taus, Henrik &amp; Mike</div>
+    <div class="company">Shhh AB &mdash; <em>Where art meets engineering.</em></div>
+  </div>
+
+</div>
+</body>
+</html>
