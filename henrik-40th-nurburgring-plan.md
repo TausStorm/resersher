@@ -293,7 +293,52 @@ Drive actual formula cars on the Nürburgring GP circuit:
 - **Ring Bowling** — at the Nürburgring complex
 - **Esports Bar** — racing simulators at the Ring
 - **Ahr Valley wine tour** — 30 min drive, beautiful medieval town, amazing red wines
-- **Shooting range** — several in the Eifel region
+
+---
+
+## 6B. ADRENALINE ACTIVITIES (beyond the track)
+
+### AT THE NÜRBURGRING (0 km)
+
+| Activity | What | Price | Notes |
+|----------|------|-------|-------|
+| **Caterham Drift Experience** | YOU drive a Caterham sideways. Coached drift training. | ~€199–399 | 🔥 Top pick. You actually learn to drift. |
+| **Drift Taxi** | Passenger in a drift car, pro throws it sideways | ~€79–149 | Less commitment, still insane |
+| **Co-Pilot AMG GT 63 PRO** | Passenger lap of Nordschleife at race speed | ~€299–499 | Different from driving — pro pushes 100% |
+| **Offroad / 4x4 Experience** | Off-road course at the Ring in SUVs | ~€99–249 | Mud, hills, obstacles |
+| **Ring Kartbahn** | Indoor electric go-karts, competitive racing | ~€25–45 | Walk-in, great warm-up |
+| **Formula Car Training** | Drive an actual formula car on the GP circuit | ~€490–1,500 | Bucket list stuff |
+
+### WITHIN 1 HOUR
+
+| Activity | Where | Distance | Price | Notes |
+|----------|-------|----------|-------|-------|
+| **Tandem Paragliding** | Vulkaneifel / Mosel valley | ~40–60 min | ~€100–160/pp | Fly over volcanic Eifel landscape |
+| **Clay Pigeon Shooting** | Adenau area | ~5 km | ~€50–80/pp | Competitive, easy to arrange, very close |
+| **Quad / ATV Tours** | Eifel region | ~30–45 min | ~€79–149/pp | Guided tours through forests and trails |
+| **Zip-lining / High Ropes** | Bad Neuenahr-Ahrweiler | ~40 km | ~€25–35/pp | Adventure park, multiple courses |
+| **Alpine Coaster** | Daun (Eifel-Coaster) | ~50 km | ~€4–6/ride | Not extreme but fun between activities |
+
+### WITHIN 1.5 HOURS (worth the drive)
+
+| Activity | Where | Distance | Price | Notes |
+|----------|-------|----------|-------|-------|
+| **Tandem Skydiving** | Skydive Spa, Belgium | ~100 km / 1h15 | ~€220–280/pp | 🔥🔥 THE bucket list move. Jump from 4,000m. |
+| **Indoor Skydiving** | Bottrop (near DUS) | ~170 km / 1h30 | ~€59–99/pp | Could do on arrival/departure day near DUS |
+
+### ⭐ TOP 4 ADRENALINE PICKS FOR THE TRIP
+
+1. **Caterham Drift Experience** (at the Ring) — Learn to drift an actual car. Coached. Competitive between the 4 of you. ~€199–399/pp.
+2. **Tandem Skydiving at Spa** (1h15 away) — Jump out of a plane at 4,000m over the Belgian Ardennes. Ultimate 40th birthday move. ~€250/pp.
+3. **Clay Pigeon Shooting** (5 km away) — Easy to slot in, competitive between mates, very close. ~€60/pp.
+4. **Quad Tour** (30–45 min) — Guided ATV ride through Eifel forests. Fill a morning perfectly. ~€100/pp.
+
+### NOT AVAILABLE NEARBY (saved you the search)
+- ❌ **Bungee jumping** — no permanent site within 100 km
+- ❌ **Tank driving** — closest is Brandenburg (~600 km), too far
+- ❌ **Whitewater / canyoning** — Eifel rivers too mild, need Alps
+- ❌ **Jet ski** — heavily restricted on German rivers
+- ❌ **Rally driving** — limited offerings near the Ring
 
 ---
 
@@ -342,18 +387,20 @@ Germany is fully legal and regulated. Cologne has the most options:
 | CPH Royal Lounge | €243 | €243 | €970 ÷ 4 |
 | Flights (SAS, round-trip) | €200 | €400 | Economy vs Plus |
 | Accommodation (3 nights) | €100 | €250 | Villa Park vs luxury Airbnb |
-| Rental car (share) | €50 | €80 | Normal car, 3-4 days |
+| Rental car (share) | €65 | €200 | SIXT M3 vs DRIVAR 992 GTS ÷ 4 |
 | Track: RSR rental (shared car) | €90 | €200 | Golf R shared ÷ 4 |
 | Track: Race car experience | €600 | €1,000 | GT3 RS self-drive |
 | Track: Lambo for Henrik | — | €500 | Henrik's gift, split 3 ways |
 | Co-pilot ride | €120 | €400 | BMW M3 CS → GT3 RS |
+| Adrenaline: Drift experience | €199 | €399 | Caterham drift training |
+| Adrenaline: Skydiving OR shooting | €60 | €280 | Clay pigeon vs tandem skydive |
 | Spa/massage | €90 | €130 | Pampering package |
 | Go-karts | €15 | €30 | |
 | Food & drink (3 days) | €200 | €400 | |
 | Night out in Cologne | €100 | €300 | |
 | Entertainment | €50 | €200 | |
-| **TOTAL per person** | **~€1,850** | **~€3,600** | |
-| **TOTAL for 4** | **~€7,400** | **~€14,400** | |
+| **TOTAL per person** | **~€2,100** | **~€4,400** | |
+| **TOTAL for 4** | **~€8,400** | **~€17,600** | |
 
 ---
 
@@ -362,13 +409,16 @@ Germany is fully legal and regulated. Cologne has the most options:
 1. [ ] **CPH Royal Lounge** — vip@cph.dk / +45 32 31 22 00
 2. [ ] **SAS flights** — flysas.com, CPH→DUS June 30, DUS→CPH July 2 or 3
 3. [ ] **Accommodation** — Villa Park or Airbnb (book early, CW27 is peak season)
-4. [ ] **Rental car DUS** — Hertz (SAS EuroBonus deal) or SIXT
+4. [ ] **Rental car DUS** — DRIVAR (drivar.de, 992 GTS Cabrio €649/day) or SIXT (M3/M4 ~€300/day)
 5. [ ] **RSR Nürburg** — Track car rental — rsrbooking.com
 6. [ ] **Lambo for Henrik** — Contact RSR Nürburg directly (rsr-nurburg.com)
 7. [ ] **RentRaceCar** — GT3 RS self-drive — rentracecar.com
 8. [ ] **Co-pilot rides** — Book via Nürburgring website
-9. [ ] **Spa/massage** — Book at Villa Park or Ahr-Thermen
-10. [ ] **Cologne night** — Book a table at a Kölsch beer hall, rest is walk-in
+9. [ ] **Caterham Drift Experience** — Book via Nürburgring driving experiences
+10. [ ] **Tandem Skydiving** — Skydive Spa, Belgium (~€250/pp, book early)
+11. [ ] **Clay Pigeon Shooting** — Adenau area, contact locally
+12. [ ] **Spa/massage** — Book at Villa Park or Ahr-Thermen
+13. [ ] **Cologne night** — Book a table at a Kölsch beer hall, rest is walk-in
 
 ---
 
