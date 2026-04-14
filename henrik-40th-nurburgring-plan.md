@@ -54,6 +54,66 @@ The service you're thinking of is **CPH VIP Service — "Royal Lounge"** (not "Q
 
 ---
 
+## 2B. TRANSFER: DUS AIRPORT → NÜRBURGRING
+
+Skip the rental car pickup queue. Get picked up like kings.
+
+### 🚁 Option 1: HELICOPTER (the ultimate flex) ⭐
+
+| Detail | Info |
+|--------|------|
+| **What** | Helicopter charter DUS → Nürburgring, ~30-40 min flight |
+| **Aircraft** | Robinson R66 (4 passengers, 220 km/h) |
+| **Price** | **~€2,500–3,500 total (~€625–875/pp)** |
+| **Provider** | **HELI-FLIGHT** |
+| **Includes** | In-flight catering available |
+| **Contact** | +49 6035 91000 / zentrale@heli-flight.de |
+| **Web** | heli-flight.de |
+
+30 minutes instead of 1.5 hours. Land at or near the Nürburgring. For a 40th birthday? This is the move.
+
+### 🚐 Option 2: Mercedes V-Class VIP + Champagne (best value)
+
+| Detail | Info |
+|--------|------|
+| **What** | Chauffeur-driven V-Class, airport meet & greet, champagne on board |
+| **Price** | **~€400–600 total (~€100–150/pp)** |
+| **Providers** | **Blacklane** (blacklane.com) or **SIXT ride** (sixt.com/ride) |
+| **Includes** | Meet at arrivals, name sign, 60 min free wait, luggage handling |
+
+Comfortable, classy, all 4 + luggage. Crack open champagne on the Autobahn. Book online in 2 min.
+
+### 🚗 Option 3: Hummer Stretch Limo (classic birthday energy)
+
+| Detail | Info |
+|--------|------|
+| **What** | Hummer H2 stretch limousine with bar, lights, sound |
+| **Price** | **~€600–1,000 total (~€150–250/pp)** |
+| **How to find** | Search Google Maps "Stretch Limousine mieten Düsseldorf" — fragmented local market |
+
+The classic birthday move. Built-in bar, LED lighting, ridiculous. 1.5 hours of party before you even arrive.
+
+### 🎉 Option 4: Party Bus (better for the return)
+
+| Detail | Info |
+|--------|------|
+| **What** | Converted school bus with sound system, lights, bar, DJ option |
+| **Price** | **~€500–1,500** |
+| **Providers** | Search "Partybus NRW" or "Partybus Köln" |
+
+1.5 hours is a bit short for a party bus on arrival. **Better idea:** use this for the Cologne night out (no one has to drive) or the return trip to DUS.
+
+### 💡 COMBO SUGGESTION
+
+**Arrival:** Helicopter (€3,000) — land like absolute legends
+**During trip:** DRIVAR Porsche 992 GTS Cabrio (€649/day) — for getting around + Autobahn blasts
+**Cologne night:** Party bus or V-Class (no one drives after drinking)
+**Departure:** V-Class back to DUS (€500) — chill, hungover-friendly
+
+> **If helicopter is too much:** Hummer stretch limo on arrival (€800) + rent the Porsche at the Ring via DRIVAR delivery.
+
+---
+
 ## 3. ACCOMMODATION — Three Options
 
 ### Option A: Nürburgring Villa Park ⭐ RECOMMENDED
@@ -387,6 +447,7 @@ Germany is fully legal and regulated. Cologne has the most options:
 | CPH Royal Lounge | €243 | €243 | €970 ÷ 4 |
 | Flights (SAS, round-trip) | €200 | €400 | Economy vs Plus |
 | Accommodation (3 nights) | €100 | €250 | Villa Park vs luxury Airbnb |
+| Transfer DUS→Ring | €125 | €875 | V-Class vs Helicopter ÷ 4 |
 | Rental car (share) | €65 | €200 | SIXT M3 vs DRIVAR 992 GTS ÷ 4 |
 | Track: RSR rental (shared car) | €90 | €200 | Golf R shared ÷ 4 |
 | Track: Race car experience | €600 | €1,000 | GT3 RS self-drive |
@@ -399,8 +460,8 @@ Germany is fully legal and regulated. Cologne has the most options:
 | Food & drink (3 days) | €200 | €400 | |
 | Night out in Cologne | €100 | €300 | |
 | Entertainment | €50 | €200 | |
-| **TOTAL per person** | **~€2,100** | **~€4,400** | |
-| **TOTAL for 4** | **~€8,400** | **~€17,600** | |
+| **TOTAL per person** | **~€2,200** | **~€5,300** | |
+| **TOTAL for 4** | **~€8,800** | **~€21,200** | |
 
 ---
 
@@ -409,7 +470,8 @@ Germany is fully legal and regulated. Cologne has the most options:
 1. [ ] **CPH Royal Lounge** — vip@cph.dk / +45 32 31 22 00
 2. [ ] **SAS flights** — flysas.com, CPH→DUS June 30, DUS→CPH July 2 or 3
 3. [ ] **Accommodation** — Villa Park or Airbnb (book early, CW27 is peak season)
-4. [ ] **Rental car DUS** — DRIVAR (drivar.de, 992 GTS Cabrio €649/day) or SIXT (M3/M4 ~€300/day)
+4. [ ] **Transfer DUS→Ring** — Helicopter: HELI-FLIGHT +49 6035 91000 / V-Class: blacklane.com / Hummer: local search
+5. [ ] **Rental car at Ring** — DRIVAR (drivar.de, 992 GTS Cabrio €649/day, deliver to accommodation) or SIXT
 5. [ ] **RSR Nürburg** — Track car rental — rsrbooking.com
 6. [ ] **Lambo for Henrik** — Contact RSR Nürburg directly (rsr-nurburg.com)
 7. [ ] **RentRaceCar** — GT3 RS self-drive — rentracecar.com
