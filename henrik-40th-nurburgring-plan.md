@@ -81,9 +81,122 @@ The service you're thinking of is **CPH VIP Service — "Royal Lounge"** (not "Q
 
 ---
 
-## 4. RENTAL CAR
+## 4. RENTAL CAR — THE COOLEST THING AT DUS
 
-### For transport: Normal rental from DUS airport
+The goal: fastest/most exciting car to drive DUS → Nürburgring (~1.5h, mostly Autobahn) and use for 3-4 days. Must seat 4. NO rental car is allowed on the track (insurance void) — this is for road use only.
+
+### TIER 1: DRIVAR — Supercars & Exotics (Specialty Platform)
+
+Germany's largest premium car-sharing platform. Private owners rent their cars via DRIVAR with full insurance. **Cars delivered to DUS airport on request.** This is where the truly insane stuff lives.
+
+| Car | Location | Price/Day | 0-100 km/h | Top Speed | Seats 4? | Book |
+|-----|----------|-----------|------------|-----------|----------|------|
+| **Porsche 718 Cayman GT4 RS** | Düren (nr. DUS) | **€799/day** | 3.4s | 315 km/h | NO (2-seater) | drivar.de/car/porsche-718-cayman-gt4-rs-mieten-in-dueren/ |
+| **Porsche 992 Carrera 4 GTS Cabrio** | Duisburg (nr. DUS) | **€649/day** | 3.3s | 306 km/h | YES (4 seats, open top!) | drivar.de/car/porsche-992-carrera-4-gts-cabrio-mieten-duisburg/ |
+| **Mercedes-AMG GT63** | Köln | **ask** | 3.2s | 315 km/h | YES (4-door, 4 seats) | drivar.de/car/mercedes-amg-gt63-4-tuerer-coupe-in-koeln-mieten-2/ |
+| **Mercedes-AMG C63 Coupé** | Düsseldorf | **ask** | 3.9s | 290 km/h | YES (4 seats) | drivar.de/car/mercedes-amg-c63-coupe-mieten-in-duesseldorf/ |
+| **BMW M3 Competition** | Düsseldorf | **ask** | 3.9s | 290 km/h | YES (4 seats, perfect!) | drivar.de/car/bmw-m3-competition-mieten-in-duesseldorf/ |
+| **BMW M8 Competition Grand Coupé** | Bonn | **ask** | 3.2s | 305 km/h | YES (4 seats, brutal) | drivar.de/car/bmw-m8-competition-grand-coupe-mieten-in-bonn/ |
+| **Audi R8 V10** | Düsseldorf | **ask** | 3.1s | 330 km/h | NO (2-seater) | drivar.de/car/audi-r8-v10-in-duesseldorf-mieten-2/ |
+| **Audi RS6** | Duisburg | **ask** | 3.6s | 305 km/h | YES (5 seats, fast wagon!) | drivar.de/car/audi-rs6-mieten-in-duisburg/ |
+| **Audi RS Q8** | Duisburg | **ask** | 3.8s | 305 km/h | YES (5 seats) | drivar.de/car/audi-rsq8-mieten-in-duisburg/ |
+| **Lamborghini Urus** | Duisburg | **ask** | 3.6s | 305 km/h | YES (5 seats, mad SUV) | drivar.de/car/lamborghini-urus-mieten-in-duisburg/ |
+| **Lamborghini Huracan Tecnica** | Köln | **ask** | 3.2s | 325 km/h | NO (2-seater) | drivar.de/car/lamborghini-huracan-tecnica-mieten-in-koeln/ |
+| **Mercedes AMG GT** | Düsseldorf | **ask** | 3.8s | 310 km/h | NO (2-seater) | drivar.de/car/mercedes-amg-gt-2015-in-duesseldorf-mieten/ |
+| **BMW M850i** | Düsseldorf | **ask** | 3.7s | 250 km/h | YES (4 seats, GT cruiser) | drivar.de/car/bmw-m850i-mieten-in-duesseldorf-2/ |
+| **Ford Mustang GT Dark Horse** | Düsseldorf | **ask** | 4.2s | 260 km/h | YES (4 seats, V8 rumble) | drivar.de/car/ford-mustang-gt-dark-horse-mieten-duesseldorf/ |
+| **Porsche 992 Turbo S** | Köln | **€799/day** | 2.7s | 330 km/h | YES (4 seats) | drivar.de/car/porsche-992-turbo-s-mieten-koeln/ |
+| **Porsche 992 GTS Cabrio** | Köln | **ask** | 3.3s | 306 km/h | YES (4 seats) | drivar.de/car/porsche-992-carrera-gts-cabrio-mieten-koeln/ |
+| **Porsche 911 GT3** | Köln | **ask** | 3.4s | 318 km/h | YES (4 seats, NA flat-6!) | drivar.de/car/porsche-911-gt3-mieten-in-koeln/ |
+| **Porsche Cayenne Turbo GT** | Köln | **€749/day** | 3.3s | 300 km/h | YES (5 seats) | drivar.de/car/porsche-cayenne-turbo-gt-mieten-in-koeln/ |
+
+**DRIVAR key facts:**
+- Deposit: varies per car (€500–€3,000 blocked on credit card)
+- Mileage: typically limited (e.g. 200-300 km/day), extra km can be booked
+- Insurance: all cars have mandatory rental insurance (Selbstfahrervermietversicherung)
+- Delivery: **will deliver to DUS airport** or any address (extra fee, ask)
+- Min age: typically 25 (some cars 21)
+- Multi-day: ask for multi-day discount (3-4 days often gets 10-20% off)
+- **Track use: NEVER allowed** (but these are for the Autobahn blasts)
+- Contact: https://drivar.de/kontakt/
+- Main booking: https://drivar.de/sportwagen-mieten-duesseldorf/
+
+**DRIVAR also has Nürburgring-specific race car rentals** (separate from road cars):
+- Porsche GT3, GT4, BMW M2 Competition, etc. for track use only
+- With instructor, fuel, insurance included
+- https://drivar.de/nuerburgring-auto-mieten/
+
+### TIER 2: SIXT — Best of the Big Rental Companies
+
+SIXT has the strongest luxury/sports fleet of any traditional rental company in Germany. They have a dedicated **Sports & Luxury Cars** division at DUS airport.
+
+| Car Category | Typical Models | Est. Price/Day | Seats 4? | Notes |
+|-------------|----------------|----------------|----------|-------|
+| **XFAR (Sports)** | BMW M3/M4 Competition, Mercedes-AMG C63 | €200–350 | YES | Best value performance |
+| **XDAR (Premium Sports)** | Porsche 911 Carrera, Mercedes-AMG GT | €350–500 | Depends | Not guaranteed specific model |
+| **XLNR (Luxury)** | BMW 7-series, Mercedes S-Class | €250–400 | YES | Luxury, not sporty |
+| **Sports & Luxury (on request)** | Porsche 911 Turbo, Maserati, Jaguar F-Type | €400–800+ | Varies | Contact Sports & Luxury team |
+
+**SIXT key facts:**
+- DUS Airport location: Terminal Ring 1, Zentralgeb. — open 06:00–23:30 daily
+- **You choose a category, not a specific model** (but app lets you pick 30 min before)
+- Some exclusive models only available on request via Help Center → "Sonstiges" → "SIXT Luxury Cars"
+- Deposit: €500–€3,000 depending on category
+- Min age: 25 for luxury/sports
+- Unlimited mileage on most categories
+- Can cross borders into most EU countries
+- **Track use: absolutely not**
+- Book: https://www.sixt.de/mietwagen/deutschland/duesseldorf/duesseldorf-flughafen/
+
+### TIER 3: Other Airport Rental Companies
+
+| Company | Premium Options | DUS Presence | Pricing | Notes |
+|---------|----------------|--------------|---------|-------|
+| **Europcar** | Prestige range (BMW 5/7, Mercedes E/S) | Yes, at airport | €150–300/day | No true sports cars at DUS |
+| **Hertz** | Dream Collection (Porsche, Maserati) — **Germany has limited availability** | Yes, at airport | €300–600/day | Must check DUS specifically; SAS EuroBonus partnership |
+| **AVIS** | Prestige (BMW 5, Mercedes E, Audi A6) | Yes, at airport | €150–250/day | Decent cars but nothing exotic |
+| **Enterprise/National** | Exotic Car Collection exists **in US only** — not available in Germany | Yes, at airport | N/A | Don't bother for performance |
+| **Buchbinder** | Budget company — no luxury fleet | Yes, at airport | €40–80/day | SSL cert expired; avoid |
+
+**Bottom line on traditional rentals:** SIXT is the only airport rental company with genuine sports/luxury options in Düsseldorf. The others top out at BMW 5-series/Mercedes E-Class territory.
+
+### FASTEST CARS THAT SEAT 4: THE SHORTLIST
+
+For the DUS → Nürburgring → 3-4 days → 4 passengers mission, ranked by **pure speed:**
+
+| Rank | Car | 0-100 | Top | Price/Day | Source | Why |
+|------|-----|-------|-----|-----------|--------|-----|
+| 1 | **Porsche 992 Turbo S** | 2.7s | 330 km/h | ~€799 | DRIVAR Köln | Fastest 4-seater you can rent. Period. |
+| 2 | **Mercedes-AMG GT63 4-door** | 3.2s | 315 km/h | ask | DRIVAR Köln | 630 hp, 4 doors, brutal looks |
+| 3 | **BMW M8 Competition Grand Coupé** | 3.2s | 305 km/h | ask | DRIVAR Bonn | 625 hp V8 twin-turbo, 4 proper seats |
+| 4 | **Porsche 911 GT3** | 3.4s | 318 km/h | ask | DRIVAR Köln | Naturally aspirated 4.0L flat-6, manual option |
+| 5 | **Porsche 992 GTS Cabrio** | 3.3s | 306 km/h | ~€649 | DRIVAR Duisburg | Open top on Autobahn = incredible |
+| 6 | **Audi RS6 Avant** | 3.6s | 305 km/h | ask | DRIVAR Duisburg | Fast wagon energy, 5 seats, luggage |
+| 7 | **Lamborghini Urus** | 3.6s | 305 km/h | ask | DRIVAR Duisburg | "I brought a Lambo" bragging rights |
+| 8 | **BMW M3 Competition** | 3.9s | 290 km/h | ask | DRIVAR Düsseldorf | Daily-driver practical, still a monster |
+| 9 | **SIXT BMW M3/M4** | 3.9s | 290 km/h | ~€250-350 | SIXT DUS | Cheapest performance option |
+| 10 | **Ford Mustang GT Dark Horse** | 4.2s | 260 km/h | ask | DRIVAR Düsseldorf | V8 rumble, cheap thrills |
+
+### RECOMMENDATION
+
+**Best overall: Porsche 992 Carrera 4 GTS Cabrio (DRIVAR, Duisburg) — €649/day**
+- 480 hp, 3.3s to 100, 306 km/h
+- Seats 4 comfortably
+- Convertible in late June = perfect
+- Available near DUS (Duisburg, 20 min)
+- DRIVAR delivers to airport
+- This is the sweet spot of exciting + practical + summer vibes
+
+**If money is no object: Porsche 992 Turbo S (DRIVAR, Köln) — €799/day**
+- 650 hp, 2.7s, 330 km/h. Nothing legal on a road is faster.
+
+**If you want the maddest bragging rights: Lamborghini Urus (DRIVAR, Duisburg)**
+- A Lamborghini that seats 5. Ridiculous. Everyone will stare.
+
+**Budget option: SIXT BMW M3/M4 Competition — ~€250-350/day**
+- Still 510 hp, still absurdly fast, seats 4, from the airport counter with no delivery drama.
+
+### For transport: Normal rental from DUS airport (budget fallback)
 - SIXT, Hertz, Europcar all at DUS
 - BMW 3-series / Mercedes C-class / Audi A4 — from ~€50-80/day
 - **SAS has a Hertz partnership** — double EuroBonus points
