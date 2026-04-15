@@ -48,7 +48,7 @@ The service you're thinking of is **CPH VIP Service — "Royal Lounge"** (not "Q
 | **Return** | Thu July 2 or Fri July 3 |
 | **Estimated cost** | **€800–1,280 total** (4 pax round-trip, economy) |
 | **SAS Plus upgrade** | ~2x price, gets you SAS Lounge + Fast Track + food + 2x23kg bags |
-| **Book** | flysas.com |
+| **Book** | https://www.flysas.com |
 
 > **Note:** If you're doing the Royal Lounge at CPH, you already get the VIP treatment. SAS Plus mainly adds the lounge on the return at DUS + extra bags. Consider SAS Go Smart as the sweet spot.
 
@@ -68,7 +68,7 @@ Skip the rental car pickup queue. Get picked up like kings.
 | **Provider** | **HELI-FLIGHT** |
 | **Includes** | In-flight catering available |
 | **Contact** | +49 6035 91000 / zentrale@heli-flight.de |
-| **Web** | heli-flight.de |
+| **Web** | https://www.heli-flight.de |
 
 30 minutes instead of 1.5 hours. Land at or near the Nürburgring. For a 40th birthday? This is the move.
 
@@ -78,7 +78,7 @@ Skip the rental car pickup queue. Get picked up like kings.
 |--------|------|
 | **What** | Chauffeur-driven V-Class, airport meet & greet, champagne on board |
 | **Price** | **~€400–600 total (~€100–150/pp)** |
-| **Providers** | **Blacklane** (blacklane.com) or **SIXT ride** (sixt.com/ride) |
+| **Providers** | **Blacklane** (https://www.blacklane.com) or **SIXT ride** (https://www.sixt.com/ride) |
 | **Includes** | Meet at arrivals, name sign, 60 min free wait, luggage handling |
 
 Comfortable, classy, all 4 + luggage. Crack open champagne on the Autobahn. Book online in 2 min.
@@ -151,24 +151,24 @@ Germany's largest premium car-sharing platform. Private owners rent their cars v
 
 | Car | Location | Price/Day | 0-100 km/h | Top Speed | Seats 4? | Book |
 |-----|----------|-----------|------------|-----------|----------|------|
-| **Porsche 718 Cayman GT4 RS** | Düren (nr. DUS) | **€799/day** | 3.4s | 315 km/h | NO (2-seater) | drivar.de/car/porsche-718-cayman-gt4-rs-mieten-in-dueren/ |
-| **Porsche 992 Carrera 4 GTS Cabrio** | Duisburg (nr. DUS) | **€649/day** | 3.3s | 306 km/h | YES (4 seats, open top!) | drivar.de/car/porsche-992-carrera-4-gts-cabrio-mieten-duisburg/ |
-| **Mercedes-AMG GT63** | Köln | **ask** | 3.2s | 315 km/h | YES (4-door, 4 seats) | drivar.de/car/mercedes-amg-gt63-4-tuerer-coupe-in-koeln-mieten-2/ |
-| **Mercedes-AMG C63 Coupé** | Düsseldorf | **ask** | 3.9s | 290 km/h | YES (4 seats) | drivar.de/car/mercedes-amg-c63-coupe-mieten-in-duesseldorf/ |
-| **BMW M3 Competition** | Düsseldorf | **ask** | 3.9s | 290 km/h | YES (4 seats, perfect!) | drivar.de/car/bmw-m3-competition-mieten-in-duesseldorf/ |
-| **BMW M8 Competition Grand Coupé** | Bonn | **ask** | 3.2s | 305 km/h | YES (4 seats, brutal) | drivar.de/car/bmw-m8-competition-grand-coupe-mieten-in-bonn/ |
-| **Audi R8 V10** | Düsseldorf | **ask** | 3.1s | 330 km/h | NO (2-seater) | drivar.de/car/audi-r8-v10-in-duesseldorf-mieten-2/ |
-| **Audi RS6** | Duisburg | **ask** | 3.6s | 305 km/h | YES (5 seats, fast wagon!) | drivar.de/car/audi-rs6-mieten-in-duisburg/ |
-| **Audi RS Q8** | Duisburg | **ask** | 3.8s | 305 km/h | YES (5 seats) | drivar.de/car/audi-rsq8-mieten-in-duisburg/ |
-| **Lamborghini Urus** | Duisburg | **ask** | 3.6s | 305 km/h | YES (5 seats, mad SUV) | drivar.de/car/lamborghini-urus-mieten-in-duisburg/ |
-| **Lamborghini Huracan Tecnica** | Köln | **ask** | 3.2s | 325 km/h | NO (2-seater) | drivar.de/car/lamborghini-huracan-tecnica-mieten-in-koeln/ |
-| **Mercedes AMG GT** | Düsseldorf | **ask** | 3.8s | 310 km/h | NO (2-seater) | drivar.de/car/mercedes-amg-gt-2015-in-duesseldorf-mieten/ |
-| **BMW M850i** | Düsseldorf | **ask** | 3.7s | 250 km/h | YES (4 seats, GT cruiser) | drivar.de/car/bmw-m850i-mieten-in-duesseldorf-2/ |
-| **Ford Mustang GT Dark Horse** | Düsseldorf | **ask** | 4.2s | 260 km/h | YES (4 seats, V8 rumble) | drivar.de/car/ford-mustang-gt-dark-horse-mieten-duesseldorf/ |
-| **Porsche 992 Turbo S** | Köln | **€799/day** | 2.7s | 330 km/h | YES (4 seats) | drivar.de/car/porsche-992-turbo-s-mieten-koeln/ |
-| **Porsche 992 GTS Cabrio** | Köln | **ask** | 3.3s | 306 km/h | YES (4 seats) | drivar.de/car/porsche-992-carrera-gts-cabrio-mieten-koeln/ |
-| **Porsche 911 GT3** | Köln | **ask** | 3.4s | 318 km/h | YES (4 seats, NA flat-6!) | drivar.de/car/porsche-911-gt3-mieten-in-koeln/ |
-| **Porsche Cayenne Turbo GT** | Köln | **€749/day** | 3.3s | 300 km/h | YES (5 seats) | drivar.de/car/porsche-cayenne-turbo-gt-mieten-in-koeln/ |
+| **Porsche 718 Cayman GT4 RS** | Düren (nr. DUS) | **€799/day** | 3.4s | 315 km/h | NO (2-seater) | https://drivar.de/car/porsche-718-cayman-gt4-rs-mieten-in-dueren/ |
+| **Porsche 992 Carrera 4 GTS Cabrio** | Duisburg (nr. DUS) | **€649/day** | 3.3s | 306 km/h | YES (4 seats, open top!) | https://drivar.de/car/porsche-992-carrera-4-gts-cabrio-mieten-duisburg/ |
+| **Mercedes-AMG GT63** | Köln | **ask** | 3.2s | 315 km/h | YES (4-door, 4 seats) | https://drivar.de/car/mercedes-amg-gt63-4-tuerer-coupe-in-koeln-mieten-2/ |
+| **Mercedes-AMG C63 Coupé** | Düsseldorf | **ask** | 3.9s | 290 km/h | YES (4 seats) | https://drivar.de/car/mercedes-amg-c63-coupe-mieten-in-duesseldorf/ |
+| **BMW M3 Competition** | Düsseldorf | **ask** | 3.9s | 290 km/h | YES (4 seats, perfect!) | https://drivar.de/car/bmw-m3-competition-mieten-in-duesseldorf/ |
+| **BMW M8 Competition Grand Coupé** | Bonn | **ask** | 3.2s | 305 km/h | YES (4 seats, brutal) | https://drivar.de/car/bmw-m8-competition-grand-coupe-mieten-in-bonn/ |
+| **Audi R8 V10** | Düsseldorf | **ask** | 3.1s | 330 km/h | NO (2-seater) | https://drivar.de/car/audi-r8-v10-in-duesseldorf-mieten-2/ |
+| **Audi RS6** | Duisburg | **ask** | 3.6s | 305 km/h | YES (5 seats, fast wagon!) | https://drivar.de/car/audi-rs6-mieten-in-duisburg/ |
+| **Audi RS Q8** | Duisburg | **ask** | 3.8s | 305 km/h | YES (5 seats) | https://drivar.de/car/audi-rsq8-mieten-in-duisburg/ |
+| **Lamborghini Urus** | Duisburg | **ask** | 3.6s | 305 km/h | YES (5 seats, mad SUV) | https://drivar.de/car/lamborghini-urus-mieten-in-duisburg/ |
+| **Lamborghini Huracan Tecnica** | Köln | **ask** | 3.2s | 325 km/h | NO (2-seater) | https://drivar.de/car/lamborghini-huracan-tecnica-mieten-in-koeln/ |
+| **Mercedes AMG GT** | Düsseldorf | **ask** | 3.8s | 310 km/h | NO (2-seater) | https://drivar.de/car/mercedes-amg-gt-2015-in-duesseldorf-mieten/ |
+| **BMW M850i** | Düsseldorf | **ask** | 3.7s | 250 km/h | YES (4 seats, GT cruiser) | https://drivar.de/car/bmw-m850i-mieten-in-duesseldorf-2/ |
+| **Ford Mustang GT Dark Horse** | Düsseldorf | **ask** | 4.2s | 260 km/h | YES (4 seats, V8 rumble) | https://drivar.de/car/ford-mustang-gt-dark-horse-mieten-duesseldorf/ |
+| **Porsche 992 Turbo S** | Köln | **€799/day** | 2.7s | 330 km/h | YES (4 seats) | https://drivar.de/car/porsche-992-turbo-s-mieten-koeln/ |
+| **Porsche 992 GTS Cabrio** | Köln | **ask** | 3.3s | 306 km/h | YES (4 seats) | https://drivar.de/car/porsche-992-carrera-gts-cabrio-mieten-koeln/ |
+| **Porsche 911 GT3** | Köln | **ask** | 3.4s | 318 km/h | YES (4 seats, NA flat-6!) | https://drivar.de/car/porsche-911-gt3-mieten-in-koeln/ |
+| **Porsche Cayenne Turbo GT** | Köln | **€749/day** | 3.3s | 300 km/h | YES (5 seats) | https://drivar.de/car/porsche-cayenne-turbo-gt-mieten-in-koeln/ |
 
 **DRIVAR key facts:**
 - Deposit: varies per car (€500–€3,000 blocked on credit card)
@@ -290,7 +290,7 @@ The only serious option for track-eligible rental. 25+ years at the Ring, ~100 c
 
 ### 🏎️ Henrik's Lamborghini Dream
 
-**RSR Nürburg** is the main provider for Lamborghini Huracan drives on the Nordschleife. Their website (rsr-nurburg.com) needs to be contacted directly for Lambo availability and pricing — expect **€1,500–2,500** for a multi-lap package with a driving coach.
+**RSR Nürburg** is the main provider for Lamborghini Huracan drives on the Nordschleife. Their website (https://rsr-nurburg.com) needs to be contacted directly for Lambo availability and pricing — expect **€1,500–2,500** for a multi-lap package with a driving coach.
 
 **Alternative Lambo options:**
 - **Apex Nürburg** — another provider, contact directly
@@ -468,13 +468,13 @@ Germany is fully legal and regulated. Cologne has the most options:
 ## 📋 BOOKING CHECKLIST
 
 1. [ ] **CPH Royal Lounge** — vip@cph.dk / +45 32 31 22 00
-2. [ ] **SAS flights** — flysas.com, CPH→DUS June 30, DUS→CPH July 2 or 3
+2. [ ] **SAS flights** — https://www.flysas.com, CPH→DUS June 30, DUS→CPH July 2 or 3
 3. [ ] **Accommodation** — Villa Park or Airbnb (book early, CW27 is peak season)
-4. [ ] **Transfer DUS→Ring** — Helicopter: HELI-FLIGHT +49 6035 91000 / V-Class: blacklane.com / Hummer: local search
-5. [ ] **Rental car at Ring** — DRIVAR (drivar.de, 992 GTS Cabrio €649/day, deliver to accommodation) or SIXT
-5. [ ] **RSR Nürburg** — Track car rental — rsrbooking.com
-6. [ ] **Lambo for Henrik** — Contact RSR Nürburg directly (rsr-nurburg.com)
-7. [ ] **RentRaceCar** — GT3 RS self-drive — rentracecar.com
+4. [ ] **Transfer DUS→Ring** — Helicopter: HELI-FLIGHT +49 6035 91000 / V-Class: https://www.blacklane.com / Hummer: local search
+5. [ ] **Rental car at Ring** — DRIVAR (https://drivar.de, 992 GTS Cabrio €649/day, deliver to accommodation) or SIXT
+6. [ ] **RSR Nürburg** — Track car rental — https://rsrbooking.com
+7. [ ] **Lambo for Henrik** — Contact RSR Nürburg directly (https://rsr-nurburg.com)
+8. [ ] **RentRaceCar** — GT3 RS self-drive — https://www.rentracecar.com/en
 8. [ ] **Co-pilot rides** — Book via Nürburgring website
 9. [ ] **Caterham Drift Experience** — Book via Nürburgring driving experiences
 10. [ ] **Tandem Skydiving** — Skydive Spa, Belgium (~€250/pp, book early)
