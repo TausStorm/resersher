@@ -1,130 +1,126 @@
-# Cool Rental Cars at DUS Airport — June 29 – July 2, 2026
+# Sports Car Rentals DUS Airport — June 29 – July 2, 2026
 
-**3 days | Düsseldorf area | Performance & Sports Cars**
-
----
-
-## ACTUAL CARS AVAILABLE IN DÜSSELDORF — with real prices
-
-Source: **DRIVAR.de** (Germany's #1 sports car rental platform, 1000+ cars, 4.7/5 rating)
-All cars below confirmed available for pickup in Düsseldorf or nearby (Duisburg/Köln/Dortmund — all <40min from DUS airport). Prices are per day.
+**3 days | Pickup: Düsseldorf Flughafen | Porsche, AMG, BMW M**
 
 ---
 
-### PORSCHE
+## WHERE TO FIND PORSCHE / AMG / BMW M AT DUS
 
-| Car | Price/Day | 3-Day Total | Pickup | Link |
-|-----|-----------|-------------|--------|------|
-| **Porsche 992 Carrera 4 GTS Cabrio** | from €649 | ~€1,947 | Duisburg/Düsseldorf | [Book](https://drivar.de/car/porsche-992-carrera-4-gts-cabrio-mieten-duisburg/) |
-| **Porsche 718 Cayman GT4 RS** | from €799 | ~€2,397 | Düren/Düsseldorf/Köln | [Book](https://drivar.de/car/porsche-718-cayman-gt4-rs-mieten-in-dueren/) |
-
-### BMW M
-
-| Car | Price/Day | 3-Day Total | Pickup | Link |
-|-----|-----------|-------------|--------|------|
-| **BMW M3 Competition** | from €339 | ~€1,017 | Düsseldorf/Dortmund/Essen/Köln | [Book](https://drivar.de/car/bmw-m3-competition-mieten-in-duesseldorf/) |
-| **BMW M4 Competition** | from ~€349 | ~€1,047 | Köln (30min from DUS) | [Book](https://drivar.de/car/bmw-m4-competition-xdrive-mieten-koeln/) |
-| **BMW M850i** | from ~€399 | ~€1,197 | Düsseldorf | [Book](https://drivar.de/car/bmw-m850i-mieten-in-duesseldorf-2/) |
-| **BMW M8 Competition Grand Coupé** | from ~€499 | ~€1,497 | Bonn/Düsseldorf area | [Book](https://drivar.de/car/bmw-m8-competition-grand-coupe-mieten-in-bonn/) |
-
-### MERCEDES AMG
-
-| Car | Price/Day | 3-Day Total | Pickup | Link |
-|-----|-----------|-------------|--------|------|
-| **Mercedes-AMG C63 Coupé** | from €279 | ~€837 | Düsseldorf/Dortmund/Essen/Köln | [Book](https://drivar.de/car/mercedes-amg-c63-coupe-mieten-in-duesseldorf/) |
-| **Mercedes AMG GT** | from ~€399 | ~€1,197 | Düsseldorf | [Book](https://drivar.de/car/mercedes-amg-gt-2015-in-duesseldorf-mieten/) |
-| **Mercedes-AMG GT63 4-door** | from ~€499 | ~€1,497 | Köln | [Book](https://drivar.de/car/mercedes-amg-gt63-4-tuerer-coupe-in-koeln-mieten-2/) |
-| **Mercedes E63 AMG** | from ~€349 | ~€1,047 | Köln | [Book](https://drivar.de/car/mercedes-e63-amg-in-koeln-mieten/) |
-| **Mercedes C63s AMG** | from ~€299 | ~€897 | Köln | [Book](https://drivar.de/car/mercedes-c63s-amg-in-koeln-mieten/) |
-| **Mercedes-AMG GLC 63 S Coupé** | from ~€349 | ~€1,047 | Köln | [Book](https://drivar.de/car/mercedes-amg-glc-63-s-coupe-in-koeln-mieten/) |
-| **Mercedes G63 AMG** | from €499 | ~€1,497 | Dortmund/Duisburg/Düsseldorf | [Book](https://drivar.de/car/mercedes-g-klasse-g63-mieten-in-dortmund/) |
-
-### AUDI RS
-
-| Car | Price/Day | 3-Day Total | Pickup | Link |
-|-----|-----------|-------------|--------|------|
-| **Audi RS3** | from €249 | ~€747 | Bonn/Düsseldorf area | [Book](https://drivar.de/car/audi-rs3-mieten-in-bonn/) |
-| **Audi RS6** | from €499 | ~€1,497 | Duisburg/Düsseldorf/Essen/Köln | [Book](https://drivar.de/car/audi-rs6-mieten-in-duisburg/) |
-| **Audi RS Q8** | from €599 | ~€1,797 | Duisburg/Düsseldorf/Essen/Köln | [Book](https://drivar.de/car/audi-rsq8-mieten-in-duisburg/) |
-| **Audi R8 V10 Quattro** | from ~€599 | ~€1,797 | Düsseldorf / Köln | [Book](https://drivar.de/car/audi-r8-v10-in-duesseldorf-mieten-2/) |
-
-### OTHER COOL CARS
-
-| Car | Price/Day | 3-Day Total | Pickup | Link |
-|-----|-----------|-------------|--------|------|
-| **Dodge Challenger SRT** | from €199 | ~€597 | Aachen/Düsseldorf/Köln | [Book](https://drivar.de/car/dodge-challenger-mieten-in-aachen/) |
-| **Ford Mustang GT Dark Horse** | from ~€279 | ~€837 | Düsseldorf | [Book](https://drivar.de/car/ford-mustang-gt-dark-horse-mieten-duesseldorf/) |
-| **Lamborghini Urus** | from €1,100 | ~€3,300 | Duisburg/Düsseldorf/Essen/Köln | [Book](https://drivar.de/car/lamborghini-urus-mieten-in-duisburg/) |
-| **Lamborghini Huracan Tecnica** | from ~€1,299 | ~€3,897 | Köln | [Book](https://drivar.de/car/lamborghini-huracan-tecnica-mieten-in-koeln/) |
+These cars are NOT on comparison sites. You need to go to the right provider's **premium program** directly.
 
 ---
 
-## TOP PICKS — sorted cheapest to most expensive
+### 1. HERTZ — "Dream Collection"
+**The best shot for Porsche 911 / AMG GT at a traditional rental counter.**
 
-| # | Car | Per Day | 3 Days | Why |
-|---|-----|---------|--------|-----|
-| 1 | **Dodge Challenger SRT** | €199 | ~€597 | Cheapest muscle car, V8, loud & fun |
-| 2 | **Audi RS3** | €249 | ~€747 | 400hp pocket rocket, fastest in class |
-| 3 | **Mercedes-AMG C63 Coupé** | €279 | ~€837 | V8 bi-turbo, proper AMG, best value AMG |
-| 4 | **Ford Mustang GT Dark Horse** | €279 | ~€837 | 5.0L V8, new model, looks incredible |
-| 5 | **BMW M3 Competition** | €339 | ~€1,017 | 510hp, RWD, the ultimate driver's car |
-| 6 | **BMW M850i** | €399 | ~€1,197 | Grand tourer, V8, luxury + speed |
-| 7 | **Mercedes AMG GT** | €399 | ~€1,197 | Proper supercar, front-mid engine |
-| 8 | **Audi RS6** | €499 | ~€1,497 | 600hp wagon, sleeper look, insane |
-| 9 | **Porsche 992 GTS Cabrio** | €649 | ~€1,947 | The one. 911 GTS convertible |
-| 10 | **Porsche 718 Cayman GT4 RS** | €799 | ~€2,397 | Track weapon, naturally aspirated flat-6 |
+- Pickup: DUS airport (Mietwagenzentrum)
+- Program: **Dream Collection** — their luxury/sports fleet
+- Known cars in German Dream Collection:
+  - **Porsche 911 Carrera S**
+  - **Porsche Taycan Turbo**
+  - **Mercedes-AMG GT Coupé**
+  - **BMW M4 Competition**
+  - **Corvette Stingray**
+  - **Aston Martin Vantage** (select locations)
+- **How to book:** hertz.de → Flotte → Dream Collection, or call **01806 33 35 35**
+- Phone is the best way — not all Dream Collection cars show online for every station
+- Expect: **€300–600/day** depending on model
+
+### 2. EUROPCAR — "Prestige Collection"
+**Good for Porsche and AMG, available at major airports.**
+
+- Pickup: DUS airport
+- Program: **Prestige** / **Selection** fleet
+- Known cars:
+  - **Porsche Taycan**
+  - **Porsche 911 Carrera**
+  - **Mercedes-AMG C63**
+  - **Mercedes-AMG E63**
+  - **BMW M3 / M4**
+  - **Audi RS models**
+- **How to book:** europcar.de → enter DUS + dates → filter "Premium" or "Prestige"
+- Sign up for **Privilege For You** loyalty = 10% off instantly
+- Or call: **+49 (0) 40 520 18 80 00**
+- Expect: **€250–500/day**
+
+### 3. AVIS — "Select Series"
+**Guaranteed specific model (not "or similar").**
+
+- Pickup: DUS airport
+- Program: **Select Series** — you book a specific model, guaranteed
+- Known cars:
+  - **BMW M4 Competition**
+  - **Porsche Taycan**
+  - **Porsche 911**
+  - **Mercedes-AMG models**
+- **How to book:** avis.de → Mietwagen → Select Series
+- Or call: **+49 (0) 69 500 700 20**
+- Expect: **€300–550/day**
+
+### 4. ENTERPRISE / NATIONAL — "Exotic Car Collection"
+**US-style exotic rental, sometimes available in Germany.**
+
+- Pickup: DUS Flughafen station
+- Program: **Exotic Car Collection** (limited in Germany)
+- Known cars at German airports:
+  - **Porsche 911**
+  - **BMW M models**
+  - **Mercedes-AMG**
+- **How to book:** enterprise.de or call station directly
+- More limited than Hertz/Europcar for exotics in DE
+- Expect: **€300–500/day**
 
 ---
 
-## HOW TO BOOK ON DRIVAR
+## ACTION PLAN — do this right now
 
-1. Go to **drivar.de/sportwagen-mieten-duesseldorf/**
-2. Pick your car
-3. Click through to booking page
-4. Select your dates (June 29 – July 2)
-5. Pay deposit at pickup (bar, EC-Karte, or credit card)
-6. Car delivered to you or pickup at owner location
+### Step 1: Call Hertz Dream Collection
+**01806 33 35 35**
+Say: "I want a Dream Collection car at Düsseldorf Flughafen, June 29 to July 2. What Porsches, AMGs, and BMW M cars do you have?"
+They'll tell you exactly what's available and the price.
 
-**Important DRIVAR info:**
-- Peer-to-peer platform (like Turo) — cars owned by private owners, vetted by DRIVAR
-- Insurance included, deposit varies per car
-- Weekday prices often cheaper than weekend
-- Delivery to DUS airport possible (ask, extra fee)
-- Min age varies per car (some from 18, most 21+)
-- KM limits apply — check each listing
+### Step 2: Call Europcar Prestige
+**+49 (0) 40 520 18 80 00**
+Same question. Compare prices with Hertz.
 
----
+### Step 3: Call Avis Select Series
+**+49 (0) 69 500 700 20**
+Same question. They guarantee the exact model.
 
-## ALSO CHECK (traditional rental companies at DUS)
-
-For standard premium cars (BMW 2/4 series, Porsche Taycan) at lower prices:
-
-| Provider | What they have | How to book |
-|----------|---------------|-------------|
-| **Sixt** (DUS airport) | BMW Coupés, Porsche Taycan, some M-cars on request | sixt.de or call +49 0211 92323990 |
-| **Europcar** (DUS airport) | Porsche, BMW, Audi, Mercedes premium | europcar.de + "Privilege" loyalty = 10% off |
-| **DiscoverCars** | Aggregator, all providers, good sport filter | discovercars.com/de |
-| **HAPPYCAR** | 9/10 rated, 140+ providers compared | happycar.de |
-| **FLOYT** | Sport car filter, 437k reviews | billiger-mietwagen.de |
+### Step 4: Book the best deal
 
 ---
 
-## MY RECOMMENDATION
+## WHY YOU NEED TO CALL
 
-**Best bang for buck = Mercedes-AMG C63 Coupé at €279/day (€837 for 3 days)**
-- V8 bi-turbo, 510hp, rear-wheel drive
-- Proper AMG, not a "baby" AMG
-- Available directly in Düsseldorf
-- Cheaper than BMW M3 and way cheaper than Porsche
-- Book at: drivar.de/car/mercedes-amg-c63-coupe-mieten-in-duesseldorf/
+These cars are NOT in the standard online booking flow. The sites show "BMW 3 Series or similar" — useless. The premium programs (Dream Collection, Prestige, Select Series) are separate inventories that:
+- Often require phone booking
+- Have limited stock per station
+- Book out fast for summer weekends
+- Staff can tell you EXACTLY which models are at DUS on your dates
 
-**Runner-up = BMW M3 Competition at €339/day (€1,017 for 3 days)**
-- 510hp straight-six twin-turbo
-- Available directly in Düsseldorf
-- The ultimate driving machine, literally
-- Book at: drivar.de/car/bmw-m3-competition-mieten-in-duesseldorf/
+**Book ASAP — June 29 is peak summer, these cars go fast.**
 
-**Dream pick = Porsche 992 Carrera 4 GTS Cabrio at €649/day (€1,947 for 3 days)**
-- 480hp flat-six, convertible, the iconic 911
-- Summer + Autobahn + top down = perfection
-- Book at: drivar.de/car/porsche-992-carrera-4-gts-cabrio-mieten-duisburg/
+---
+
+## EXPECTED PRICING (3 days, Jun 29 – Jul 2)
+
+| Car | Provider | Est. Per Day | Est. 3 Days |
+|-----|----------|-------------|-------------|
+| **Porsche Taycan** | Europcar/Hertz/Avis | €250–350 | €750–1,050 |
+| **BMW M4 Competition** | Hertz/Avis | €300–400 | €900–1,200 |
+| **Mercedes-AMG C63** | Europcar | €250–350 | €750–1,050 |
+| **Mercedes-AMG GT** | Hertz Dream | €400–600 | €1,200–1,800 |
+| **Porsche 911 Carrera S** | Hertz Dream/Avis | €450–600 | €1,350–1,800 |
+| **BMW M3 Competition** | Europcar/Avis | €280–380 | €840–1,140 |
+
+---
+
+## PHONE NUMBERS (save these)
+
+| Company | Phone | Program |
+|---------|-------|---------|
+| **Hertz** | 01806 33 35 35 | Dream Collection |
+| **Europcar** | +49 40 520 18 80 00 | Prestige Collection |
+| **Avis** | +49 69 500 700 20 | Select Series |
+| **Enterprise** | +49 211 22049770 | Exotic Collection |
