@@ -50,13 +50,13 @@ doc.text('Sandra,', marginL, y);
 y += 14;
 
 const paragraphs = [
-  'Jag vet att jag kanske inte borde skriva det h\u00e4r. Men jag kan inte l\u00e5ta bli.',
-  'Jag har inte kunnat sluta t\u00e4nka p\u00e5 den d\u00e4r kv\u00e4llen sedan du \u00e5kte hem. Allt \u2014 samtalet som bara fl\u00f6t, hur du tittade p\u00e5 mig n\u00e4r du trodde jag inte m\u00e4rkte det, och sen allt som h\u00e4nde efter\u00e5t.',
-  'Jag har aldrig k\u00e4nt n\u00e5got liknande. Den n\u00e4rheten, intensiteten, hur naturligt allt bara var mellan oss. Du fick mig att gl\u00f6mma tid, plats, allt. Det enda som existerade var du och jag.',
-  'Den natten f\u00f6r\u00e4ndrade n\u00e5got i mig. Du v\u00e4ckte n\u00e5got jag inte visste fanns kvar.',
-  'Dina h\u00e4nder. Din r\u00f6st. S\u00e4ttet du andades mitt namn i m\u00f6rkret. Jag b\u00e4r det med mig varje dag.',
-  'Jag f\u00f6rv\u00e4ntar mig inget. Men om du n\u00e5gonsin \u00e4r tillbaka i stan \u2014 du vet var du hittar mig.',
-  'Du saknas.'
+  'Det h\u00e4r brevet borde jag aldrig skicka. Men n\u00e4r jag blundar ser jag bara dig.',
+  'Sedan den kv\u00e4llen har ingenting k\u00e4nts riktigt. Jag g\u00e5r omkring som i dimma. Ditt skratt. Dina \u00f6gon. Hur allt f\u00f6rsvann runt oss n\u00e4r vi var ensamma.',
+  'Ingen har n\u00e5gonsin f\u00e5tt mig att k\u00e4nna s\u00e5. Den v\u00e4rmen, hur n\u00e4ra vi var, hur du h\u00f6ll mig som om inget annat spelade n\u00e5gon roll. Jag tappade andan. Jag tror inte jag har f\u00e5tt tillbaka den \u00e4n.',
+  'Du l\u00e4mnade n\u00e5got kvar i mig som jag inte kan sl\u00e4ppa.',
+  'Din doft p\u00e5 min kudde. K\u00e4nslan av din hud mot min. Orden du viskade som ingen annan f\u00e5r h\u00f6ra. Jag spelar upp det om och om igen.',
+  'Jag kr\u00e4ver ingenting. Men l\u00f6gnen att det bara var en kv\u00e4ll \u2014 den k\u00f6per jag inte.',
+  'Jag v\u00e4ntar p\u00e5 dig.'
 ];
 
 for (const para of paragraphs) {
