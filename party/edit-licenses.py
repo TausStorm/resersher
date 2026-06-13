@@ -1,125 +1,157 @@
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
-import random
+"""
+Edit real license images: replace Taus's details with Carl Michel Rayes.
+Uses threshold-based text detection + OpenCV inpainting.
+Only masks actual dark text pixels, preserving background texture/watermarks.
+"""
+
+import cv2
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
 
 FONT_PATH = "party/fonts/Inter.ttf"
 NEW_NAME = "Carl Michel Rayes"
 NEW_PID = "19740617-4099"
 
-def font(size):
+def pil_font(size):
     return ImageFont.truetype(FONT_PATH, size)
 
-def smooth_fill(img, region, sample_offset=-15):
-    """Fill a region by sampling colors from a clean area nearby, with gaussian blur to blend"""
-    x1, y1, x2, y2 = region
-    ref_y = max(0, y1 + sample_offset)
-    random.seed(42)
-    
-    # Sample multiple reference rows for better texture
-    ref_rows = []
-    for dy in range(-20, -5):
-        ry = max(0, y1 + dy)
-        row = []
-        for x in range(x1, x2):
-            try: row.append(img.getpixel((x, ry)))
-            except: row.append((200, 200, 200))
-        ref_rows.append(row)
-    
-    for y in range(y1, y2):
-        ref_row = ref_rows[random.randint(0, len(ref_rows)-1)]
-        for x in range(x1, x2):
-            idx = x - x1
-            if idx < len(ref_row):
-                base = ref_row[idx]
-            else:
-                base = (200, 200, 200)
-            noise = random.randint(-3, 3)
-            r = max(0, min(255, base[0] + noise))
-            g = max(0, min(255, base[1] + noise))
-            b = max(0, min(255, base[2] + noise))
-            img.putpixel((x, y), (r, g, b))
 
-def simple_fill(img, region):
-    """Fill with averaged bg color — clean and simple for uniform backgrounds"""
+def text_mask_threshold(img, region, threshold=140):
+    """
+    Create mask by finding dark (text) pixels within a region.
+    Only masks pixels darker than threshold — preserves light background/watermarks.
+    """
     x1, y1, x2, y2 = region
-    # Sample pixels from multiple rows above region
-    pixels = []
-    for dy in range(-25, -5):
-        ry = max(0, y1 + dy)
-        for x in range(x1, x2, 3):
-            try: pixels.append(img.getpixel((x, ry)))
-            except: pass
-    # Also sample from right side at same height
-    for y in range(y1, y2, 3):
-        for dx in range(5, 25):
-            rx = min(img.width - 1, x2 + dx)
-            try: pixels.append(img.getpixel((rx, y)))
-            except: pass
+    h, w = img.shape[:2]
+    mask = np.zeros((h, w), dtype=np.uint8)
     
-    r = sum(p[0] for p in pixels) // len(pixels)
-    g = sum(p[1] for p in pixels) // len(pixels)
-    b = sum(p[2] for p in pixels) // len(pixels)
+    # Convert region to grayscale
+    roi = img[y1:y2, x1:x2]
+    gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
     
-    draw = ImageDraw.Draw(img)
-    draw.rectangle(region, fill=(r, g, b))
+    # Threshold: text pixels are dark (below threshold)
+    _, text_binary = cv2.threshold(gray, threshold, 255, cv2.THRESH_BINARY_INV)
+    
+    # Place into full mask
+    mask[y1:y2, x1:x2] = text_binary
+    
+    return mask
+
+
+def smart_inpaint(img_path, text_regions, thresholds, radius=8):
+    """
+    1. Detect dark text pixels via threshold in each region
+    2. Dilate slightly to catch edges  
+    3. Inpaint only those pixels
+    """
+    img = cv2.imread(img_path)
+    h, w = img.shape[:2]
+    
+    # Build combined mask from all regions
+    combined_mask = np.zeros((h, w), dtype=np.uint8)
+    for region, thresh in zip(text_regions, thresholds):
+        region_mask = text_mask_threshold(img, region, thresh)
+        combined_mask = cv2.bitwise_or(combined_mask, region_mask)
+    
+    # Dilate to catch anti-aliased edges around text
+    kernel = np.ones((3, 3), np.uint8)
+    combined_mask = cv2.dilate(combined_mask, kernel, iterations=3)
+    
+    # Inpaint — small radius since we're only filling narrow text strokes
+    result = cv2.inpaint(img, combined_mask, radius, cv2.INPAINT_NS)
+    # Second pass for cleanup
+    result = cv2.inpaint(result, combined_mask, radius // 2, cv2.INPAINT_TELEA)
+    
+    return result, combined_mask
+
+
+def draw_text(img_cv, texts):
+    """Draw text using PIL for nice font rendering."""
+    img_rgb = cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB)
+    pil_img = Image.fromarray(img_rgb)
+    draw = ImageDraw.Draw(pil_img)
+    
+    for spec in texts:
+        text = spec["text"]
+        f = pil_font(spec["size"])
+        color = spec.get("color", (28, 28, 48))
+        
+        if spec.get("center"):
+            x1, x2 = spec["center"]
+            bbox = draw.textbbox((0, 0), text, font=f)
+            tw = bbox[2] - bbox[0]
+            x = (x1 + x2) // 2 - tw // 2
+        else:
+            x = spec["x"]
+        
+        draw.text((x, spec["y"]), text, fill=color, font=f)
+    
+    return cv2.cvtColor(np.array(pil_img), cv2.COLOR_RGB2BGR)
+
 
 # ============================================================
-# NFB CARD (1125 x 732)
+# NFB CARD
 # ============================================================
 def edit_nfb():
-    img = Image.open("party/IMG_0629.jpg")
+    print("=== NFB ===")
+    
+    # Regions containing text to remove
+    # Using generous regions but threshold will only pick up dark text pixels
+    regions = [
+        (120, 165, 930, 260),   # name area
+        (200, 258, 800, 335),   # personnummer area
+    ]
+    # Threshold: NFB card bg is ~160-180 gray, text is ~30-80
+    thresholds = [145, 145]
+    
+    clean, mask = smart_inpaint("party/IMG_0629.jpg", regions, thresholds, radius=8)
+    
+    # Save debug images
+    cv2.imwrite("party/debug-nfb-mask.jpg", mask)
+    cv2.imwrite("party/carl-nfb-clean.jpg", clean, [cv2.IMWRITE_JPEG_QUALITY, 95])
+    print("Inpainted (threshold-based)")
+    
+    # Draw Carl's details
+    result = draw_text(clean, [
+        {"text": NEW_NAME, "y": 182, "size": 48, "center": (120, 930)},
+        {"text": NEW_PID,  "y": 268, "size": 40, "center": (200, 800)},
+    ])
+    
+    cv2.imwrite("party/carl-nfb-license.jpg", result, [cv2.IMWRITE_JPEG_QUALITY, 95])
+    print("Done: party/carl-nfb-license.jpg")
 
-    # Cover old name + personnummer with texture-matched fill
-    smooth_fill(img, (130, 170, 920, 255))
-    smooth_fill(img, (230, 253, 760, 325))
 
-    draw = ImageDraw.Draw(img)
-    text_color = (28, 28, 48)
-
-    # New name centered
-    nf = font(48)
-    bb = draw.textbbox((0, 0), NEW_NAME, font=nf)
-    tw = bb[2] - bb[0]
-    draw.text(((130 + 920) // 2 - tw // 2, 178), NEW_NAME, fill=text_color, font=nf)
-
-    # New personnummer centered
-    pf = font(40)
-    bb = draw.textbbox((0, 0), NEW_PID, font=pf)
-    tw = bb[2] - bb[0]
-    draw.text(((230 + 760) // 2 - tw // 2, 260), NEW_PID, fill=text_color, font=pf)
-
-    img.save("party/carl-nfb-license.jpg", quality=95)
-    print("NFB done")
-
-# ============================================================
-# TRANSPORTSTYRELSEN CARD (2483 x 1708)
-# Positions from image:
-#   "Namn" label: ~y 400-480 (keep this!)
-#   "Taus Sune  Gerner-Rasmussen": ~y 490-640
-#   "Personnummer" label: ~y 660-745 (keep this!)
-#   "19820708-0634": ~y 750-870
+# ============================================================  
+# TRANSPORTSTYRELSEN CARD
 # ============================================================
 def edit_ts():
-    img = Image.open("party/IMG_0631.jpeg")
+    print("\n=== Transportstyrelsen ===")
+    
+    # Regions — generous but threshold isolates text only
+    regions = [
+        (60, 490, 1550, 660),   # name value
+        (60, 750, 960, 885),    # personnummer value
+    ]
+    # TS card bg is ~200-220 gray, text is ~30-80, catch anti-aliased edges too
+    thresholds = [185, 185]
+    
+    clean, mask = smart_inpaint("party/IMG_0631.jpeg", regions, thresholds, radius=12)
+    
+    cv2.imwrite("party/debug-ts-mask.jpg", mask)
+    cv2.imwrite("party/carl-ts-clean.jpeg", clean, [cv2.IMWRITE_JPEG_QUALITY, 95])
+    print("Inpainted (threshold-based)")
+    
+    # Draw Carl's details
+    result = draw_text(clean, [
+        {"text": NEW_NAME, "x": 90, "y": 525, "size": 90},
+        {"text": NEW_PID,  "x": 90, "y": 768, "size": 82},
+    ])
+    
+    cv2.imwrite("party/carl-ts-license.jpeg", result, [cv2.IMWRITE_JPEG_QUALITY, 95])
+    print("Done: party/carl-ts-license.jpeg")
 
-    # Cover only the name value (not the "Namn" label above)
-    simple_fill(img, (75, 490, 1520, 650))
-    # Cover only the personnummer value (not the "Personnummer" label)
-    simple_fill(img, (75, 755, 960, 875))
 
-    draw = ImageDraw.Draw(img)
-    text_color = (28, 28, 48)
-
-    # New name
-    nf = font(90)
-    draw.text((90, 510), NEW_NAME, fill=text_color, font=nf)
-
-    # New personnummer  
-    pf = font(82)
-    draw.text((90, 762), NEW_PID, fill=text_color, font=pf)
-
-    img.save("party/carl-ts-license.jpeg", quality=95)
-    print("TS done")
-
-edit_nfb()
-edit_ts()
-print("All done!")
+if __name__ == "__main__":
+    edit_nfb()
+    edit_ts()
+    print("\n✓ Complete")
