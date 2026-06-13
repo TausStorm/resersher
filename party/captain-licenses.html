@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaptensbevis - Festbåt</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e8e8;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 20px;
+  }
+
+  .instructions {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+    font-size: 13px;
+  }
+
+  .card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 3.6in;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  /* === THE CARD === */
+  .license {
+    width: 3.375in;
+    height: 2.125in;
+    background: linear-gradient(170deg, #e8e8e8 0%, #d8d8d8 30%, #e0e0e0 60%, #d4d4d4 100%);
+    border-radius: 6px;
+    color: #1a1a2e;
+    position: relative;
+    overflow: hidden;
+    page-break-inside: avoid;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    padding: 0;
+  }
+
+  /* === COMPASS ROSE WATERMARK (SVG in CSS) === */
+  .license::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -42%);
+    opacity: 0.09;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='%23000'%3E%3C!-- N/S/E/W main points --%3E%3Cpolygon points='100,5 108,85 100,70 92,85'/%3E%3Cpolygon points='100,195 108,115 100,130 92,115'/%3E%3Cpolygon points='5,100 85,92 70,100 85,108'/%3E%3Cpolygon points='195,100 115,92 130,100 115,108'/%3E%3C!-- NE/NW/SE/SW secondary points --%3E%3Cpolygon points='160,40 118,88 125,80 112,82' opacity='0.6'/%3E%3Cpolygon points='40,40 82,88 80,80 88,82' opacity='0.6'/%3E%3Cpolygon points='160,160 118,112 125,120 112,118' opacity='0.6'/%3E%3Cpolygon points='40,160 82,112 80,120 88,118' opacity='0.6'/%3E%3C!-- Center circle --%3E%3Ccircle cx='100' cy='100' r='12' fill='none' stroke='%23000' stroke-width='1.5'/%3E%3Ccircle cx='100' cy='100' r='5'/%3E%3C!-- Outer ring --%3E%3Ccircle cx='100' cy='100' r='90' fill='none' stroke='%23000' stroke-width='1'/%3E%3Ccircle cx='100' cy='100' r='85' fill='none' stroke='%23000' stroke-width='0.5'/%3E%3C!-- Cardinal labels --%3E%3Ctext x='100' y='22' text-anchor='middle' font-size='10' font-weight='bold'%3EN%3C/text%3E%3Ctext x='100' y='192' text-anchor='middle' font-size='10' font-weight='bold'%3ES%3C/text%3E%3Ctext x='185' y='104' text-anchor='middle' font-size='10' font-weight='bold'%3EO%3C/text%3E%3Ctext x='16' y='104' text-anchor='middle' font-size='10' font-weight='bold'%3EV%3C/text%3E%3C/g%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* === HEADER AREA === */
+  .license-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 6px 8px 3px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* EU-style flag box */
+  .flag-box {
+    width: 22px;
+    height: 16px;
+    background: #003399;
+    border-radius: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    position: relative;
+  }
+
+  .flag-box::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgba(255,204,0,0.3);
+    border-radius: 50%;
+  }
+
+  .flag-box span {
+    color: #fff;
+    font-size: 8px;
+    font-weight: 800;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-text {
+    flex: 1;
+  }
+
+  .header-text .org-name {
+    font-size: 7pt;
+    font-weight: 800;
+    color: #1a1a2e;
+    line-height: 1.15;
+  }
+
+  .header-text .subtitle {
+    font-size: 5.5pt;
+    color: #444;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 0px;
+  }
+
+  /* === NAME + ID === */
+  .person-info {
+    padding: 4px 8px 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .person-name {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1.2;
+  }
+
+  .person-id {
+    font-size: 8pt;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0px;
+  }
+
+  /* === CERTIFICATIONS TABLE === */
+  .certs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 6px;
+    row-gap: 0px;
+    padding: 3px 8px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cert-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3px;
+  }
+
+  .cert-name {
+    font-size: 5.2pt;
+    font-weight: 700;
+    color: #1a1a2e;
+    white-space: nowrap;
+  }
+
+  .cert-name .sub {
+    font-weight: 400;
+    font-size: 4.5pt;
+    color: #555;
+  }
+
+  .cert-date {
+    font-size: 5.2pt;
+    font-weight: 500;
+    color: #333;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* === PRINT === */
+  @media print {
+    body { background: white; padding: 0.3in; }
+    h1, .instructions { display: none; }
+    .card-grid { gap: 0.3in; }
+    .license {
+      box-shadow: none;
+      border: 0.5px solid #ccc;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Kaptensbevis - Festbåt</h1>
+<p class="instructions">Skriv ut (Ctrl+P) — minsta marginaler, aktivera bakgrundsgrafik. Klipp ut korten.</p>
+
+<div class="card-grid">
+
+  <!-- ========== LICENSE 1 ========== -->
+  <div class="license">
+    <div class="license-top">
+      <div class="flag-box"><span>S</span></div>
+      <div class="header-text">
+        <div class="org-name">Nämnden för festbåtsutbildning, NFF</div>
+        <div class="subtitle">Intyg nautisk partykompetens för festbåtar</div>
+      </div>
+    </div>
+
+    <div class="person-info">
+      <div class="person-name">Carl Michel Rayes</div>
+      <div class="person-id">19740617-4099</div>
+    </div>
+
+    <div class="certs">
+      <!-- Left column -->
+      <div class="cert-row">
+        <span class="cert-name">Festintyg</span>
+        <span class="cert-date">2026-06-13</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Vibeintyg</span>
+        <span class="cert-date">***</span>
+      </div>
+
+      <div class="cert-row">
+        <span class="cert-name">Drinkmixning</span>
+        <span class="cert-date">2026-06-13</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Skålintyg <span class="sub">högfart</span></span>
+        <span class="cert-date">***</span>
+      </div>
+
+      <div class="cert-row">
+        <span class="cert-name">Festskepparintyg</span>
+        <span class="cert-date">2026-06-13</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Limbo Nivå 1</span>
+        <span class="cert-date">***</span>
+      </div>
+
+      <div class="cert-row">
+        <span class="cert-name">Danspraktik</span>
+        <span class="cert-date">***</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Limbo Nivå 2</span>
+        <span class="cert-date">***</span>
+      </div>
+
+      <div class="cert-row">
+        <span class="cert-name">Grillmästarbevis</span>
+        <span class="cert-date">***</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Limbo Nivå 3</span>
+        <span class="cert-date">***</span>
+      </div>
+
+      <div class="cert-row">
+        <span class="cert-name">Karaokeintyg</span>
+        <span class="cert-date">***</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">SBC</span>
+        <span class="cert-date">***</span>
+      </div>
+
+      <div class="cert-row">
+        <span class="cert-name">Badpraktik</span>
+        <span class="cert-date">***</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">LBC</span>
+        <span class="cert-date">***</span>
+      </div>
+    </div>
+  </div>
+  <!-- ========== END LICENSE 1 ========== -->
+
+
+  <!-- ========== LICENSE 2 (copy) ========== -->
+  <div class="license">
+    <div class="license-top">
+      <div class="flag-box"><span>S</span></div>
+      <div class="header-text">
+        <div class="org-name">Nämnden för festbåtsutbildning, NFF</div>
+        <div class="subtitle">Intyg nautisk partykompetens för festbåtar</div>
+      </div>
+    </div>
+
+    <div class="person-info">
+      <div class="person-name">Carl Michel Rayes</div>
+      <div class="person-id">19740617-4099</div>
+    </div>
+
+    <div class="certs">
+      <div class="cert-row">
+        <span class="cert-name">Festintyg</span>
+        <span class="cert-date">2026-06-13</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Vibeintyg</span>
+        <span class="cert-date">***</span>
+      </div>
+
+      <div class="cert-row">
+        <span class="cert-name">Drinkmixning</span>
+        <span class="cert-date">2026-06-13</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Skålintyg <span class="sub">högfart</span></span>
+        <span class="cert-date">***</span>
+      </div>
+
+      <div class="cert-row">
+        <span class="cert-name">Festskepparintyg</span>
+        <span class="cert-date">2026-06-13</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Limbo Nivå 1</span>
+        <span class="cert-date">***</span>
+      </div>
+
+      <div class="cert-row">
+        <span class="cert-name">Danspraktik</span>
+        <span class="cert-date">***</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Limbo Nivå 2</span>
+        <span class="cert-date">***</span>
+      </div>
+
+      <div class="cert-row">
+        <span class="cert-name">Grillmästarbevis</span>
+        <span class="cert-date">***</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Limbo Nivå 3</span>
+        <span class="cert-date">***</span>
+      </div>
+
+      <div class="cert-row">
+        <span class="cert-name">Karaokeintyg</span>
+        <span class="cert-date">***</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">SBC</span>
+        <span class="cert-date">***</span>
+      </div>
+
+      <div class="cert-row">
+        <span class="cert-name">Badpraktik</span>
+        <span class="cert-date">***</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">LBC</span>
+        <span class="cert-date">***</span>
+      </div>
+    </div>
+  </div>
+  <!-- ========== END LICENSE 2 ========== -->
+
+</div>
+
+</body>
+</html>
