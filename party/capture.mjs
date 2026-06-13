@@ -7,137 +7,180 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const fontsDir = path.join(__dirname, 'fonts');
 
-// Card dimensions: 3.375in x 2.125in at 300dpi
 const W = 1013;
 const H = 638;
 const SCALE = 3;
 
-function buildCompassRose() {
-  return `
-    <g transform="translate(${W/2}, ${H/2 - 10})" opacity="0.08">
-      <circle cx="0" cy="0" r="135" fill="none" stroke="#000" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="128" fill="none" stroke="#000" stroke-width="0.75"/>
-      <polygon points="0,-130 12,-15 0,-40 -12,-15" fill="#000"/>
-      <polygon points="0,130 12,15 0,40 -12,15" fill="#000"/>
-      <polygon points="-130,0 -15,-12 -40,0 -15,12" fill="#000"/>
-      <polygon points="130,0 15,-12 40,0 15,12" fill="#000"/>
-      <polygon points="90,-90 25,-12 38,-28 17,-14" fill="#000" opacity="0.6"/>
-      <polygon points="-90,-90 -25,-12 -28,-28 -14,-14" fill="#000" opacity="0.6"/>
-      <polygon points="90,90 25,12 38,28 17,14" fill="#000" opacity="0.6"/>
-      <polygon points="-90,90 -25,12 -28,28 -14,14" fill="#000" opacity="0.6"/>
-      <circle cx="0" cy="0" r="18" fill="none" stroke="#000" stroke-width="2"/>
-      <circle cx="0" cy="0" r="7" fill="#000"/>
-      <text x="0" y="-112" text-anchor="middle" font-size="14" font-weight="bold" font-family="Inter" fill="#000">N</text>
-      <text x="0" y="125" text-anchor="middle" font-size="14" font-weight="bold" font-family="Inter" fill="#000">S</text>
-      <text x="120" y="5" text-anchor="middle" font-size="14" font-weight="bold" font-family="Inter" fill="#000">O</text>
-      <text x="-120" y="5" text-anchor="middle" font-size="14" font-weight="bold" font-family="Inter" fill="#000">V</text>
+const resvgOpts = {
+  fitTo: { mode: 'width', value: W * SCALE },
+  font: {
+    fontFiles: [
+      path.join(fontsDir, 'Inter-Regular.ttf'),
+      path.join(fontsDir, 'Inter-Medium.ttf'),
+      path.join(fontsDir, 'Inter-SemiBold.ttf'),
+      path.join(fontsDir, 'Inter-Bold.ttf'),
+      path.join(fontsDir, 'Inter-ExtraBold.ttf'),
+    ],
+    loadSystemFonts: false,
+    defaultFontFamily: 'Inter',
+  },
+};
+
+// ============================================================
+// CARD 1 — NFB (Nämnden för båtlivsutbildning) — real text
+// ============================================================
+function buildNFBCard(name, personnummer) {
+  const cx = W * 0.52;
+  const cy = H * 0.58;
+  const compassRose = `
+    <g transform="translate(${cx}, ${cy})" opacity="0.07">
+      <circle cx="0" cy="0" r="165" fill="none" stroke="#222" stroke-width="1.2"/>
+      <circle cx="0" cy="0" r="158" fill="none" stroke="#222" stroke-width="0.6"/>
+      <polygon points="0,-155 8,-20 0,-50 -8,-20" fill="#222"/>
+      <polygon points="0,155 8,20 0,50 -8,20" fill="#222"/>
+      <polygon points="-155,0 -20,-8 -50,0 -20,8" fill="#222"/>
+      <polygon points="155,0 20,-8 50,0 20,8" fill="#222"/>
+      <polygon points="110,-110 22,-10 35,-30 12,-12" fill="#222" opacity="0.5"/>
+      <polygon points="-110,-110 -22,-10 -35,-30 -12,-12" fill="#222" opacity="0.5"/>
+      <polygon points="110,110 22,10 35,30 12,12" fill="#222" opacity="0.5"/>
+      <polygon points="-110,110 -22,10 -35,30 -12,12" fill="#222" opacity="0.5"/>
+      <polygon points="55,-145 6,-18 0,-25 -2,-16" fill="#222" opacity="0.25"/>
+      <polygon points="-55,-145 -6,-18 0,-25 2,-16" fill="#222" opacity="0.25"/>
+      <polygon points="145,-55 18,-6 25,0 16,2" fill="#222" opacity="0.25"/>
+      <polygon points="145,55 18,6 25,0 16,-2" fill="#222" opacity="0.25"/>
+      <polygon points="55,145 6,18 0,25 -2,16" fill="#222" opacity="0.25"/>
+      <polygon points="-55,145 -6,18 0,25 2,16" fill="#222" opacity="0.25"/>
+      <polygon points="-145,-55 -18,-6 -25,0 -16,2" fill="#222" opacity="0.25"/>
+      <polygon points="-145,55 -18,6 -25,0 -16,-2" fill="#222" opacity="0.25"/>
+      <circle cx="0" cy="0" r="16" fill="none" stroke="#222" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="6" fill="#222"/>
     </g>`;
-}
 
-function buildLicenseSVG(name, personnummer) {
+  // Real NFB certification names from the actual card
   const leftCerts = [
-    ['Festintyg', '2026-06-13'],
-    ['Drinkmixning', '2026-06-13'],
-    ['Festskepparintyg', '2026-06-13'],
-    ['Danspraktik', '***'],
-    ['Grillmästarbevis', '***'],
-    ['Karaokeintyg', '***'],
-    ['Badpraktik', '***'],
+    ['Förarintyg', '2015-02-01'],
+    ['Båtpraktik Dag', '2017-05-15'],
+    ['Kustskepparintyg', '2017-05-31'],
+    ['Båtpraktik Mörker', '***'],
+    ['Båtmekanikerintyg', '***'],
+    ['Utsjöskepparintyg', '***'],
+    ['Kanalintyg', '***'],
   ];
-
   const rightCerts = [
-    ['Vibeintyg', '***'],
-    ['Skålintyg högfart', '***'],
-    ['Limbo Nivå 1', '***'],
-    ['Limbo Nivå 2', '***'],
-    ['Limbo Nivå 3', '***'],
-    ['SBC', '***'],
-    ['LBC', '***'],
+    ['Radarintyg', '***'],
+    ['Manöverintyg högfart', '***'],
+    ['Seglarintyg 1', '2019-06-15'],
+    ['Seglarintyg 2', '***'],
+    ['Seglarintyg 3', '***'],
+    ['SRC', '2020-10-30'],
+    ['LRC', '***'],
   ];
 
-  const startY = 280;
-  const lineH = 22;
-  const leftX = 30;
-  const rightX = W / 2 + 20;
-  const leftDateX = W / 2 - 15;
-  const rightDateX = W - 30;
+  const certStartY = 365;
+  const certLineH = 37;
+  const lNameX = 38;
+  const lDateX = 330;
+  const rNameX = 480;
+  const rDateX = 975;
 
-  let certRows = '';
+  let certs = '';
   for (let i = 0; i < leftCerts.length; i++) {
-    const y = startY + i * lineH;
-    const [ln, ld] = leftCerts[i];
-    const [rn, rd] = rightCerts[i];
-
-    certRows += `
-      <text x="${leftX}" y="${y}" font-size="12.5" font-weight="700" font-family="Inter" fill="#1a1a2e">${ln}</text>
-      <text x="${leftDateX}" y="${y}" font-size="12.5" font-weight="500" font-family="Inter" fill="#333" text-anchor="end">${ld}</text>
-      <text x="${rightX}" y="${y}" font-size="12.5" font-weight="700" font-family="Inter" fill="#1a1a2e">${rn}</text>
-      <text x="${rightDateX}" y="${y}" font-size="12.5" font-weight="500" font-family="Inter" fill="#333" text-anchor="end">${rd}</text>
-    `;
+    const y = certStartY + i * certLineH;
+    certs += `
+      <text x="${lNameX}" y="${y}" font-size="15.5" font-weight="700" font-family="Inter" fill="#1a1a2e">${leftCerts[i][0]}</text>
+      <text x="${lDateX}" y="${y}" font-size="15.5" font-weight="400" font-family="Inter" fill="#222" text-anchor="end">${leftCerts[i][1]}</text>
+      <text x="${rNameX}" y="${y}" font-size="15.5" font-weight="700" font-family="Inter" fill="#1a1a2e">${rightCerts[i][0]}</text>
+      <text x="${rDateX}" y="${y}" font-size="15.5" font-weight="400" font-family="Inter" fill="#222" text-anchor="end">${rightCerts[i][1]}</text>`;
   }
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0%" stop-color="#e8e8e8"/>
-      <stop offset="30%" stop-color="#d8d8d8"/>
-      <stop offset="60%" stop-color="#e0e0e0"/>
-      <stop offset="100%" stop-color="#d4d4d4"/>
+    <linearGradient id="nfbBg" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#e2e2e2"/>
+      <stop offset="40%" stop-color="#d5d5d5"/>
+      <stop offset="70%" stop-color="#dcdcdc"/>
+      <stop offset="100%" stop-color="#d0d0d0"/>
     </linearGradient>
-    <clipPath id="roundCard">
-      <rect x="0" y="0" width="${W}" height="${H}" rx="12"/>
-    </clipPath>
   </defs>
 
-  <!-- Card bg -->
-  <rect width="${W}" height="${H}" rx="12" fill="url(#bg)"/>
+  <rect width="${W}" height="${H}" rx="10" fill="url(#nfbBg)"/>
 
-  <!-- Subtle diagonals -->
-  <g clip-path="url(#roundCard)" opacity="0.02">
-    ${Array.from({length: 50}, (_, i) => `<line x1="${i*30}" y1="0" x2="${i*30-300}" y2="${H}" stroke="#000" stroke-width="0.8"/>`).join('')}
-  </g>
-
-  <!-- Compass rose -->
-  ${buildCompassRose()}
+  ${compassRose}
 
   <!-- EU flag box -->
-  <rect x="22" y="18" width="42" height="32" rx="2" fill="#003399"/>
-  <circle cx="43" cy="34" r="11" fill="none" stroke="rgba(255,204,0,0.35)" stroke-width="1.5"/>
-  <text x="43" y="40" text-anchor="middle" font-size="18" font-weight="800" font-family="Inter" fill="white">S</text>
+  <rect x="32" y="25" width="48" height="36" rx="2" fill="#003399"/>
+  <circle cx="56" cy="43" r="12" fill="none" stroke="rgba(255,204,0,0.3)" stroke-width="1"/>
+  <text x="56" y="49" text-anchor="middle" font-size="20" font-weight="800" font-family="Inter" fill="#fff">S</text>
 
-  <!-- Header -->
-  <text x="74" y="36" font-size="16.5" font-weight="800" font-family="Inter" fill="#1a1a2e" letter-spacing="0.2">Nämnden för festbåtsutbildning, NFF</text>
-  <text x="74" y="52" font-size="12" font-weight="400" font-family="Inter" fill="#555">Intyg nautisk partykompetens för festbåtar</text>
+  <!-- Real org name -->
+  <text x="92" y="40" font-size="17.5" font-weight="800" font-family="Inter" fill="#1a1a2e">Nämnden för båtlivsutbildning, NFB</text>
+  <text x="92" y="58" font-size="12.5" font-weight="400" font-family="Inter" fill="#444">Intyg nautisk kompetens för fritidsbåtar</text>
 
-  <!-- Name section -->
-  <text x="30" y="105" font-size="28" font-weight="700" font-family="Inter" fill="#1a1a2e">${name}</text>
-  <text x="30" y="135" font-size="22" font-weight="600" font-family="Inter" fill="#333">${personnummer}</text>
+  <!-- Name centered -->
+  <text x="${W/2}" y="150" text-anchor="middle" font-size="32" font-weight="700" font-family="Inter" fill="#1a1a2e">${name}</text>
+  <text x="${W/2}" y="188" text-anchor="middle" font-size="24" font-weight="600" font-family="Inter" fill="#222">${personnummer}</text>
 
-  <!-- Cert table -->
-  <line x1="${W/2 + 8}" y1="260" x2="${W/2 + 8}" y2="${H - 20}" stroke="#c0c0c0" stroke-width="0.5"/>
-  ${certRows}
+  ${certs}
+
+</svg>`;
+}
+
+// ============================================================
+// CARD 2 — Transportstyrelsen — real text
+// ============================================================
+function buildTSCard(name, personnummer) {
+  const waves = `
+    <g opacity="0.35">
+      <path d="M0,520 Q100,480 200,510 T400,490 T600,520 T800,495 T1013,530 L1013,638 L0,638 Z" fill="#5ba3d9" opacity="0.4"/>
+      <path d="M0,545 Q120,510 250,540 T500,515 T750,545 T1013,520 L1013,638 L0,638 Z" fill="#4a90c9" opacity="0.5"/>
+      <path d="M0,570 Q150,540 300,565 T600,545 T900,575 T1013,555 L1013,638 L0,638 Z" fill="#3a7ab5" opacity="0.45"/>
+      <path d="M0,595 Q130,575 260,590 T520,570 T780,600 T1013,580 L1013,638 L0,638 Z" fill="#2d6aa0" opacity="0.35"/>
+    </g>`;
+
+  // Transportstyrelsen logo — blue geometric arrow/diamond shapes
+  const logoX = 700;
+  const logoY = 50;
+  const logo = `
+    <g transform="translate(${logoX}, ${logoY})">
+      <polygon points="0,0 60,40 0,80" fill="#003d7a"/>
+      <polygon points="20,10 80,40 20,70" fill="#0058a8"/>
+      <polygon points="70,25 110,40 70,55" fill="#003d7a" opacity="0.8"/>
+      <text x="55" y="110" text-anchor="middle" font-size="19" font-weight="700" font-family="Inter" fill="#555" letter-spacing="2">TRANSPORT</text>
+      <text x="55" y="132" text-anchor="middle" font-size="19" font-weight="700" font-family="Inter" fill="#555" letter-spacing="2">STYRELSEN</text>
+    </g>`;
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+  <defs>
+    <clipPath id="tsClip"><rect width="${W}" height="${H}" rx="10"/></clipPath>
+  </defs>
+
+  <rect width="${W}" height="${H}" rx="10" fill="#f2f2f2"/>
+
+  <g clip-path="url(#tsClip)">${waves}</g>
+
+  <!-- Real title -->
+  <text x="40" y="60" font-size="28" font-weight="800" font-family="Inter" fill="#1a1a2e">Förarbevis för vattenskoter</text>
+
+  ${logo}
+
+  <!-- Namn -->
+  <text x="40" y="155" font-size="15" font-weight="400" font-family="Inter" fill="#555">Namn</text>
+  <text x="40" y="185" font-size="24" font-weight="600" font-family="Inter" fill="#1a1a2e">${name}</text>
+
+  <!-- Personnummer -->
+  <text x="40" y="240" font-size="15" font-weight="400" font-family="Inter" fill="#555">Personnummer</text>
+  <text x="40" y="275" font-size="24" font-weight="700" font-family="Inter" fill="#1a1a2e">${personnummer}</text>
+
+  <!-- Kort utfärdat -->
+  <text x="40" y="335" font-size="15" font-weight="400" font-family="Inter" fill="#555">Kort utfärdat</text>
+  <text x="40" y="370" font-size="24" font-weight="700" font-family="Inter" fill="#1a1a2e">2025-06-09</text>
 
 </svg>`;
 }
 
 async function renderCard(svg, baseName) {
-  const resvg = new Resvg(svg, {
-    fitTo: { mode: 'width', value: W * SCALE },
-    font: {
-      fontFiles: [
-        path.join(fontsDir, 'Inter-Regular.ttf'),
-        path.join(fontsDir, 'Inter-Medium.ttf'),
-        path.join(fontsDir, 'Inter-SemiBold.ttf'),
-        path.join(fontsDir, 'Inter-Bold.ttf'),
-        path.join(fontsDir, 'Inter-ExtraBold.ttf'),
-      ],
-      loadSystemFonts: false,
-      defaultFontFamily: 'Inter',
-    },
-  });
-
-  const pngData = resvg.render();
-  const pngBuf = pngData.asPng();
+  const resvg = new Resvg(svg, resvgOpts);
+  const pngBuf = resvg.render().asPng();
 
   const pngPath = path.join(__dirname, `${baseName}.png`);
   fs.writeFileSync(pngPath, pngBuf);
@@ -149,12 +192,16 @@ async function renderCard(svg, baseName) {
 }
 
 async function main() {
-  const svg = buildLicenseSVG('Carl Michel Rayes', '19740617-4099');
-  console.log('Rendering card 1...');
-  await renderCard(svg, 'carl-michel-rayes-license-1');
-  console.log('Rendering card 2...');
-  await renderCard(svg, 'carl-michel-rayes-license-2');
-  console.log('\nDone! 2 x PNG + 2 x JPEG in party/');
+  const name = 'Carl Michel Rayes';
+  const pnr = '19740617-4099';
+
+  console.log('Card 1 — NFB...');
+  await renderCard(buildNFBCard(name, pnr), 'carl-michel-rayes-license-1');
+
+  console.log('Card 2 — Transportstyrelsen...');
+  await renderCard(buildTSCard(name, pnr), 'carl-michel-rayes-license-2');
+
+  console.log('\nDone!');
 }
 
 main().catch(console.error);
