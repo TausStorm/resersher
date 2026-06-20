@@ -18,25 +18,37 @@ This is a VLTRA business project for research, writing, and strategic work.
 ## Project Structure
 
 ```
-.context/           # Business context (created by /onboard)
-├── company.md      # Identity, industry, story, Sacpro internal issues
-├── products.md     # Offerings, differentiators
-├── customers.md    # Audience, personas, pain points
-├── competitors.md  # Landscape, positioning (incl. Boldan/Trelleborg, Linervent)
-├── partnerships.md # Sacpro, APS, resellers, Linervent, Picote
-├── voice.md        # Tone, terminology
-└── goals.md        # Priorities, challenges, financial notes
+.context/                    # Business context (created by /onboard)
 
-## Key Documents
+henriks-birthday/            # Henrik's 40th -- Nurburgring trip planning
+  ├── research/              # Accommodation, activities, driving experiences
+  ├── emails/                # Email drafts to Nurburgring management & staff
+  └── rental-cars/           # DUS airport rental car research
 
-- board/email-draft-styrelsen-oro.md          # Formal board escalation letter (Taus + Peter)
-- board/bilaga-sammanfattning-forslag-och-initiativ.md  # All 17 initiatives raised, with status
-- board/bilaga-sammanfattning-forslag-och-initiativ.pdf # PDF version of bilaga (for attachment)
-- linervent-strategic-analysis.md       # Strategic analysis of Linervent/FLEX situation
-- sacpro-picote-cooperation-proposal.md # Picote partnership proposal
-- iso-audit-prep-forsaljning.md         # ISO audit prep for sales process
-- email-draft-lucas-iso-concerns.md     # ISO concerns flagged to Lucas
-- research/T&C/email-draft-fredrik.md   # T&C/warranty feedback to CEO
+uvre-lining/                  # Uvre Lining / PEANTA business
+  ├── board/                 # Board escalation letters, initiative summaries
+  ├── partnerships/          # Sacpro, Picote, Linervent, APS
+  ├── iso/                   # ISO audit prep, concerns
+  ├── budget/                # Budget analysis, Fortnox, spreadsheets
+  └── T&C/                   # Terms & conditions, warranty docs
+
+ai-research/                  # AI pornography, deepfakes, policy
+  ├── book-concept/          # Book narrative framework
+  └── debate/                # EU debate manuscripts, evidence
+
+investments/                  # Iran blockade, AI infrastructure, oil market
+
+health/                       # Dementia, bioresonance, bioelectronic medicine
+
+open-house/                   # Open house invitations
+
+party/                        # Party licenses, pranks
+
+AC/                           # Dantherm AC unit sale
+
+matteo/                       # Matteo photos
+
+misc/                         # Telecom, student car research
 ```
 
 ## Git Workflow
